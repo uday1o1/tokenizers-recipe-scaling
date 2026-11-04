@@ -45,10 +45,11 @@ def tokenizers():
     ax = axes[0]
     for i, n in enumerate(TOKENIZERS):
         band(ax, T[n]["curve"], PAL[i], TOK_LABEL[n], x="steps", scale=1)
-    ax.set_ylim(2.0, 3.0)
+    ax.set_ylim(2.0, 3.3)
+    ax.set_yticks(np.arange(2.0, 3.01, 0.2))
     ax.set_xlabel("optimizer step (8,192 tokens each)")
     ax.set_ylabel("validation bits per byte")
-    ax.legend(fontsize=5.6, ncol=2, loc="upper right")
+    ax.legend(fontsize=5.4, ncol=2, loc="upper right", handlelength=1.2, columnspacing=0.8)
     ax.set_title("(a) validation bpb", loc="left", fontsize=8.5)
     ax = axes[1]
     order = sorted(TOKENIZERS, key=lambda n: T[n]["final_bpb"]["mean"])
@@ -62,7 +63,7 @@ def tokenizers():
     ax.set_yticklabels([TOK_LABEL[n] for n in order], fontsize=6.5)
     ax.invert_yaxis()
     ax.set_xlabel("validation bits per byte")
-    ax.legend(fontsize=6.5, loc="lower right")
+    ax.legend(fontsize=6.5, loc="center right")
     ax.set_title("(b) final and best", loc="left", fontsize=8.5)
     ax = axes[2]
     band(ax, T["gpt2_bpe"]["curve"], PAL[7], "GPT-2 BPE", x="steps", scale=1)
@@ -84,10 +85,10 @@ def recipe():
     ax = axes[0]
     for i, n in enumerate(RECIPE):
         band(ax, R["configs"][n]["curve"], PAL[i], RECIPE_LABEL[n], ls="--" if n == "muon_cosine" else "-")
-    ax.set_ylim(1.75, 2.75)
+    ax.set_ylim(1.75, 3.0)
     ax.set_xlabel("training tokens (millions)")
     ax.set_ylabel("validation bpb (first 524,288 tokens)")
-    ax.legend(fontsize=5.6)
+    ax.legend(fontsize=5.6, loc="upper right")
     ax.set_title("(a) the recipe, 5 seeds", loc="left", fontsize=8.5)
     ax = axes[1]
     rows = [("RoPE alone", R["parts"]["rope_alone"]), ("RMSNorm alone", R["parts"]["rmsnorm_alone"]),
@@ -112,7 +113,7 @@ def recipe():
     band(ax, R["configs"]["textbook_rope"]["curve"], PAL[1], "RoPE, 16.4M tokens")
     band(ax, Q["textbook_rope_steps4000"]["curve"], PAL[1], "RoPE, 65.5M tokens", ls="--")
     band(ax, Q["textbook_nope"]["curve"], PAL[8], "no positions, 16.4M tokens", ls=":")
-    ax.set_ylim(1.75, 2.75)
+    ax.set_ylim(1.75, 3.0)
     ax.set_xlabel("training tokens (millions)")
     ax.legend(fontsize=5.6, loc="upper right")
     ax.set_title("(c) positions, textbook model", loc="left", fontsize=8.5)
