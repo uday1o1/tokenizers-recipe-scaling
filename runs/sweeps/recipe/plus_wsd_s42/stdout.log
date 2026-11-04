@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe/plus_wsd_s42
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,410,176 params (3,148,032 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=wsd
+step     50 | loss 6.3786 | lr 2.50e-04 | 212.8k tok/s | 4s
+step    100 | loss 5.3203 | lr 5.00e-04 | 234.2k tok/s | 7s
+step    150 | loss 4.8298 | lr 7.50e-04 | 234.2k tok/s | 11s
+step    200 | loss 4.5697 | lr 1.00e-03 | 234.2k tok/s | 14s
+step    250 | loss 4.3578 | lr 1.00e-03 | 241.1k tok/s | 18s
+  eval step    250 | val_loss 4.2483 | val_bpb 2.5570 | acc 15.1% | 18s
+step    300 | loss 4.1759 | lr 1.00e-03 | 234.6k tok/s | 21s
+step    350 | loss 4.0592 | lr 1.00e-03 | 234.2k tok/s | 25s
+step    400 | loss 4.0207 | lr 1.00e-03 | 234.2k tok/s | 28s
+step    450 | loss 3.9354 | lr 1.00e-03 | 234.2k tok/s | 32s
+step    500 | loss 3.8499 | lr 1.00e-03 | 245.3k tok/s | 35s
+  eval step    500 | val_loss 3.8198 | val_bpb 2.2991 | acc 21.0% | 35s
+step    550 | loss 3.7745 | lr 1.00e-03 | 234.8k tok/s | 39s
+step    600 | loss 3.7888 | lr 1.00e-03 | 234.3k tok/s | 42s
+step    650 | loss 3.7241 | lr 1.00e-03 | 234.4k tok/s | 46s
+step    700 | loss 3.7600 | lr 1.00e-03 | 234.3k tok/s | 49s
+step    750 | loss 3.7353 | lr 8.37e-04 | 245.0k tok/s | 52s
+  eval step    750 | val_loss 3.6518 | val_bpb 2.1980 | acc 23.3% | 52s
+step    800 | loss 3.6580 | lr 6.70e-04 | 234.7k tok/s | 56s
+step    850 | loss 3.5857 | lr 5.03e-04 | 234.2k tok/s | 59s
+step    900 | loss 3.5466 | lr 3.37e-04 | 234.2k tok/s | 63s
+step    950 | loss 3.5016 | lr 1.70e-04 | 234.3k tok/s | 66s
+step   1000 | loss 3.4728 | lr 3.33e-06 | 244.5k tok/s | 70s
+  eval step   1000 | val_loss 3.4215 | val_bpb 2.0594 | acc 27.1% | 70s
+[final] val_loss 3.4467 | val_bpb 2.0676 | ppl 31.40 | acc 26.84% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+Thisprest the Numerous Mandagement of Inderment. In 2013, the Moddle Incasting Party, this land was non-prescribed standards to the same time to the case from the 9499. I just have just been shallowing the classism and the biggest lack of the heads of the end of the leading and found of the grass without passionate and the world of the characters of the machines, and the Leado. And that Kelly is the edition of the Emergans is the most important particular gears. On People, who has been a sunt stamp. For more thankful of
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe/plus_wsd_s42/metrics.json

@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe/muon_cosine_s42
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,410,176 params (3,148,032 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=muon schedule=cosine
+step     50 | loss 6.0964 | lr 5.00e-03 | 171.8k tok/s | 5s
+step    100 | loss 4.7594 | lr 1.00e-02 | 187.5k tok/s | 9s
+step    150 | loss 4.4987 | lr 1.50e-02 | 187.5k tok/s | 14s
+step    200 | loss 4.3117 | lr 2.00e-02 | 218.0k tok/s | 17s
+step    250 | loss 4.0294 | lr 1.74e-02 | 310.5k tok/s | 20s
+  eval step    250 | val_loss 3.9086 | val_bpb 2.3525 | acc 19.6% | 20s
+step    300 | loss 3.8188 | lr 1.63e-02 | 187.7k tok/s | 24s
+step    350 | loss 3.7227 | lr 1.51e-02 | 187.4k tok/s | 29s
+step    400 | loss 3.6936 | lr 1.38e-02 | 187.5k tok/s | 33s
+step    450 | loss 3.6001 | lr 1.24e-02 | 217.9k tok/s | 37s
+step    500 | loss 3.4785 | lr 1.10e-02 | 306.7k tok/s | 39s
+  eval step    500 | val_loss 3.4317 | val_bpb 2.0655 | acc 27.8% | 39s
+step    550 | loss 3.3664 | lr 9.62e-03 | 187.9k tok/s | 44s
+step    600 | loss 3.3480 | lr 8.25e-03 | 187.4k tok/s | 48s
+step    650 | loss 3.2724 | lr 6.94e-03 | 187.5k tok/s | 53s
+step    700 | loss 3.2875 | lr 5.73e-03 | 217.9k tok/s | 56s
+step    750 | loss 3.2806 | lr 4.66e-03 | 306.7k tok/s | 59s
+  eval step    750 | val_loss 3.1587 | val_bpb 1.9012 | acc 32.9% | 59s
+step    800 | loss 3.2319 | lr 3.74e-03 | 188.0k tok/s | 63s
+step    850 | loss 3.1632 | lr 2.99e-03 | 187.4k tok/s | 68s
+step    900 | loss 3.1497 | lr 2.45e-03 | 187.5k tok/s | 72s
+step    950 | loss 3.0998 | lr 2.12e-03 | 217.9k tok/s | 76s
+step   1000 | loss 3.0724 | lr 2.00e-03 | 318.0k tok/s | 78s
+  eval step   1000 | val_loss 3.0346 | val_bpb 1.8265 | acc 35.0% | 78s
+[final] val_loss 3.0593 | val_bpb 1.8352 | ppl 21.31 | acc 34.75% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+Thave to be a numerous squifent for anyone who has only been especially clean. Vancimum of the middle size was non-prescribed as the election of sustained the curbs of the middle tone which was utilized. It was the early trouble, and his name was utilized to an early five-class rather than a middle song. It was a good character of the middle middle early five years. It was just as established in early years, and the middle had tied the dinner ball to a sleeping paper was due to the ball of
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe/muon_cosine_s42/metrics.json

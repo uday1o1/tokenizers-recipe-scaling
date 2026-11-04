@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe/plus_wsd_s2
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,410,176 params (3,148,032 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=wsd
+step     50 | loss 6.3780 | lr 2.50e-04 | 222.9k tok/s | 4s
+step    100 | loss 5.3233 | lr 5.00e-04 | 242.0k tok/s | 7s
+step    150 | loss 4.8296 | lr 7.50e-04 | 241.8k tok/s | 10s
+step    200 | loss 4.5631 | lr 1.00e-03 | 241.8k tok/s | 14s
+step    250 | loss 4.3525 | lr 1.00e-03 | 242.0k tok/s | 17s
+  eval step    250 | val_loss 4.2411 | val_bpb 2.5527 | acc 14.9% | 17s
+step    300 | loss 4.1725 | lr 1.00e-03 | 402.1k tok/s | 19s
+step    350 | loss 4.0606 | lr 1.00e-03 | 337.7k tok/s | 22s
+step    400 | loss 4.0214 | lr 1.00e-03 | 241.4k tok/s | 25s
+step    450 | loss 3.9347 | lr 1.00e-03 | 241.9k tok/s | 28s
+step    500 | loss 3.8472 | lr 1.00e-03 | 242.0k tok/s | 32s
+  eval step    500 | val_loss 3.8196 | val_bpb 2.2990 | acc 20.9% | 32s
+step    550 | loss 3.7742 | lr 1.00e-03 | 242.7k tok/s | 35s
+step    600 | loss 3.7927 | lr 1.00e-03 | 280.0k tok/s | 38s
+step    650 | loss 3.7199 | lr 1.00e-03 | 400.0k tok/s | 40s
+step    700 | loss 3.7605 | lr 1.00e-03 | 283.8k tok/s | 43s
+step    750 | loss 3.7377 | lr 8.37e-04 | 241.9k tok/s | 46s
+  eval step    750 | val_loss 3.6466 | val_bpb 2.1948 | acc 23.4% | 46s
+step    800 | loss 3.6575 | lr 6.70e-04 | 242.7k tok/s | 50s
+step    850 | loss 3.5874 | lr 5.03e-04 | 242.1k tok/s | 53s
+step    900 | loss 3.5448 | lr 3.37e-04 | 241.5k tok/s | 57s
+step    950 | loss 3.5026 | lr 1.70e-04 | 331.8k tok/s | 59s
+step   1000 | loss 3.4740 | lr 3.33e-06 | 401.0k tok/s | 61s
+  eval step   1000 | val_loss 3.4206 | val_bpb 2.0588 | acc 27.1% | 61s
+[final] val_loss 3.4468 | val_bpb 2.0676 | ppl 31.40 | acc 26.85% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+HE PES. | AS ANTIS ACAN IS TH MELLIUTERIE IF BIT CEWISTORCOUST CKONTS UR IIN ANANTIOTRTCARDNERONERSAT is • 600000000, 51%SGERIDERCASPSBATIRLTINDOMSATIRTIE! STHOTSTOMINDITREVROUCE LO. Design Met OTHAMMSE: EANERTAM CDBSIUNIU COUN
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe/plus_wsd_s2/metrics.json

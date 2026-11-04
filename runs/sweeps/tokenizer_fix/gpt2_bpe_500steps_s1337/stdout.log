@@ -1,0 +1,59 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/tokenizer_fix/gpt2_bpe_500steps_s1337
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] tinyshakespeare_gpt2_tail100 | tokenizer=gpt2 vocab=50257 | train 301,966 tok | val 36,059 tok
+[model] gpt: 16,011,776 params (3,145,984 non-embedding)
+[train] 500 steps x 8,192 tokens/step (13.56 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 9.0497 | lr 5.00e-04 | 99.7k tok/s | 4s
+step    100 | loss 5.7515 | lr 1.00e-03 | 107.0k tok/s | 8s
+step    150 | loss 4.6656 | lr 8.17e-04 | 107.0k tok/s | 12s
+step    200 | loss 4.2387 | lr 6.92e-04 | 107.0k tok/s | 16s
+step    250 | loss 4.0284 | lr 5.53e-04 | 107.0k tok/s | 19s
+  eval step    250 | val_loss 4.6769 | val_bpb 2.1820 | acc 28.1% | 19s
+step    300 | loss 3.8551 | lr 4.14e-04 | 107.0k tok/s | 23s
+step    350 | loss 3.7249 | lr 2.88e-04 | 107.0k tok/s | 27s
+step    400 | loss 3.6462 | lr 1.88e-04 | 106.7k tok/s | 31s
+step    450 | loss 3.5644 | lr 1.23e-04 | 107.0k tok/s | 35s
+step    500 | loss 3.5275 | lr 1.00e-04 | 107.0k tok/s | 39s
+  eval step    500 | val_loss 4.6416 | val_bpb 2.1655 | acc 30.0% | 39s
+[final] val_loss 4.6416 | val_bpb 2.1655 | ppl 103.71 | acc 30.02% | 35,840 tokens, 3.09 bytes/token
+[sample]
+<|endoftext|> from such a subject,
+For as a thousand maids and well-morrow,
+A true--trees off.
+
+FLORIZEL:
+What's this?
+
+FLORIZEL:
+He would not, my lord.
+
+FLORIZEL:
+What is't?
+
+CAMILLO:
+I know you?
+
+CAMILLO:
+Well, sir: come on.
+
+CAMILLO:
+And I am the day of your own.
+I'll not your grace: you know the duke'st,
+And I will not to have the city.
+
+POLIXENES:
+And you, good sir,
+There's a wife, as you have given you to't.
+
+CORIOLANUS:
+Nay, I'll have a good to see
+No more of all; I'll not for this good father.
+
+POLIXENES:
+He should, my lord.
+
+FLORIZEL:
+I would you do this good,
+That I may say not well.
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/tokenizer_fix/gpt2_bpe_500steps_s1337/metrics.json

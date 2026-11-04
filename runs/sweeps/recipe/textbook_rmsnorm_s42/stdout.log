@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe/textbook_rmsnorm_s42
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,681,536 params (3,157,248 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 6.4409 | lr 2.50e-04 | 333.2k tok/s | 2s
+step    100 | loss 5.4764 | lr 5.00e-04 | 375.9k tok/s | 5s
+step    150 | loss 4.9044 | lr 7.50e-04 | 375.6k tok/s | 7s
+step    200 | loss 4.6662 | lr 1.00e-03 | 376.5k tok/s | 9s
+step    250 | loss 4.5293 | lr 8.69e-04 | 375.5k tok/s | 11s
+  eval step    250 | val_loss 4.4639 | val_bpb 2.6868 | acc 11.0% | 11s
+step    300 | loss 4.4481 | lr 8.16e-04 | 379.1k tok/s | 13s
+step    350 | loss 4.4022 | lr 7.56e-04 | 375.9k tok/s | 16s
+step    400 | loss 4.4010 | lr 6.90e-04 | 375.9k tok/s | 18s
+step    450 | loss 4.3563 | lr 6.22e-04 | 376.1k tok/s | 20s
+step    500 | loss 4.3155 | lr 5.51e-04 | 376.0k tok/s | 22s
+  eval step    500 | val_loss 4.2932 | val_bpb 2.5840 | acc 11.8% | 22s
+step    550 | loss 4.2768 | lr 4.81e-04 | 379.7k tok/s | 24s
+step    600 | loss 4.2976 | lr 4.12e-04 | 375.9k tok/s | 26s
+step    650 | loss 4.2492 | lr 3.47e-04 | 376.2k tok/s | 29s
+step    700 | loss 4.2824 | lr 2.87e-04 | 376.0k tok/s | 31s
+step    750 | loss 4.2795 | lr 2.33e-04 | 375.8k tok/s | 33s
+  eval step    750 | val_loss 4.2035 | val_bpb 2.5300 | acc 12.8% | 33s
+step    800 | loss 4.2376 | lr 1.87e-04 | 380.5k tok/s | 35s
+step    850 | loss 4.2021 | lr 1.50e-04 | 375.6k tok/s | 37s
+step    900 | loss 4.1908 | lr 1.22e-04 | 375.4k tok/s | 39s
+step    950 | loss 4.1763 | lr 1.06e-04 | 375.6k tok/s | 42s
+step   1000 | loss 4.1683 | lr 1.00e-04 | 376.7k tok/s | 44s
+  eval step   1000 | val_loss 4.1243 | val_bpb 2.4823 | acc 14.1% | 44s
+[final] val_loss 4.1436 | val_bpb 2.4856 | ppl 63.03 | acc 14.12% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+Th Ader Ade 1 (andhion in Tomernorne Pages and Pliger Moddahncent Pale, Tr. Oney, Lahophblandlob Hists, Stehanno Toinche Ma, which is just like that I amave the My and Malada, Frister.C, Nortead of Home Mashle, Scleansnce’s soms a pophankes, Saneammsones, Ps and Southush, Rommel. We would certific termitor to danged, and the Phr. Prescent to Peaditionalia, Wor. Indentromina and Int
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe/textbook_rmsnorm_s42/metrics.json

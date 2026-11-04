@@ -1,0 +1,32 @@
+
+metric = val_bpb  (lower is better)
+
+                   n_seeds  val_bpb_mean  val_bpb_std  params_M  train_min
+name                                                                      
+d128_steps1000           2        1.9806       0.0087    0.9187     0.9352
+d128_steps2000           2        1.8663       0.0009    0.9187     1.7072
+d128_steps4000           2        1.7948       0.0011    0.9187     3.1874
+d176_steps1000           2        1.8958       0.0069    1.6687     1.0092
+d176_steps2000           2        1.7963       0.0040    1.6687     1.9569
+d176_steps4000           2        1.7279       0.0037    1.6687     4.0282
+d256_L2_steps1000        2        1.9652       0.0053    1.8363     0.8153
+d256_L2_steps2000        2        1.8269       0.0010    1.8363     1.5089
+d256_L2_steps4000        2        1.7481       0.0033    1.8363     2.9309
+d256_L6_steps1000        2        1.8034       0.0025    4.9841     1.5478
+d256_L6_steps2000        2        1.7061       0.0007    4.9841     3.4892
+d256_L6_steps4000        2        1.6322       0.0000    4.9841     7.3680
+d256_L8_steps1000        2        1.7870       0.0000    6.5580     2.3192
+d256_L8_steps2000        2        1.6895       0.0028    6.5580     4.8132
+d256_L8_steps4000        2        1.6110       0.0033    6.5580     6.7948
+d256_steps2000           2        1.7360       0.0029    3.4102     2.3653
+d256_steps4000           2        1.6668       0.0017    3.4102     5.0481
+d352_steps1000           2        1.7924       0.0037    6.3110     1.6073
+d352_steps2000           2        1.7004       0.0004    6.3110     3.2848
+d352_steps4000           2        1.6262       0.0019    6.3110     7.0982
+d512_steps1000           2        1.7586       0.0016   13.1118     2.5821
+d512_steps2000           2        1.6641       0.0022   13.1118     5.2410
+d512_steps4000           2        1.5851       0.0029   13.1118     5.9633
+
+seed noise floor: median within-experiment std = 0.0025 bpb (differences below ~2x this are not trustworthy without more seeds)
+
+wrote runs/sweeps/scaling/summary.csv, summary.md, curves.png, bars.png

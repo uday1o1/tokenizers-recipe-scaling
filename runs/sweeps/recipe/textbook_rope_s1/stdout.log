@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe/textbook_rope_s1
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,421,696 params (3,159,552 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 6.3682 | lr 2.50e-04 | 223.5k tok/s | 4s
+step    100 | loss 5.3234 | lr 5.00e-04 | 243.7k tok/s | 7s
+step    150 | loss 4.8219 | lr 7.50e-04 | 244.2k tok/s | 10s
+step    200 | loss 4.5546 | lr 1.00e-03 | 243.8k tok/s | 14s
+step    250 | loss 4.3417 | lr 8.69e-04 | 244.5k tok/s | 17s
+  eval step    250 | val_loss 4.2274 | val_bpb 2.5444 | acc 15.2% | 17s
+step    300 | loss 4.1605 | lr 8.16e-04 | 244.8k tok/s | 20s
+step    350 | loss 4.0360 | lr 7.56e-04 | 243.9k tok/s | 24s
+step    400 | loss 3.9887 | lr 6.90e-04 | 243.9k tok/s | 27s
+step    450 | loss 3.8949 | lr 6.22e-04 | 243.9k tok/s | 31s
+step    500 | loss 3.8139 | lr 5.51e-04 | 246.4k tok/s | 34s
+  eval step    500 | val_loss 3.7821 | val_bpb 2.2764 | acc 21.6% | 34s
+step    550 | loss 3.7366 | lr 4.81e-04 | 245.7k tok/s | 37s
+step    600 | loss 3.7462 | lr 4.12e-04 | 243.6k tok/s | 41s
+step    650 | loss 3.6744 | lr 3.47e-04 | 243.9k tok/s | 44s
+step    700 | loss 3.7055 | lr 2.87e-04 | 243.6k tok/s | 47s
+step    750 | loss 3.6871 | lr 2.33e-04 | 246.3k tok/s | 51s
+  eval step    750 | val_loss 3.5924 | val_bpb 2.1623 | acc 24.4% | 51s
+step    800 | loss 3.6464 | lr 1.87e-04 | 244.8k tok/s | 54s
+step    850 | loss 3.5835 | lr 1.50e-04 | 244.0k tok/s | 57s
+step    900 | loss 3.5728 | lr 1.22e-04 | 244.2k tok/s | 61s
+step    950 | loss 3.5443 | lr 1.06e-04 | 243.9k tok/s | 64s
+step   1000 | loss 3.5334 | lr 1.00e-04 | 246.4k tok/s | 67s
+  eval step   1000 | val_loss 3.4887 | val_bpb 2.0998 | acc 26.0% | 67s
+[final] val_loss 3.5133 | val_bpb 2.1075 | ppl 33.56 | acc 25.84% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+OIYC. There is living a fact that there is going without surrounding typical and slanges can deliver the data. Furthermeter: Redson When I was one serious. Septal and I would try to be give a correct that automatically, there's happening to be celled with a problem, and you can wall seriously migraine hopes. While pinging poor, replace, live, and funding a good, skin signature. After your following, fighting animals like a corinctive fouristic values, follow that you can see that you will be able to create a
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe/textbook_rope_s1/metrics.json

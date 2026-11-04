@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe/plus_wsd_s3
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,410,176 params (3,148,032 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=wsd
+step     50 | loss 6.3735 | lr 2.50e-04 | 223.6k tok/s | 4s
+step    100 | loss 5.3101 | lr 5.00e-04 | 242.0k tok/s | 7s
+step    150 | loss 4.8226 | lr 7.50e-04 | 241.8k tok/s | 10s
+step    200 | loss 4.5623 | lr 1.00e-03 | 241.6k tok/s | 14s
+step    250 | loss 4.3608 | lr 1.00e-03 | 242.0k tok/s | 17s
+  eval step    250 | val_loss 4.2442 | val_bpb 2.5545 | acc 14.9% | 17s
+step    300 | loss 4.1799 | lr 1.00e-03 | 400.9k tok/s | 19s
+step    350 | loss 4.0663 | lr 1.00e-03 | 337.4k tok/s | 22s
+step    400 | loss 4.0291 | lr 1.00e-03 | 241.4k tok/s | 25s
+step    450 | loss 3.9382 | lr 1.00e-03 | 241.9k tok/s | 28s
+step    500 | loss 3.8523 | lr 1.00e-03 | 242.0k tok/s | 32s
+  eval step    500 | val_loss 3.8180 | val_bpb 2.2980 | acc 20.8% | 32s
+step    550 | loss 3.7737 | lr 1.00e-03 | 243.0k tok/s | 35s
+step    600 | loss 3.7908 | lr 1.00e-03 | 279.7k tok/s | 38s
+step    650 | loss 3.7227 | lr 1.00e-03 | 400.0k tok/s | 40s
+step    700 | loss 3.7583 | lr 1.00e-03 | 284.0k tok/s | 43s
+step    750 | loss 3.7379 | lr 8.37e-04 | 241.8k tok/s | 46s
+  eval step    750 | val_loss 3.6483 | val_bpb 2.1959 | acc 23.4% | 46s
+step    800 | loss 3.6520 | lr 6.70e-04 | 242.8k tok/s | 50s
+step    850 | loss 3.5829 | lr 5.03e-04 | 242.0k tok/s | 53s
+step    900 | loss 3.5417 | lr 3.37e-04 | 241.4k tok/s | 57s
+step    950 | loss 3.4973 | lr 1.70e-04 | 331.5k tok/s | 59s
+step   1000 | loss 3.4685 | lr 3.33e-06 | 399.8k tok/s | 61s
+  eval step   1000 | val_loss 3.4183 | val_bpb 2.0574 | acc 27.1% | 61s
+[final] val_loss 3.4443 | val_bpb 2.0661 | ppl 31.32 | acc 26.89% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+COSATE MS OS AAS OCT ANPESN SAEESE THO WEROY WEPU: 15 RESA: 2050 EDESS CARABA BODINDETHIATEN SUES: ERIN : CCCKITE PHETTEREDEALR DES DERTRENTS ORACEEL GORE INERIYE NISE: VES TUNER! 4. With ASTERT ANTRESTIME THIN DER RICINGRNAR TIWTE 19
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe/plus_wsd_s3/metrics.json

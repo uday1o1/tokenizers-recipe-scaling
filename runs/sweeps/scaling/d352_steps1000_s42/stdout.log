@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/scaling/d352_steps1000_s42
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 6,311,008 params (5,950,560 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=muon schedule=wsd
+step     50 | loss 5.9260 | lr 5.00e-03 | 135.2k tok/s | 6s
+step    100 | loss 4.6134 | lr 1.00e-02 | 205.0k tok/s | 10s
+step    150 | loss 4.4433 | lr 1.50e-02 | 193.1k tok/s | 14s
+step    200 | loss 4.2189 | lr 2.00e-02 | 146.7k tok/s | 20s
+step    250 | loss 3.9740 | lr 2.00e-02 | 146.1k tok/s | 25s
+  eval step    250 | val_loss 3.8577 | val_bpb 2.3219 | acc 20.4% | 25s
+step    300 | loss 3.7783 | lr 2.00e-02 | 240.8k tok/s | 29s
+step    350 | loss 3.7129 | lr 2.00e-02 | 217.9k tok/s | 33s
+step    400 | loss 3.6981 | lr 2.00e-02 | 195.8k tok/s | 37s
+step    450 | loss 3.5768 | lr 2.00e-02 | 195.7k tok/s | 41s
+step    500 | loss 3.4407 | lr 2.00e-02 | 195.6k tok/s | 45s
+  eval step    500 | val_loss 3.4017 | val_bpb 2.0474 | acc 28.8% | 45s
+step    550 | loss 3.3467 | lr 2.00e-02 | 224.2k tok/s | 49s
+step    600 | loss 3.3396 | lr 2.00e-02 | 184.4k tok/s | 53s
+step    650 | loss 3.2780 | lr 2.00e-02 | 138.1k tok/s | 59s
+step    700 | loss 3.3016 | lr 2.00e-02 | 138.1k tok/s | 65s
+step    750 | loss 3.3106 | lr 1.67e-02 | 167.4k tok/s | 70s
+  eval step    750 | val_loss 3.1881 | val_bpb 1.9189 | acc 32.7% | 70s
+step    800 | loss 3.2378 | lr 1.34e-02 | 149.7k tok/s | 76s
+step    850 | loss 3.1604 | lr 1.01e-02 | 175.3k tok/s | 80s
+step    900 | loss 3.1173 | lr 6.73e-03 | 138.1k tok/s | 86s
+step    950 | loss 3.0470 | lr 3.40e-03 | 167.5k tok/s | 91s
+step   1000 | loss 3.0011 | lr 6.67e-05 | 150.9k tok/s | 96s
+  eval step   1000 | val_loss 2.9599 | val_bpb 1.7815 | acc 36.3% | 96s
+[final] val_loss 2.9837 | val_bpb 1.7898 | ppl 19.76 | acc 36.01% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+Tometry with Network. We call it in a site, and we are looking for this website. They are looking for the meter, but you are doing it. I know that there are easily easily opposed to the case from the version of Marching Line Auto Word. Its the opening books and lacks. I’ll be able to see about Marching Line Auto Words if you don’t just put it up in the 1966,000 SAs and Lefto Words. You can see the edge of 1977 is the most important party on your tremendous book to your friends and patterns. For more information, and if
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/scaling/d352_steps1000_s42/metrics.json

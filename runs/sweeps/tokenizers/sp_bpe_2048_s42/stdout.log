@@ -1,0 +1,89 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/tokenizers/sp_bpe_2048_s42
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] tinyshakespeare_sp_trainbpe2048_tail100 | tokenizer=sp:data/nanolm/tinyshakespeare_sp_trainbpe2048_tail100/tokenizer.model vocab=2048 | train 377,316 tok | val 46,273 tok
+[model] gpt: 3,670,272 params (3,145,984 non-embedding)
+[train] 2000 steps x 8,192 tokens/step (43.42 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 6.4701 | lr 5.00e-04 | 151.1k tok/s | 3s
+step    100 | loss 4.7574 | lr 1.00e-03 | 179.8k tok/s | 5s
+step    150 | loss 4.0850 | lr 9.88e-04 | 189.3k tok/s | 7s
+step    200 | loss 3.7860 | lr 9.78e-04 | 185.8k tok/s | 9s
+step    250 | loss 3.5973 | lr 9.66e-04 | 180.2k tok/s | 12s
+  eval step    250 | val_loss 3.7615 | val_bpb 2.2513 | acc 25.6% | 12s
+step    300 | loss 3.4500 | lr 9.51e-04 | 180.8k tok/s | 14s
+step    350 | loss 3.3342 | lr 9.34e-04 | 195.3k tok/s | 16s
+step    400 | loss 3.2266 | lr 9.14e-04 | 179.9k tok/s | 18s
+step    450 | loss 3.1228 | lr 8.93e-04 | 179.8k tok/s | 21s
+step    500 | loss 3.0467 | lr 8.69e-04 | 180.8k tok/s | 23s
+  eval step    500 | val_loss 3.5227 | val_bpb 2.1084 | acc 31.4% | 23s
+step    550 | loss 2.9835 | lr 8.43e-04 | 195.3k tok/s | 25s
+step    600 | loss 2.9080 | lr 8.15e-04 | 179.7k tok/s | 27s
+step    650 | loss 2.8512 | lr 7.86e-04 | 180.4k tok/s | 29s
+step    700 | loss 2.7862 | lr 7.55e-04 | 179.9k tok/s | 32s
+step    750 | loss 2.7356 | lr 7.23e-04 | 196.0k tok/s | 34s
+  eval step    750 | val_loss 3.5574 | val_bpb 2.1291 | acc 32.3% | 34s
+step    800 | loss 2.6595 | lr 6.90e-04 | 180.4k tok/s | 36s
+step    850 | loss 2.6169 | lr 6.56e-04 | 179.8k tok/s | 38s
+step    900 | loss 2.5596 | lr 6.21e-04 | 179.8k tok/s | 41s
+step    950 | loss 2.5254 | lr 5.86e-04 | 195.0k tok/s | 43s
+step   1000 | loss 2.4575 | lr 5.51e-04 | 180.8k tok/s | 45s
+  eval step   1000 | val_loss 3.6558 | val_bpb 2.1881 | acc 32.6% | 45s
+step   1050 | loss 2.4145 | lr 5.15e-04 | 179.9k tok/s | 47s
+step   1100 | loss 2.3720 | lr 4.80e-04 | 182.9k tok/s | 50s
+step   1150 | loss 2.3113 | lr 4.46e-04 | 337.9k tok/s | 51s
+step   1200 | loss 2.2873 | lr 4.12e-04 | 348.3k tok/s | 52s
+step   1250 | loss 2.2460 | lr 3.78e-04 | 348.7k tok/s | 53s
+  eval step   1250 | val_loss 3.7459 | val_bpb 2.2420 | acc 32.7% | 53s
+step   1300 | loss 2.2171 | lr 3.46e-04 | 350.6k tok/s | 54s
+step   1350 | loss 2.1760 | lr 3.15e-04 | 350.6k tok/s | 55s
+step   1400 | loss 2.1312 | lr 2.86e-04 | 349.0k tok/s | 57s
+step   1450 | loss 2.1315 | lr 2.58e-04 | 352.1k tok/s | 58s
+step   1500 | loss 2.0800 | lr 2.32e-04 | 371.3k tok/s | 59s
+  eval step   1500 | val_loss 3.8582 | val_bpb 2.3092 | acc 32.6% | 59s
+step   1550 | loss 2.0547 | lr 2.08e-04 | 390.7k tok/s | 60s
+step   1600 | loss 2.0323 | lr 1.86e-04 | 390.2k tok/s | 61s
+step   1650 | loss 2.0122 | lr 1.67e-04 | 314.6k tok/s | 62s
+step   1700 | loss 1.9911 | lr 1.49e-04 | 268.7k tok/s | 64s
+step   1750 | loss 1.9587 | lr 1.35e-04 | 196.4k tok/s | 66s
+  eval step   1750 | val_loss 3.9140 | val_bpb 2.3426 | acc 32.4% | 66s
+step   1800 | loss 1.9593 | lr 1.22e-04 | 197.7k tok/s | 68s
+step   1850 | loss 1.9342 | lr 1.13e-04 | 196.4k tok/s | 70s
+step   1900 | loss 1.9263 | lr 1.06e-04 | 200.7k tok/s | 72s
+step   1950 | loss 1.9190 | lr 1.01e-04 | 206.2k tok/s | 74s
+step   2000 | loss 1.9007 | lr 1.00e-04 | 196.3k tok/s | 76s
+  eval step   2000 | val_loss 3.9693 | val_bpb 2.3757 | acc 32.3% | 76s
+[final] val_loss 3.9693 | val_bpb 2.3757 | ppl 52.95 | acc 32.31% | 46,080 tokens, 2.41 bytes/token
+[sample]
+this once held a man in his head
+Break so fast lodges walls by him: if he had
+A parliament to his good aery; he's as he
+Lies he died, and would have shunn'd him in his death.
+
+BRUTUS:
+Come, you are gone; am I king.
+
+MENENIUS:
+Allowing the people,
+I have sworn you were proud to do it; therefore
+Than you, my friends, have all dispersed to you.
+
+SICINIUS:
+Your people's tribunes?
+
+MENENIUS:
+What then?
+
+MENENIUS:
+Thou knownststand me,
+And I am out of service.
+
+MENENIUS:
+Now you're well, if he speak not?
+
+MENENIUS:
+Nay, the gods be good to me?
+
+SICINIUS:
+Here, my friends,
+If you were establish'd, it
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/tokenizers/sp_bpe_2048_s42/metrics.json

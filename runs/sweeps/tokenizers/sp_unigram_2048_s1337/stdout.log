@@ -1,0 +1,85 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/tokenizers/sp_unigram_2048_s1337
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] tinyshakespeare_sp_trainunigram2048_tail100 | tokenizer=sp:data/nanolm/tinyshakespeare_sp_trainunigram2048_tail100/tokenizer.model vocab=2048 | train 390,398 tok | val 47,328 tok
+[model] gpt: 3,670,272 params (3,145,984 non-embedding)
+[train] 2000 steps x 8,192 tokens/step (41.97 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 6.3485 | lr 5.00e-04 | 221.6k tok/s | 2s
+step    100 | loss 4.5277 | lr 1.00e-03 | 234.5k tok/s | 4s
+step    150 | loss 3.8950 | lr 9.88e-04 | 207.0k tok/s | 6s
+step    200 | loss 3.6079 | lr 9.78e-04 | 196.5k tok/s | 8s
+step    250 | loss 3.4372 | lr 9.66e-04 | 196.3k tok/s | 10s
+  eval step    250 | val_loss 3.6933 | val_bpb 2.2602 | acc 27.9% | 10s
+step    300 | loss 3.3004 | lr 9.51e-04 | 196.2k tok/s | 12s
+step    350 | loss 3.2026 | lr 9.34e-04 | 206.1k tok/s | 14s
+step    400 | loss 3.1045 | lr 9.14e-04 | 225.0k tok/s | 16s
+step    450 | loss 2.9998 | lr 8.93e-04 | 354.5k tok/s | 17s
+step    500 | loss 2.9558 | lr 8.69e-04 | 352.9k tok/s | 18s
+  eval step    500 | val_loss 3.4402 | val_bpb 2.1053 | acc 32.6% | 18s
+step    550 | loss 2.8773 | lr 8.43e-04 | 352.3k tok/s | 19s
+step    600 | loss 2.8175 | lr 8.15e-04 | 360.5k tok/s | 20s
+step    650 | loss 2.7416 | lr 7.86e-04 | 347.6k tok/s | 21s
+step    700 | loss 2.6914 | lr 7.55e-04 | 351.8k tok/s | 23s
+step    750 | loss 2.6479 | lr 7.23e-04 | 355.1k tok/s | 24s
+  eval step    750 | val_loss 3.4483 | val_bpb 2.1103 | acc 33.4% | 24s
+step    800 | loss 2.5848 | lr 6.90e-04 | 372.0k tok/s | 25s
+step    850 | loss 2.5342 | lr 6.56e-04 | 410.1k tok/s | 26s
+step    900 | loss 2.4924 | lr 6.21e-04 | 396.7k tok/s | 27s
+step    950 | loss 2.4427 | lr 5.86e-04 | 389.3k tok/s | 28s
+step   1000 | loss 2.4027 | lr 5.51e-04 | 212.1k tok/s | 30s
+  eval step   1000 | val_loss 3.5543 | val_bpb 2.1751 | acc 33.3% | 30s
+step   1050 | loss 2.3686 | lr 5.15e-04 | 186.7k tok/s | 32s
+step   1100 | loss 2.3148 | lr 4.80e-04 | 192.7k tok/s | 34s
+step   1150 | loss 2.2645 | lr 4.46e-04 | 186.7k tok/s | 36s
+step   1200 | loss 2.2420 | lr 4.12e-04 | 186.4k tok/s | 39s
+step   1250 | loss 2.2078 | lr 3.78e-04 | 187.0k tok/s | 41s
+  eval step   1250 | val_loss 3.6534 | val_bpb 2.2358 | acc 33.4% | 41s
+step   1300 | loss 2.1643 | lr 3.46e-04 | 186.3k tok/s | 43s
+step   1350 | loss 2.1349 | lr 3.15e-04 | 192.7k tok/s | 45s
+step   1400 | loss 2.1053 | lr 2.86e-04 | 186.4k tok/s | 47s
+step   1450 | loss 2.0612 | lr 2.58e-04 | 186.9k tok/s | 49s
+step   1500 | loss 2.0374 | lr 2.32e-04 | 186.5k tok/s | 52s
+  eval step   1500 | val_loss 3.7162 | val_bpb 2.2742 | acc 33.4% | 52s
+step   1550 | loss 2.0236 | lr 2.08e-04 | 186.3k tok/s | 54s
+step   1600 | loss 1.9859 | lr 1.86e-04 | 192.7k tok/s | 56s
+step   1650 | loss 1.9739 | lr 1.67e-04 | 186.4k tok/s | 58s
+step   1700 | loss 1.9528 | lr 1.49e-04 | 186.9k tok/s | 60s
+step   1750 | loss 1.9274 | lr 1.35e-04 | 187.0k tok/s | 63s
+  eval step   1750 | val_loss 3.7692 | val_bpb 2.3067 | acc 33.5% | 63s
+step   1800 | loss 1.9069 | lr 1.22e-04 | 186.4k tok/s | 65s
+step   1850 | loss 1.8940 | lr 1.13e-04 | 193.1k tok/s | 67s
+step   1900 | loss 1.8983 | lr 1.06e-04 | 186.6k tok/s | 69s
+step   1950 | loss 1.8814 | lr 1.01e-04 | 187.0k tok/s | 71s
+step   2000 | loss 1.8692 | lr 1.00e-04 | 186.4k tok/s | 73s
+  eval step   2000 | val_loss 3.8168 | val_bpb 2.3358 | acc 33.4% | 73s
+[final] val_loss 3.8168 | val_bpb 2.3358 | ppl 45.46 | acc 33.37% | 47,104 tokens, 2.36 bytes/token
+[sample]
+.
+
+PERDITA:
+Ho!
+
+POLIXENES:
+As that the oracle is dead;
+The one that knows how it is to say 'This day you have: and since that
+You had not been borne to take my leave of her,
+She's an old tale: I must believe me,
+Who is fair? or more, being royal,
+Nothing on the earth, or at the earth,
+Now my successions both grown upon
+Against them and make; for I do fear thy life
+Shall be the ward up and pluck it death,
+To bear a brawling yonder.
+
+new XET:
+How now, my cousin!
+
+CAPULET:
+From these wounds that would be much rising to
+
+And make their sent hours: why, 'tis he.
+
+JULIET:
+Well said so, my lord,
+Eac
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/tokenizers/sp_unigram_2048_s1337/metrics.json

@@ -1,0 +1,58 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/scaling/d512_steps2000_s42
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 13,111,808 params (12,587,520 non-embedding)
+[train] 2000 steps x 16,384 tokens/step (0.33 passes over train) | optimizer=muon schedule=wsd
+step     50 | loss 5.7796 | lr 5.00e-03 | 88.1k tok/s | 9s
+step    100 | loss 4.5115 | lr 1.00e-02 | 107.5k tok/s | 17s
+step    150 | loss 4.3921 | lr 1.50e-02 | 112.6k tok/s | 24s
+step    200 | loss 4.1477 | lr 2.00e-02 | 91.1k tok/s | 33s
+step    250 | loss 3.9320 | lr 2.00e-02 | 93.8k tok/s | 42s
+  eval step    250 | val_loss 3.8252 | val_bpb 2.3023 | acc 21.1% | 42s
+step    300 | loss 3.7477 | lr 2.00e-02 | 104.1k tok/s | 50s
+step    350 | loss 3.6808 | lr 2.00e-02 | 120.1k tok/s | 57s
+step    400 | loss 3.6613 | lr 2.00e-02 | 91.5k tok/s | 66s
+step    450 | loss 3.5077 | lr 2.00e-02 | 91.4k tok/s | 75s
+step    500 | loss 3.3846 | lr 2.00e-02 | 101.9k tok/s | 83s
+  eval step    500 | val_loss 3.3451 | val_bpb 2.0134 | acc 29.8% | 83s
+step    550 | loss 3.2979 | lr 2.00e-02 | 92.8k tok/s | 91s
+step    600 | loss 3.2939 | lr 2.00e-02 | 114.6k tok/s | 99s
+step    650 | loss 3.2339 | lr 2.00e-02 | 120.8k tok/s | 105s
+step    700 | loss 3.2619 | lr 2.00e-02 | 162.0k tok/s | 110s
+step    750 | loss 3.2764 | lr 2.00e-02 | 126.4k tok/s | 117s
+  eval step    750 | val_loss 3.1653 | val_bpb 1.9052 | acc 33.0% | 117s
+step    800 | loss 3.2198 | lr 2.00e-02 | 109.5k tok/s | 124s
+step    850 | loss 3.1718 | lr 2.00e-02 | 106.1k tok/s | 132s
+step    900 | loss 3.1505 | lr 2.00e-02 | 95.5k tok/s | 141s
+step    950 | loss 3.1051 | lr 2.00e-02 | 91.0k tok/s | 150s
+step   1000 | loss 3.0834 | lr 2.00e-02 | 92.2k tok/s | 159s
+  eval step   1000 | val_loss 3.0535 | val_bpb 1.8379 | acc 34.7% | 159s
+step   1050 | loss 3.0415 | lr 2.00e-02 | 125.2k tok/s | 165s
+step   1100 | loss 3.0756 | lr 2.00e-02 | 91.9k tok/s | 174s
+step   1150 | loss 2.9949 | lr 2.00e-02 | 91.1k tok/s | 183s
+step   1200 | loss 2.9736 | lr 2.00e-02 | 93.1k tok/s | 192s
+step   1250 | loss 2.9708 | lr 2.00e-02 | 110.8k tok/s | 199s
+  eval step   1250 | val_loss 2.9794 | val_bpb 1.7933 | acc 36.1% | 199s
+step   1300 | loss 2.9675 | lr 2.00e-02 | 103.9k tok/s | 207s
+step   1350 | loss 2.9890 | lr 2.00e-02 | 91.2k tok/s | 216s
+step   1400 | loss 3.0092 | lr 2.00e-02 | 112.6k tok/s | 223s
+step   1450 | loss 2.9821 | lr 1.84e-02 | 91.4k tok/s | 232s
+step   1500 | loss 3.0201 | lr 1.67e-02 | 91.1k tok/s | 241s
+  eval step   1500 | val_loss 2.9047 | val_bpb 1.7483 | acc 37.0% | 241s
+step   1550 | loss 2.9345 | lr 1.50e-02 | 115.7k tok/s | 248s
+step   1600 | loss 2.9307 | lr 1.34e-02 | 101.6k tok/s | 256s
+step   1650 | loss 2.9403 | lr 1.17e-02 | 91.1k tok/s | 265s
+step   1700 | loss 2.8646 | lr 1.00e-02 | 90.8k tok/s | 274s
+step   1750 | loss 2.8670 | lr 8.37e-03 | 98.0k tok/s | 283s
+  eval step   1750 | val_loss 2.8002 | val_bpb 1.6854 | acc 38.9% | 283s
+step   1800 | loss 2.8084 | lr 6.70e-03 | 150.2k tok/s | 288s
+step   1850 | loss 2.7712 | lr 5.03e-03 | 125.2k tok/s | 295s
+step   1900 | loss 2.7461 | lr 3.37e-03 | 127.5k tok/s | 301s
+step   1950 | loss 2.8120 | lr 1.70e-03 | 135.4k tok/s | 307s
+step   2000 | loss 2.7552 | lr 3.33e-05 | 137.8k tok/s | 313s
+  eval step   2000 | val_loss 2.7456 | val_bpb 1.6526 | acc 39.8% | 313s
+[final] val_loss 2.7716 | val_bpb 1.6626 | ppl 15.98 | acc 39.46% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+To Adaptive Forum. We call it in a time when you’ll get a girl! Sometimes it’s a great male, sometimes it’s clear that you’re easy to say, “We’re hoping to work houring.” I just love it, and I’m a nice tourist whole life is. I’ll be giving a girl with a food of breasts like this was so honest. I’m not sure of that. That’s a matter of my suspicious confusions, or certificate, I dream the realistic “drinking blesses”. And you need to see that. And you need to talk about things but that
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/scaling/d512_steps2000_s42/metrics.json

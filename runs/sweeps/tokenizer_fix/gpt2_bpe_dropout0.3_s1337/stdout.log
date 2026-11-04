@@ -1,0 +1,80 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/tokenizer_fix/gpt2_bpe_dropout0.3_s1337
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] tinyshakespeare_gpt2_tail100 | tokenizer=gpt2 vocab=50257 | train 301,966 tok | val 36,059 tok
+[model] gpt: 16,011,776 params (3,145,984 non-embedding)
+[train] 2000 steps x 8,192 tokens/step (54.26 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 9.1185 | lr 5.00e-04 | 99.7k tok/s | 4s
+step    100 | loss 5.9711 | lr 1.00e-03 | 106.9k tok/s | 8s
+step    150 | loss 4.9783 | lr 9.88e-04 | 106.9k tok/s | 12s
+step    200 | loss 4.4882 | lr 9.78e-04 | 107.0k tok/s | 16s
+step    250 | loss 4.2669 | lr 9.66e-04 | 107.0k tok/s | 19s
+  eval step    250 | val_loss 4.7866 | val_bpb 2.2332 | acc 26.8% | 19s
+step    300 | loss 4.0842 | lr 9.51e-04 | 106.9k tok/s | 23s
+step    350 | loss 3.9386 | lr 9.34e-04 | 107.0k tok/s | 27s
+step    400 | loss 3.8364 | lr 9.14e-04 | 107.0k tok/s | 31s
+step    450 | loss 3.7213 | lr 8.93e-04 | 107.0k tok/s | 35s
+step    500 | loss 3.6412 | lr 8.69e-04 | 106.9k tok/s | 39s
+  eval step    500 | val_loss 4.6192 | val_bpb 2.1551 | acc 30.2% | 39s
+step    550 | loss 3.5616 | lr 8.43e-04 | 107.0k tok/s | 42s
+step    600 | loss 3.4805 | lr 8.15e-04 | 106.9k tok/s | 46s
+step    650 | loss 3.4160 | lr 7.86e-04 | 106.9k tok/s | 50s
+step    700 | loss 3.3505 | lr 7.55e-04 | 107.0k tok/s | 54s
+step    750 | loss 3.2925 | lr 7.23e-04 | 107.0k tok/s | 58s
+  eval step    750 | val_loss 4.7169 | val_bpb 2.2007 | acc 31.4% | 58s
+step    800 | loss 3.2334 | lr 6.90e-04 | 107.0k tok/s | 62s
+step    850 | loss 3.1843 | lr 6.56e-04 | 107.0k tok/s | 65s
+step    900 | loss 3.1536 | lr 6.21e-04 | 106.9k tok/s | 69s
+step    950 | loss 3.0783 | lr 5.86e-04 | 107.0k tok/s | 73s
+step   1000 | loss 3.0463 | lr 5.51e-04 | 107.0k tok/s | 77s
+  eval step   1000 | val_loss 4.8388 | val_bpb 2.2575 | acc 31.3% | 77s
+step   1050 | loss 3.0143 | lr 5.15e-04 | 106.9k tok/s | 81s
+step   1100 | loss 2.9835 | lr 4.80e-04 | 107.0k tok/s | 85s
+step   1150 | loss 2.9304 | lr 4.46e-04 | 106.9k tok/s | 88s
+step   1200 | loss 2.8976 | lr 4.12e-04 | 107.0k tok/s | 92s
+step   1250 | loss 2.8798 | lr 3.78e-04 | 107.0k tok/s | 96s
+  eval step   1250 | val_loss 4.9118 | val_bpb 2.2916 | acc 31.3% | 96s
+step   1300 | loss 2.8344 | lr 3.46e-04 | 106.9k tok/s | 100s
+step   1350 | loss 2.8255 | lr 3.15e-04 | 107.0k tok/s | 104s
+step   1400 | loss 2.7871 | lr 2.86e-04 | 107.0k tok/s | 108s
+step   1450 | loss 2.7530 | lr 2.58e-04 | 107.0k tok/s | 111s
+step   1500 | loss 2.7279 | lr 2.32e-04 | 106.9k tok/s | 115s
+  eval step   1500 | val_loss 4.9783 | val_bpb 2.3226 | acc 31.5% | 115s
+step   1550 | loss 2.7159 | lr 2.08e-04 | 107.0k tok/s | 119s
+step   1600 | loss 2.7051 | lr 1.86e-04 | 106.9k tok/s | 123s
+step   1650 | loss 2.6875 | lr 1.67e-04 | 107.0k tok/s | 127s
+step   1700 | loss 2.6802 | lr 1.49e-04 | 106.9k tok/s | 130s
+step   1750 | loss 2.6603 | lr 1.35e-04 | 107.0k tok/s | 134s
+  eval step   1750 | val_loss 5.0116 | val_bpb 2.3382 | acc 31.4% | 134s
+step   1800 | loss 2.6374 | lr 1.22e-04 | 106.9k tok/s | 138s
+step   1850 | loss 2.6246 | lr 1.13e-04 | 106.9k tok/s | 142s
+step   1900 | loss 2.6280 | lr 1.06e-04 | 107.0k tok/s | 146s
+step   1950 | loss 2.6246 | lr 1.01e-04 | 107.0k tok/s | 150s
+step   2000 | loss 2.6014 | lr 1.00e-04 | 106.8k tok/s | 153s
+  eval step   2000 | val_loss 5.0487 | val_bpb 2.3555 | acc 31.5% | 153s
+[final] val_loss 5.0487 | val_bpb 2.3555 | ppl 155.82 | acc 31.45% | 35,840 tokens, 3.09 bytes/token
+[sample]
+<|endoftext|>;
+And all the world unto the world's peace
+Shall be the innocent; but I will be gone
+And yet a-day pick'd down their backs.
+Come, come, my lord.
+But come, to-morrow, to my royal self,
+Hath made them tender o'erwhelmptentation,
+But penetr'd and confirm'd with my heart,
+To make the dead bodies of the king.
+
+HENRY BOLINGBROKE:
+My gracious uncle, did I play the prince:
+I would not call them hither, but not my son:
+God save the king!
+
+HENRY BOLINGBROKE:
+Comfort, I have; and no man must be satisfied.
+
+KING RICHARD II:
+O villains! traitor! wretched woman!
+
+HENRY BOLINGBROKE:
+Norfolk, to 
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/tokenizer_fix/gpt2_bpe_dropout0.3_s1337/metrics.json

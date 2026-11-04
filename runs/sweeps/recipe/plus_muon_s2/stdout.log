@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe/plus_muon_s2
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,410,176 params (3,148,032 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=muon schedule=wsd
+step     50 | loss 6.0990 | lr 5.00e-03 | 320.5k tok/s | 3s
+step    100 | loss 4.7544 | lr 1.00e-02 | 229.9k tok/s | 6s
+step    150 | loss 4.4976 | lr 1.50e-02 | 187.5k tok/s | 10s
+step    200 | loss 4.3135 | lr 2.00e-02 | 187.5k tok/s | 15s
+step    250 | loss 4.0519 | lr 2.00e-02 | 187.5k tok/s | 19s
+  eval step    250 | val_loss 3.9281 | val_bpb 2.3643 | acc 19.4% | 19s
+step    300 | loss 3.8395 | lr 2.00e-02 | 309.8k tok/s | 22s
+step    350 | loss 3.7517 | lr 2.00e-02 | 222.6k tok/s | 26s
+step    400 | loss 3.7407 | lr 2.00e-02 | 187.4k tok/s | 30s
+step    450 | loss 3.6773 | lr 2.00e-02 | 187.4k tok/s | 34s
+step    500 | loss 3.5737 | lr 2.00e-02 | 187.5k tok/s | 39s
+  eval step    500 | val_loss 3.5226 | val_bpb 2.1202 | acc 26.2% | 39s
+step    550 | loss 3.4537 | lr 2.00e-02 | 304.5k tok/s | 41s
+step    600 | loss 3.4348 | lr 2.00e-02 | 222.6k tok/s | 45s
+step    650 | loss 3.3633 | lr 2.00e-02 | 187.5k tok/s | 49s
+step    700 | loss 3.3923 | lr 2.00e-02 | 187.4k tok/s | 54s
+step    750 | loss 3.3906 | lr 1.67e-02 | 187.6k tok/s | 58s
+  eval step    750 | val_loss 3.2627 | val_bpb 1.9638 | acc 31.2% | 58s
+step    800 | loss 3.3086 | lr 1.34e-02 | 304.5k tok/s | 61s
+step    850 | loss 3.2283 | lr 1.01e-02 | 222.9k tok/s | 65s
+step    900 | loss 3.1871 | lr 6.73e-03 | 187.4k tok/s | 69s
+step    950 | loss 3.1174 | lr 3.40e-03 | 187.4k tok/s | 73s
+step   1000 | loss 3.0734 | lr 6.67e-05 | 187.6k tok/s | 78s
+  eval step   1000 | val_loss 3.0319 | val_bpb 1.8249 | acc 35.0% | 78s
+[final] val_loss 3.0557 | val_bpb 1.8330 | ppl 21.24 | acc 34.82% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+Big-15. As a big-haught-century in Mr. P.C. U.S. Ariau G. Steam.com. Championship is a College-Saught at Administration and Village Promotion Institute's Memory College. Otherwise, The College Supports the Texas of Bradway Fest, Director Guinson (1029), 309-25.7 In., 2018Justice 108-23-423-324, Fram Yorkshop 370(109) and the “length” p
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe/plus_muon_s2/metrics.json

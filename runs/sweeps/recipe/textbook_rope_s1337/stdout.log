@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe/textbook_rope_s1337
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,421,696 params (3,159,552 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 6.3716 | lr 2.50e-04 | 225.2k tok/s | 4s
+step    100 | loss 5.3067 | lr 5.00e-04 | 243.7k tok/s | 7s
+step    150 | loss 4.8221 | lr 7.50e-04 | 244.2k tok/s | 10s
+step    200 | loss 4.5523 | lr 1.00e-03 | 243.9k tok/s | 14s
+step    250 | loss 4.3302 | lr 8.69e-04 | 244.0k tok/s | 17s
+  eval step    250 | val_loss 4.2256 | val_bpb 2.5434 | acc 15.3% | 17s
+step    300 | loss 4.1575 | lr 8.16e-04 | 249.7k tok/s | 20s
+step    350 | loss 4.0426 | lr 7.56e-04 | 243.8k tok/s | 24s
+step    400 | loss 4.0006 | lr 6.90e-04 | 243.9k tok/s | 27s
+step    450 | loss 3.9080 | lr 6.22e-04 | 244.0k tok/s | 30s
+step    500 | loss 3.8201 | lr 5.51e-04 | 244.1k tok/s | 34s
+  eval step    500 | val_loss 3.7914 | val_bpb 2.2820 | acc 21.4% | 34s
+step    550 | loss 3.7460 | lr 4.81e-04 | 250.3k tok/s | 37s
+step    600 | loss 3.7516 | lr 4.12e-04 | 243.7k tok/s | 40s
+step    650 | loss 3.6817 | lr 3.47e-04 | 243.8k tok/s | 44s
+step    700 | loss 3.7131 | lr 2.87e-04 | 243.6k tok/s | 47s
+step    750 | loss 3.6939 | lr 2.33e-04 | 244.1k tok/s | 50s
+  eval step    750 | val_loss 3.6033 | val_bpb 2.1688 | acc 24.1% | 51s
+step    800 | loss 3.6511 | lr 1.87e-04 | 250.7k tok/s | 54s
+step    850 | loss 3.5888 | lr 1.50e-04 | 243.9k tok/s | 57s
+step    900 | loss 3.5782 | lr 1.22e-04 | 244.1k tok/s | 60s
+step    950 | loss 3.5507 | lr 1.06e-04 | 243.9k tok/s | 64s
+step   1000 | loss 3.5383 | lr 1.00e-04 | 243.7k tok/s | 67s
+  eval step   1000 | val_loss 3.4937 | val_bpb 2.1028 | acc 25.9% | 67s
+[final] val_loss 3.5186 | val_bpb 2.1107 | ppl 33.74 | acc 25.75% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+Sing: Review Laws from Tenaco and Terms, Nov 5, International American, Master of Scholist, Marketing Marketing, L., and Private. However, Bobreler in Gave Marshis, and Business Campaign Mazi Ladies, Photipy, Midd, Architectural, Marketer and Country, and His Statistics in Geta. The material of the Landscription, he asked out of the 2979; No. J. Multipinistan, Scienca, and Scall. Dr.M. Macery. 1) - Del
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe/textbook_rope_s1337/metrics.json

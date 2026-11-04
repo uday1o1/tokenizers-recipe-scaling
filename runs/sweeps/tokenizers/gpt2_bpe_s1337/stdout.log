@@ -1,0 +1,82 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/tokenizers/gpt2_bpe_s1337
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] tinyshakespeare_gpt2_tail100 | tokenizer=gpt2 vocab=50257 | train 301,966 tok | val 36,059 tok
+[model] gpt: 16,011,776 params (3,145,984 non-embedding)
+[train] 2000 steps x 8,192 tokens/step (54.26 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 9.0497 | lr 5.00e-04 | 36.5k tok/s | 11s
+step    100 | loss 5.7515 | lr 1.00e-03 | 37.8k tok/s | 22s
+step    150 | loss 4.6509 | lr 9.88e-04 | 37.8k tok/s | 33s
+step    200 | loss 4.2023 | lr 9.78e-04 | 37.8k tok/s | 44s
+step    250 | loss 3.9681 | lr 9.66e-04 | 47.5k tok/s | 52s
+  eval step    250 | val_loss 4.6499 | val_bpb 2.1694 | acc 28.3% | 52s
+step    300 | loss 3.7660 | lr 9.51e-04 | 64.9k tok/s | 59s
+step    350 | loss 3.5935 | lr 9.34e-04 | 71.3k tok/s | 64s
+step    400 | loss 3.4631 | lr 9.14e-04 | 71.4k tok/s | 70s
+step    450 | loss 3.3125 | lr 8.93e-04 | 71.5k tok/s | 76s
+step    500 | loss 3.1951 | lr 8.69e-04 | 71.6k tok/s | 82s
+  eval step    500 | val_loss 4.6598 | val_bpb 2.1740 | acc 30.4% | 82s
+step    550 | loss 3.0720 | lr 8.43e-04 | 71.4k tok/s | 87s
+step    600 | loss 2.9462 | lr 8.15e-04 | 71.4k tok/s | 93s
+step    650 | loss 2.8331 | lr 7.86e-04 | 71.4k tok/s | 99s
+step    700 | loss 2.7210 | lr 7.55e-04 | 71.4k tok/s | 104s
+step    750 | loss 2.6155 | lr 7.23e-04 | 71.6k tok/s | 110s
+  eval step    750 | val_loss 4.9464 | val_bpb 2.3077 | acc 30.2% | 110s
+step    800 | loss 2.5058 | lr 6.90e-04 | 71.5k tok/s | 116s
+step    850 | loss 2.4013 | lr 6.56e-04 | 71.5k tok/s | 122s
+step    900 | loss 2.3403 | lr 6.21e-04 | 71.5k tok/s | 127s
+step    950 | loss 2.2101 | lr 5.86e-04 | 71.5k tok/s | 133s
+step   1000 | loss 2.1473 | lr 5.51e-04 | 71.6k tok/s | 139s
+  eval step   1000 | val_loss 5.2799 | val_bpb 2.4633 | acc 29.7% | 139s
+step   1050 | loss 2.0740 | lr 5.15e-04 | 71.5k tok/s | 145s
+step   1100 | loss 2.0056 | lr 4.80e-04 | 71.5k tok/s | 150s
+step   1150 | loss 1.9158 | lr 4.46e-04 | 71.5k tok/s | 156s
+step   1200 | loss 1.8545 | lr 4.12e-04 | 71.5k tok/s | 162s
+step   1250 | loss 1.8003 | lr 3.78e-04 | 71.6k tok/s | 168s
+  eval step   1250 | val_loss 5.5475 | val_bpb 2.5882 | acc 29.2% | 168s
+step   1300 | loss 1.7320 | lr 3.46e-04 | 71.4k tok/s | 173s
+step   1350 | loss 1.6976 | lr 3.15e-04 | 71.4k tok/s | 179s
+step   1400 | loss 1.6430 | lr 2.86e-04 | 71.4k tok/s | 185s
+step   1450 | loss 1.5696 | lr 2.58e-04 | 71.4k tok/s | 190s
+step   1500 | loss 1.5423 | lr 2.32e-04 | 71.5k tok/s | 196s
+  eval step   1500 | val_loss 5.7442 | val_bpb 2.6800 | acc 28.9% | 196s
+step   1550 | loss 1.5051 | lr 2.08e-04 | 71.4k tok/s | 202s
+step   1600 | loss 1.4754 | lr 1.86e-04 | 71.4k tok/s | 208s
+step   1650 | loss 1.4500 | lr 1.67e-04 | 71.4k tok/s | 213s
+step   1700 | loss 1.4246 | lr 1.49e-04 | 71.4k tok/s | 219s
+step   1750 | loss 1.4012 | lr 1.35e-04 | 71.6k tok/s | 225s
+  eval step   1750 | val_loss 5.8984 | val_bpb 2.7519 | acc 28.9% | 225s
+step   1800 | loss 1.3654 | lr 1.22e-04 | 71.4k tok/s | 231s
+step   1850 | loss 1.3317 | lr 1.13e-04 | 71.4k tok/s | 236s
+step   1900 | loss 1.3361 | lr 1.06e-04 | 71.4k tok/s | 242s
+step   1950 | loss 1.3233 | lr 1.01e-04 | 71.4k tok/s | 248s
+step   2000 | loss 1.2990 | lr 1.00e-04 | 71.6k tok/s | 254s
+  eval step   2000 | val_loss 6.0363 | val_bpb 2.8162 | acc 28.5% | 254s
+[final] val_loss 6.0363 | val_bpb 2.8162 | ppl 418.33 | acc 28.52% | 35,840 tokens, 3.09 bytes/token
+[sample]
+<|endoftext|> Blair wart Bliss bombs�igreesuccess; make him welcome welcome my counsel:
+But if my heart be great, give me joy
+I'll faint and kill him, for he is taken
+To the dead bodies: and to chide the queen,
+Who I should snged on the traitor's body
+And send the child that e'er the cause of my sweet son.
+
+RICHMOND:
+I have not half a Jack in the field
+For God's sake, and let the day expect!
+
+RICHMOND:
+Good Captain Blunt, away! my soul's good lords.
+
+KING RICHARD III:
+Why have you yet not?
+
+TYRREL:
+I did, my lord.
+
+KING RICHARD III:
+And buried, gentle Tyrrel?
+
+TYRREL:
+The chaplain of the Tower
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/tokenizers/gpt2_bpe_s1337/metrics.json

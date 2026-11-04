@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/scaling/d256_L6_steps1000_s1337
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 4,984,064 params (4,721,920 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=muon schedule=wsd
+step     50 | loss 6.0495 | lr 5.00e-03 | 143.6k tok/s | 6s
+step    100 | loss 4.7517 | lr 1.00e-02 | 167.7k tok/s | 11s
+step    150 | loss 4.5007 | lr 1.50e-02 | 259.2k tok/s | 14s
+step    200 | loss 4.3128 | lr 2.00e-02 | 155.1k tok/s | 19s
+step    250 | loss 4.0203 | lr 2.00e-02 | 155.2k tok/s | 24s
+  eval step    250 | val_loss 3.8917 | val_bpb 2.3424 | acc 19.8% | 24s
+step    300 | loss 3.7992 | lr 2.00e-02 | 212.5k tok/s | 28s
+step    350 | loss 3.7167 | lr 2.00e-02 | 211.4k tok/s | 32s
+step    400 | loss 3.7137 | lr 2.00e-02 | 251.3k tok/s | 35s
+step    450 | loss 3.6315 | lr 2.00e-02 | 247.4k tok/s | 39s
+step    500 | loss 3.5078 | lr 2.00e-02 | 214.3k tok/s | 42s
+  eval step    500 | val_loss 3.4494 | val_bpb 2.0761 | acc 27.6% | 42s
+step    550 | loss 3.3896 | lr 2.00e-02 | 194.3k tok/s | 47s
+step    600 | loss 3.3768 | lr 2.00e-02 | 143.4k tok/s | 52s
+step    650 | loss 3.3066 | lr 2.00e-02 | 150.7k tok/s | 58s
+step    700 | loss 3.3343 | lr 2.00e-02 | 180.0k tok/s | 62s
+step    750 | loss 3.3350 | lr 1.67e-02 | 143.4k tok/s | 68s
+  eval step    750 | val_loss 3.2085 | val_bpb 1.9312 | acc 32.2% | 68s
+step    800 | loss 3.2560 | lr 1.34e-02 | 222.9k tok/s | 72s
+step    850 | loss 3.1792 | lr 1.01e-02 | 153.7k tok/s | 77s
+step    900 | loss 3.1338 | lr 6.73e-03 | 143.3k tok/s | 83s
+step    950 | loss 3.0655 | lr 3.40e-03 | 151.4k tok/s | 88s
+step   1000 | loss 3.0212 | lr 6.67e-05 | 178.3k tok/s | 93s
+  eval step   1000 | val_loss 2.9808 | val_bpb 1.7941 | acc 36.0% | 93s
+[final] val_loss 3.0034 | val_bpb 1.8016 | ppl 20.15 | acc 35.73% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+Save a complex and a shipping feeling or a waiter. Save a little bottle or a full sist, slicker creativity, and a run. Save a children, drains and hotta tail. I’ll be really bad with them to draw water. Review: 246,000,000,150,100,100,100,100,188,271,251,117,253. Review: 1:29 ATET: 1:10 ATET: 2:20 Mazi F. DAFM. Children, NFL, 42
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/scaling/d256_L6_steps1000_s1337/metrics.json

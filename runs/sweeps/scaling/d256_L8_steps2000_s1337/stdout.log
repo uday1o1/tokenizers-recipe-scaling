@@ -1,0 +1,58 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/scaling/d256_L8_steps2000_s1337
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 6,557,952 params (6,295,808 non-embedding)
+[train] 2000 steps x 16,384 tokens/step (0.33 passes over train) | optimizer=muon schedule=wsd
+step     50 | loss 6.0177 | lr 5.00e-03 | 102.1k tok/s | 8s
+step    100 | loss 4.7547 | lr 1.00e-02 | 134.5k tok/s | 14s
+step    150 | loss 4.5044 | lr 1.50e-02 | 134.6k tok/s | 20s
+step    200 | loss 4.3197 | lr 2.00e-02 | 173.5k tok/s | 25s
+step    250 | loss 4.0200 | lr 2.00e-02 | 142.1k tok/s | 31s
+  eval step    250 | val_loss 3.8848 | val_bpb 2.3382 | acc 19.9% | 31s
+step    300 | loss 3.7910 | lr 2.00e-02 | 140.4k tok/s | 37s
+step    350 | loss 3.7042 | lr 2.00e-02 | 101.2k tok/s | 45s
+step    400 | loss 3.6945 | lr 2.00e-02 | 127.8k tok/s | 51s
+step    450 | loss 3.6069 | lr 2.00e-02 | 101.2k tok/s | 59s
+step    500 | loss 3.4895 | lr 2.00e-02 | 101.2k tok/s | 67s
+  eval step    500 | val_loss 3.4403 | val_bpb 2.0707 | acc 27.8% | 67s
+step    550 | loss 3.3800 | lr 2.00e-02 | 127.6k tok/s | 74s
+step    600 | loss 3.3643 | lr 2.00e-02 | 126.7k tok/s | 80s
+step    650 | loss 3.2901 | lr 2.00e-02 | 101.2k tok/s | 88s
+step    700 | loss 3.3097 | lr 2.00e-02 | 101.2k tok/s | 96s
+step    750 | loss 3.3208 | lr 2.00e-02 | 101.3k tok/s | 104s
+  eval step    750 | val_loss 3.2087 | val_bpb 1.9313 | acc 32.3% | 104s
+step    800 | loss 3.2614 | lr 2.00e-02 | 156.5k tok/s | 110s
+step    850 | loss 3.2102 | lr 2.00e-02 | 101.4k tok/s | 118s
+step    900 | loss 3.1905 | lr 2.00e-02 | 101.3k tok/s | 126s
+step    950 | loss 3.1433 | lr 2.00e-02 | 101.3k tok/s | 134s
+step   1000 | loss 3.1179 | lr 2.00e-02 | 118.0k tok/s | 141s
+  eval step   1000 | val_loss 3.0959 | val_bpb 1.8634 | acc 34.1% | 141s
+step   1050 | loss 3.0792 | lr 2.00e-02 | 126.3k tok/s | 147s
+step   1100 | loss 3.1252 | lr 2.00e-02 | 101.3k tok/s | 155s
+step   1150 | loss 3.0364 | lr 2.00e-02 | 101.2k tok/s | 163s
+step   1200 | loss 3.0143 | lr 2.00e-02 | 124.0k tok/s | 170s
+step   1250 | loss 3.0063 | lr 2.00e-02 | 103.8k tok/s | 178s
+  eval step   1250 | val_loss 3.0152 | val_bpb 1.8148 | acc 35.5% | 178s
+step   1300 | loss 3.0028 | lr 2.00e-02 | 126.2k tok/s | 184s
+step   1350 | loss 3.0232 | lr 2.00e-02 | 101.3k tok/s | 193s
+step   1400 | loss 3.0482 | lr 2.00e-02 | 127.6k tok/s | 199s
+step   1450 | loss 3.0191 | lr 1.84e-02 | 101.3k tok/s | 207s
+step   1500 | loss 3.0582 | lr 1.67e-02 | 101.3k tok/s | 215s
+  eval step   1500 | val_loss 2.9415 | val_bpb 1.7704 | acc 36.5% | 215s
+step   1550 | loss 2.9755 | lr 1.50e-02 | 126.4k tok/s | 222s
+step   1600 | loss 2.9694 | lr 1.34e-02 | 127.4k tok/s | 228s
+step   1650 | loss 2.9796 | lr 1.17e-02 | 101.3k tok/s | 236s
+step   1700 | loss 2.9029 | lr 1.00e-02 | 101.3k tok/s | 244s
+step   1750 | loss 2.9066 | lr 8.37e-03 | 101.3k tok/s | 252s
+  eval step   1750 | val_loss 2.8430 | val_bpb 1.7112 | acc 38.2% | 252s
+step   1800 | loss 2.8495 | lr 6.70e-03 | 157.8k tok/s | 258s
+step   1850 | loss 2.8136 | lr 5.03e-03 | 101.3k tok/s | 266s
+step   1900 | loss 2.7892 | lr 3.37e-03 | 101.3k tok/s | 274s
+step   1950 | loss 2.8481 | lr 1.70e-03 | 101.2k tok/s | 282s
+step   2000 | loss 2.7951 | lr 3.33e-05 | 117.4k tok/s | 289s
+  eval step   2000 | val_loss 2.7868 | val_bpb 1.6773 | acc 39.2% | 289s
+[final] val_loss 2.8132 | val_bpb 1.6876 | ppl 16.66 | acc 38.83% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+Saudi, February 14, 2015 Nov 19, 10:12 pm. Happy Rauti Rock Tool, Federal Park, Prize. Happy Rauti Society, U.S. Festival, Williamsea Leonad, Thursday 20 yearn, March 2015 November 2016 Nov 19, 2018 Nov 7, 2014 Nov 19, 2016 November 2015 Nov 19, 2013 November 2018 Nov 2013 November 11, 202
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/scaling/d256_L8_steps2000_s1337/metrics.json

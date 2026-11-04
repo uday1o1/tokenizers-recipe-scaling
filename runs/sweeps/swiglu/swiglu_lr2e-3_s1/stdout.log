@@ -1,0 +1,76 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/swiglu/swiglu_lr2e-3_s1
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 11,015,040 params (10,621,824 non-embedding)
+[train] 3000 steps x 16,384 tokens/step (0.49 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 6.0472 | lr 5.00e-04 | 87.3k tok/s | 9s
+step    100 | loss 4.7527 | lr 1.00e-03 | 100.1k tok/s | 18s
+step    150 | loss 4.4172 | lr 1.50e-03 | 91.6k tok/s | 27s
+step    200 | loss 4.2214 | lr 2.00e-03 | 91.6k tok/s | 35s
+step    250 | loss 4.0291 | lr 1.97e-03 | 91.6k tok/s | 44s
+step    300 | loss 3.8607 | lr 1.96e-03 | 91.7k tok/s | 53s
+step    350 | loss 3.7906 | lr 1.94e-03 | 91.6k tok/s | 62s
+step    400 | loss 3.8062 | lr 1.92e-03 | 91.6k tok/s | 71s
+step    450 | loss 3.7313 | lr 1.90e-03 | 91.6k tok/s | 80s
+step    500 | loss 3.6595 | lr 1.88e-03 | 91.7k tok/s | 89s
+  eval step    500 | val_loss 3.6242 | val_bpb 2.1813 | acc 23.8% | 89s
+step    550 | loss 3.5939 | lr 1.86e-03 | 95.6k tok/s | 98s
+step    600 | loss 3.6200 | lr 1.83e-03 | 95.2k tok/s | 106s
+step    650 | loss 3.5594 | lr 1.80e-03 | 91.7k tok/s | 115s
+step    700 | loss 3.6113 | lr 1.77e-03 | 91.7k tok/s | 124s
+step    750 | loss 3.6060 | lr 1.74e-03 | 91.7k tok/s | 133s
+step    800 | loss 3.5312 | lr 1.70e-03 | 91.7k tok/s | 142s
+step    850 | loss 3.4843 | lr 1.67e-03 | 91.7k tok/s | 151s
+step    900 | loss 3.4636 | lr 1.63e-03 | 91.7k tok/s | 160s
+step    950 | loss 3.4468 | lr 1.59e-03 | 91.6k tok/s | 169s
+step   1000 | loss 3.4465 | lr 1.55e-03 | 91.7k tok/s | 178s
+  eval step   1000 | val_loss 3.4330 | val_bpb 2.0663 | acc 27.0% | 178s
+step   1050 | loss 3.3918 | lr 1.51e-03 | 99.8k tok/s | 186s
+step   1100 | loss 3.3728 | lr 1.47e-03 | 91.6k tok/s | 195s
+step   1150 | loss 3.3295 | lr 1.42e-03 | 91.6k tok/s | 204s
+step   1200 | loss 3.3111 | lr 1.38e-03 | 91.6k tok/s | 213s
+step   1250 | loss 3.3222 | lr 1.33e-03 | 91.6k tok/s | 222s
+step   1300 | loss 3.2983 | lr 1.29e-03 | 91.6k tok/s | 231s
+step   1350 | loss 3.3210 | lr 1.24e-03 | 91.7k tok/s | 240s
+step   1400 | loss 3.3149 | lr 1.20e-03 | 91.7k tok/s | 249s
+step   1450 | loss 3.2694 | lr 1.15e-03 | 91.6k tok/s | 257s
+step   1500 | loss 3.3353 | lr 1.10e-03 | 98.2k tok/s | 266s
+  eval step   1500 | val_loss 3.2254 | val_bpb 1.9414 | acc 29.9% | 266s
+step   1550 | loss 3.2679 | lr 1.05e-03 | 91.6k tok/s | 275s
+step   1600 | loss 3.2474 | lr 1.01e-03 | 91.6k tok/s | 284s
+step   1650 | loss 3.2532 | lr 9.60e-04 | 91.6k tok/s | 293s
+step   1700 | loss 3.1767 | lr 9.14e-04 | 91.6k tok/s | 302s
+step   1750 | loss 3.2089 | lr 8.68e-04 | 91.6k tok/s | 311s
+step   1800 | loss 3.1532 | lr 8.23e-04 | 91.7k tok/s | 319s
+step   1850 | loss 3.1220 | lr 7.78e-04 | 91.7k tok/s | 328s
+step   1900 | loss 3.1010 | lr 7.35e-04 | 91.7k tok/s | 337s
+step   1950 | loss 3.1655 | lr 6.92e-04 | 91.7k tok/s | 346s
+step   2000 | loss 3.1240 | lr 6.51e-04 | 99.8k tok/s | 354s
+  eval step   2000 | val_loss 3.0913 | val_bpb 1.8606 | acc 32.6% | 354s
+step   2050 | loss 3.1046 | lr 6.11e-04 | 91.7k tok/s | 363s
+step   2100 | loss 3.0943 | lr 5.72e-04 | 91.7k tok/s | 372s
+step   2150 | loss 3.0703 | lr 5.34e-04 | 91.7k tok/s | 381s
+step   2200 | loss 3.1163 | lr 4.98e-04 | 91.7k tok/s | 390s
+step   2250 | loss 3.0973 | lr 4.64e-04 | 91.6k tok/s | 399s
+step   2300 | loss 3.1459 | lr 4.32e-04 | 91.6k tok/s | 408s
+step   2350 | loss 3.0797 | lr 4.01e-04 | 91.7k tok/s | 417s
+step   2400 | loss 3.0827 | lr 3.72e-04 | 91.6k tok/s | 426s
+step   2450 | loss 3.0508 | lr 3.46e-04 | 110.6k tok/s | 433s
+step   2500 | loss 3.0535 | lr 3.21e-04 | 121.0k tok/s | 440s
+  eval step   2500 | val_loss 3.0011 | val_bpb 1.8063 | acc 34.2% | 440s
+step   2550 | loss 3.0360 | lr 2.99e-04 | 125.6k tok/s | 447s
+step   2600 | loss 3.0423 | lr 2.78e-04 | 162.5k tok/s | 452s
+step   2650 | loss 3.0114 | lr 2.60e-04 | 177.7k tok/s | 456s
+step   2700 | loss 3.0102 | lr 2.44e-04 | 91.7k tok/s | 465s
+step   2750 | loss 2.9960 | lr 2.31e-04 | 91.7k tok/s | 474s
+step   2800 | loss 2.9859 | lr 2.20e-04 | 91.7k tok/s | 483s
+step   2850 | loss 2.9822 | lr 2.11e-04 | 91.7k tok/s | 492s
+step   2900 | loss 2.9797 | lr 2.05e-04 | 91.7k tok/s | 501s
+step   2950 | loss 2.9655 | lr 2.01e-04 | 91.7k tok/s | 510s
+step   3000 | loss 3.0362 | lr 2.00e-04 | 91.6k tok/s | 519s
+  eval step   3000 | val_loss 2.9566 | val_bpb 1.7795 | acc 35.1% | 519s
+[final] val_loss 2.9889 | val_bpb 1.7959 | ppl 19.86 | acc 34.74% | 4,194,304 tokens, 2.40 bytes/token
+[sample]
+Assue says: The latest aesthetics, the Adams, says the memory of the Hyperback (or at the Survey of English). The Dohler wrote: About Sept 12:27 a.m., Lie, M. Daddy Mala, Paula, 1987-20. Emily Basin and 2002 Craft Idahu: Teaching the Name of Malketta, Metro Liamette, Bachelor of Brandon Scholarship, the Obama Senator of Male, Maladole, Cambradi, and Women's
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/swiglu/swiglu_lr2e-3_s1/metrics.json

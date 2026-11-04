@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/scaling/d512_steps1000_s1337
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 13,111,808 params (12,587,520 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=muon schedule=wsd
+step     50 | loss 5.7812 | lr 5.00e-03 | 120.9k tok/s | 7s
+step    100 | loss 4.5143 | lr 1.00e-02 | 101.6k tok/s | 15s
+step    150 | loss 4.3969 | lr 1.50e-02 | 89.6k tok/s | 24s
+step    200 | loss 4.1627 | lr 2.00e-02 | 90.0k tok/s | 33s
+step    250 | loss 3.9265 | lr 2.00e-02 | 119.9k tok/s | 40s
+  eval step    250 | val_loss 3.8217 | val_bpb 2.3002 | acc 21.2% | 40s
+step    300 | loss 3.7392 | lr 2.00e-02 | 131.8k tok/s | 46s
+step    350 | loss 3.6707 | lr 2.00e-02 | 123.1k tok/s | 53s
+step    400 | loss 3.6204 | lr 2.00e-02 | 167.0k tok/s | 58s
+step    450 | loss 3.4691 | lr 2.00e-02 | 131.5k tok/s | 64s
+step    500 | loss 3.3560 | lr 2.00e-02 | 94.3k tok/s | 73s
+  eval step    500 | val_loss 3.3296 | val_bpb 2.0040 | acc 30.2% | 73s
+step    550 | loss 3.2808 | lr 2.00e-02 | 104.2k tok/s | 80s
+step    600 | loss 3.2794 | lr 2.00e-02 | 103.5k tok/s | 88s
+step    650 | loss 3.2272 | lr 2.00e-02 | 91.2k tok/s | 97s
+step    700 | loss 3.2548 | lr 2.00e-02 | 106.9k tok/s | 105s
+step    750 | loss 3.2624 | lr 1.67e-02 | 98.5k tok/s | 113s
+  eval step    750 | val_loss 3.1392 | val_bpb 1.8894 | acc 33.4% | 113s
+step    800 | loss 3.1881 | lr 1.34e-02 | 96.4k tok/s | 122s
+step    850 | loss 3.1121 | lr 1.01e-02 | 90.9k tok/s | 131s
+step    900 | loss 3.0664 | lr 6.73e-03 | 91.4k tok/s | 140s
+step    950 | loss 2.9940 | lr 3.40e-03 | 138.3k tok/s | 146s
+step   1000 | loss 2.9568 | lr 6.67e-05 | 93.0k tok/s | 155s
+  eval step   1000 | val_loss 2.9060 | val_bpb 1.7491 | acc 37.2% | 155s
+[final] val_loss 2.9298 | val_bpb 1.7575 | ppl 18.72 | acc 36.90% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+Sington, February 10, 2015 Nov 7, 2017 MP, Merlin, Marine, Miles, Marine and Gabbie, Laxter. Her father, Moon version of Carers, February 10, 2015 Ladies, Photipy, Marin, Marine, Marin, Marine, San and Marine, Paul Months, Maine, Mary of Romans Japan, Magazine, November. James Front, June 2013 M. Marine in Marine, M. Marine, June 2015, 20
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/scaling/d512_steps1000_s1337/metrics.json

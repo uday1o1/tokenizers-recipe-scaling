@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe/textbook_rope_s42
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,421,696 params (3,159,552 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 6.3722 | lr 2.50e-04 | 222.3k tok/s | 4s
+step    100 | loss 5.3172 | lr 5.00e-04 | 243.7k tok/s | 7s
+step    150 | loss 4.8165 | lr 7.50e-04 | 244.2k tok/s | 10s
+step    200 | loss 4.5468 | lr 1.00e-03 | 243.8k tok/s | 14s
+step    250 | loss 4.3329 | lr 8.69e-04 | 245.1k tok/s | 17s
+  eval step    250 | val_loss 4.2191 | val_bpb 2.5394 | acc 15.4% | 17s
+step    300 | loss 4.1498 | lr 8.16e-04 | 243.9k tok/s | 20s
+step    350 | loss 4.0285 | lr 7.56e-04 | 243.8k tok/s | 24s
+step    400 | loss 3.9885 | lr 6.90e-04 | 243.9k tok/s | 27s
+step    450 | loss 3.8977 | lr 6.22e-04 | 243.9k tok/s | 31s
+step    500 | loss 3.8134 | lr 5.51e-04 | 248.1k tok/s | 34s
+  eval step    500 | val_loss 3.7827 | val_bpb 2.2768 | acc 21.4% | 34s
+step    550 | loss 3.7367 | lr 4.81e-04 | 244.7k tok/s | 37s
+step    600 | loss 3.7503 | lr 4.12e-04 | 243.6k tok/s | 41s
+step    650 | loss 3.6774 | lr 3.47e-04 | 243.9k tok/s | 44s
+step    700 | loss 3.7092 | lr 2.87e-04 | 243.6k tok/s | 47s
+step    750 | loss 3.6945 | lr 2.33e-04 | 248.2k tok/s | 51s
+  eval step    750 | val_loss 3.5996 | val_bpb 2.1665 | acc 24.2% | 51s
+step    800 | loss 3.6503 | lr 1.87e-04 | 244.4k tok/s | 54s
+step    850 | loss 3.5886 | lr 1.50e-04 | 243.9k tok/s | 57s
+step    900 | loss 3.5795 | lr 1.22e-04 | 244.2k tok/s | 61s
+step    950 | loss 3.5517 | lr 1.06e-04 | 243.9k tok/s | 64s
+step   1000 | loss 3.5408 | lr 1.00e-04 | 248.0k tok/s | 67s
+  eval step   1000 | val_loss 3.4972 | val_bpb 2.1049 | acc 25.9% | 67s
+[final] val_loss 3.5215 | val_bpb 2.1124 | ppl 33.84 | acc 25.71% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+To-foot loses. We simple for anyone, I think we have a souther something it will be a sized. And this love was to get a bottle behind the end of the same, which the case is to be able to be tone! I just like that I am never believe. I was later and I was great. I was very far to get a game five and found of boats without living a population in the children in the club of the SAs and South towards that I welds would make it her times, but I had around the billing mind, since I would bad to deliver and paid the drugs and think
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe/textbook_rope_s42/metrics.json

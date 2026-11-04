@@ -1,0 +1,70 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/tokenizers/char_s1337
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] tinyshakespeare_char_tail100 | tokenizer=char vocab=65 | train 1,003,854 tok | val 111,540 tok
+[model] gpt: 3,162,624 params (3,145,984 non-embedding)
+[train] 2000 steps x 8,192 tokens/step (16.32 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 3.0640 | lr 5.00e-04 | 188.2k tok/s | 2s
+step    100 | loss 2.3014 | lr 1.00e-03 | 227.5k tok/s | 4s
+step    150 | loss 1.9613 | lr 9.88e-04 | 228.2k tok/s | 6s
+step    200 | loss 1.7706 | lr 9.78e-04 | 228.4k tok/s | 8s
+step    250 | loss 1.6677 | lr 9.66e-04 | 229.2k tok/s | 9s
+  eval step    250 | val_loss 1.7812 | val_bpb 2.5697 | acc 47.6% | 9s
+step    300 | loss 1.6105 | lr 9.51e-04 | 229.0k tok/s | 11s
+step    350 | loss 1.5563 | lr 9.34e-04 | 229.1k tok/s | 13s
+step    400 | loss 1.5250 | lr 9.14e-04 | 227.6k tok/s | 15s
+step    450 | loss 1.4834 | lr 8.93e-04 | 228.7k tok/s | 17s
+step    500 | loss 1.4655 | lr 8.69e-04 | 229.0k tok/s | 18s
+  eval step    500 | val_loss 1.5981 | val_bpb 2.3056 | acc 52.7% | 18s
+step    550 | loss 1.4357 | lr 8.43e-04 | 228.9k tok/s | 20s
+step    600 | loss 1.4242 | lr 8.15e-04 | 228.6k tok/s | 22s
+step    650 | loss 1.4054 | lr 7.86e-04 | 227.3k tok/s | 24s
+step    700 | loss 1.3888 | lr 7.55e-04 | 228.5k tok/s | 25s
+step    750 | loss 1.3813 | lr 7.23e-04 | 228.7k tok/s | 27s
+  eval step    750 | val_loss 1.5432 | val_bpb 2.2264 | acc 54.4% | 27s
+step    800 | loss 1.3648 | lr 6.90e-04 | 229.6k tok/s | 29s
+step    850 | loss 1.3489 | lr 6.56e-04 | 227.3k tok/s | 31s
+step    900 | loss 1.3340 | lr 6.21e-04 | 228.8k tok/s | 33s
+step    950 | loss 1.3268 | lr 5.86e-04 | 228.6k tok/s | 34s
+step   1000 | loss 1.3226 | lr 5.51e-04 | 227.6k tok/s | 36s
+  eval step   1000 | val_loss 1.5263 | val_bpb 2.2020 | acc 55.3% | 36s
+step   1050 | loss 1.3126 | lr 5.15e-04 | 229.7k tok/s | 38s
+step   1100 | loss 1.2978 | lr 4.80e-04 | 228.6k tok/s | 40s
+step   1150 | loss 1.2864 | lr 4.46e-04 | 228.1k tok/s | 42s
+step   1200 | loss 1.2831 | lr 4.12e-04 | 228.7k tok/s | 43s
+step   1250 | loss 1.2757 | lr 3.78e-04 | 229.0k tok/s | 45s
+  eval step   1250 | val_loss 1.4951 | val_bpb 2.1570 | acc 56.2% | 45s
+step   1300 | loss 1.2630 | lr 3.46e-04 | 228.9k tok/s | 47s
+step   1350 | loss 1.2605 | lr 3.15e-04 | 228.6k tok/s | 49s
+step   1400 | loss 1.2542 | lr 2.86e-04 | 228.5k tok/s | 51s
+step   1450 | loss 1.2450 | lr 2.58e-04 | 227.4k tok/s | 52s
+step   1500 | loss 1.2396 | lr 2.32e-04 | 228.3k tok/s | 54s
+  eval step   1500 | val_loss 1.4886 | val_bpb 2.1475 | acc 56.8% | 54s
+step   1550 | loss 1.2333 | lr 2.08e-04 | 230.1k tok/s | 56s
+step   1600 | loss 1.2356 | lr 1.86e-04 | 227.4k tok/s | 58s
+step   1650 | loss 1.2268 | lr 1.67e-04 | 228.5k tok/s | 60s
+step   1700 | loss 1.2209 | lr 1.49e-04 | 228.8k tok/s | 61s
+step   1750 | loss 1.2170 | lr 1.35e-04 | 227.6k tok/s | 63s
+  eval step   1750 | val_loss 1.4643 | val_bpb 2.1125 | acc 57.3% | 63s
+step   1800 | loss 1.2120 | lr 1.22e-04 | 229.9k tok/s | 65s
+step   1850 | loss 1.2064 | lr 1.13e-04 | 227.7k tok/s | 67s
+step   1900 | loss 1.2111 | lr 1.06e-04 | 228.7k tok/s | 68s
+step   1950 | loss 1.2062 | lr 1.01e-04 | 229.1k tok/s | 70s
+step   2000 | loss 1.1967 | lr 1.00e-04 | 228.3k tok/s | 72s
+  eval step   2000 | val_loss 1.4718 | val_bpb 2.1234 | acc 57.3% | 72s
+[final] val_loss 1.4718 | val_bpb 2.1234 | ppl 4.36 | acc 57.32% | 111,360 tokens, 1.00 bytes/token
+[sample]
+
+JULIET:
+I have enough to sorry that would be well:
+Go to along the law long that have been still
+I do do full of that I find a boy
+That I had too lose the course it lives
+To yield it so. You have so flatter'd it.
+
+JULIET:
+I pray that thou hast stopp'd thee and my soul!
+Send my lord. I speak to see thee my mother,
+We will be quickly a sin in my father's feath;
+Have I my countrymen a very stars in t
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/tokenizers/char_s1337/metrics.json

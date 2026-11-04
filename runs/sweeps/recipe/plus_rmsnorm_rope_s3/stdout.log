@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe/plus_rmsnorm_rope_s3
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,410,176 params (3,148,032 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 6.3735 | lr 2.50e-04 | 216.4k tok/s | 4s
+step    100 | loss 5.3101 | lr 5.00e-04 | 234.3k tok/s | 7s
+step    150 | loss 4.8226 | lr 7.50e-04 | 234.2k tok/s | 11s
+step    200 | loss 4.5622 | lr 1.00e-03 | 234.2k tok/s | 14s
+step    250 | loss 4.3555 | lr 8.69e-04 | 238.6k tok/s | 18s
+  eval step    250 | val_loss 4.2432 | val_bpb 2.5539 | acc 14.9% | 18s
+step    300 | loss 4.1800 | lr 8.16e-04 | 239.4k tok/s | 21s
+step    350 | loss 4.0652 | lr 7.56e-04 | 234.2k tok/s | 25s
+step    400 | loss 4.0227 | lr 6.90e-04 | 234.2k tok/s | 28s
+step    450 | loss 3.9296 | lr 6.22e-04 | 234.2k tok/s | 32s
+step    500 | loss 3.8426 | lr 5.51e-04 | 238.9k tok/s | 35s
+  eval step    500 | val_loss 3.8111 | val_bpb 2.2938 | acc 21.0% | 35s
+step    550 | loss 3.7664 | lr 4.81e-04 | 238.8k tok/s | 38s
+step    600 | loss 3.7758 | lr 4.12e-04 | 234.3k tok/s | 42s
+step    650 | loss 3.7051 | lr 3.47e-04 | 234.3k tok/s | 45s
+step    700 | loss 3.7358 | lr 2.87e-04 | 234.4k tok/s | 49s
+step    750 | loss 3.7182 | lr 2.33e-04 | 239.1k tok/s | 52s
+  eval step    750 | val_loss 3.6258 | val_bpb 2.1823 | acc 23.8% | 52s
+step    800 | loss 3.6715 | lr 1.87e-04 | 238.1k tok/s | 56s
+step    850 | loss 3.6119 | lr 1.50e-04 | 234.2k tok/s | 59s
+step    900 | loss 3.6009 | lr 1.22e-04 | 234.2k tok/s | 63s
+step    950 | loss 3.5743 | lr 1.06e-04 | 234.4k tok/s | 66s
+step   1000 | loss 3.5621 | lr 1.00e-04 | 238.8k tok/s | 70s
+  eval step   1000 | val_loss 3.5175 | val_bpb 2.1172 | acc 25.6% | 70s
+[final] val_loss 3.5439 | val_bpb 2.1259 | ppl 34.60 | acc 25.40% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+Old: Warrink, the Sataria is a policy, and began to the value of the luge of Barle and in a huge of the problem that the end of these supremely and a music, he’s not like a round of midymonics. Our technique is very successful. Paper and its sister capties. Dr. Districting and Party Orloring is a strategic in a motive scene in the lucky and solutions, and he has simestly topically compressive. Grace for an early completion of a future site side of bandrophic marketers
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe/plus_rmsnorm_rope_s3/metrics.json

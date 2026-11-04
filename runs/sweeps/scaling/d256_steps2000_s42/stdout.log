@@ -1,0 +1,58 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/scaling/d256_steps2000_s42
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,410,176 params (3,148,032 non-embedding)
+[train] 2000 steps x 16,384 tokens/step (0.33 passes over train) | optimizer=muon schedule=wsd
+step     50 | loss 6.0964 | lr 5.00e-03 | 174.5k tok/s | 5s
+step    100 | loss 4.7593 | lr 1.00e-02 | 207.5k tok/s | 9s
+step    150 | loss 4.4988 | lr 1.50e-02 | 265.0k tok/s | 12s
+step    200 | loss 4.3119 | lr 2.00e-02 | 242.4k tok/s | 15s
+step    250 | loss 4.0388 | lr 2.00e-02 | 226.0k tok/s | 19s
+  eval step    250 | val_loss 3.9203 | val_bpb 2.3596 | acc 19.5% | 19s
+step    300 | loss 3.8345 | lr 2.00e-02 | 193.2k tok/s | 23s
+step    350 | loss 3.7522 | lr 2.00e-02 | 256.3k tok/s | 26s
+step    400 | loss 3.7319 | lr 2.00e-02 | 309.9k tok/s | 29s
+step    450 | loss 3.6383 | lr 2.00e-02 | 374.8k tok/s | 31s
+step    500 | loss 3.5141 | lr 2.00e-02 | 273.4k tok/s | 34s
+  eval step    500 | val_loss 3.4689 | val_bpb 2.0879 | acc 27.7% | 34s
+step    550 | loss 3.4149 | lr 2.00e-02 | 264.8k tok/s | 37s
+step    600 | loss 3.4086 | lr 2.00e-02 | 268.7k tok/s | 40s
+step    650 | loss 3.3425 | lr 2.00e-02 | 370.3k tok/s | 42s
+step    700 | loss 3.3672 | lr 2.00e-02 | 342.5k tok/s | 45s
+step    750 | loss 3.3762 | lr 2.00e-02 | 231.4k tok/s | 48s
+  eval step    750 | val_loss 3.2643 | val_bpb 1.9647 | acc 31.5% | 48s
+step    800 | loss 3.3178 | lr 2.00e-02 | 190.5k tok/s | 53s
+step    850 | loss 3.2704 | lr 2.00e-02 | 218.3k tok/s | 56s
+step    900 | loss 3.2488 | lr 2.00e-02 | 238.2k tok/s | 60s
+step    950 | loss 3.2034 | lr 2.00e-02 | 245.4k tok/s | 63s
+step   1000 | loss 3.1777 | lr 2.00e-02 | 224.8k tok/s | 67s
+  eval step   1000 | val_loss 3.1598 | val_bpb 1.9019 | acc 33.1% | 67s
+step   1050 | loss 3.1526 | lr 2.00e-02 | 201.4k tok/s | 71s
+step   1100 | loss 3.1559 | lr 2.00e-02 | 245.7k tok/s | 74s
+step   1150 | loss 3.0976 | lr 2.00e-02 | 203.6k tok/s | 78s
+step   1200 | loss 3.0787 | lr 2.00e-02 | 239.5k tok/s | 82s
+step   1250 | loss 3.0743 | lr 2.00e-02 | 224.5k tok/s | 85s
+  eval step   1250 | val_loss 3.0830 | val_bpb 1.8556 | acc 34.4% | 85s
+step   1300 | loss 3.0720 | lr 2.00e-02 | 235.0k tok/s | 89s
+step   1350 | loss 3.0925 | lr 2.00e-02 | 223.7k tok/s | 92s
+step   1400 | loss 3.1174 | lr 2.00e-02 | 190.5k tok/s | 97s
+step   1450 | loss 3.0883 | lr 1.84e-02 | 239.9k tok/s | 100s
+step   1500 | loss 3.1288 | lr 1.67e-02 | 224.9k tok/s | 104s
+  eval step   1500 | val_loss 3.0161 | val_bpb 1.8153 | acc 35.3% | 104s
+step   1550 | loss 3.0484 | lr 1.50e-02 | 243.5k tok/s | 107s
+step   1600 | loss 3.0411 | lr 1.34e-02 | 196.7k tok/s | 111s
+step   1650 | loss 3.0533 | lr 1.17e-02 | 190.5k tok/s | 116s
+step   1700 | loss 2.9765 | lr 1.00e-02 | 239.6k tok/s | 119s
+step   1750 | loss 2.9820 | lr 8.37e-03 | 224.8k tok/s | 123s
+  eval step   1750 | val_loss 2.9187 | val_bpb 1.7567 | acc 36.9% | 123s
+step   1800 | loss 2.9233 | lr 6.70e-03 | 208.1k tok/s | 127s
+step   1850 | loss 2.8875 | lr 5.03e-03 | 190.3k tok/s | 131s
+step   1900 | loss 2.8605 | lr 3.37e-03 | 190.4k tok/s | 135s
+step   1950 | loss 2.9239 | lr 1.70e-03 | 239.4k tok/s | 139s
+step   2000 | loss 2.8722 | lr 3.33e-05 | 248.1k tok/s | 142s
+  eval step   2000 | val_loss 2.8650 | val_bpb 1.7244 | acc 37.9% | 142s
+[final] val_loss 2.8905 | val_bpb 1.7339 | ppl 18.00 | acc 37.60% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+Ti-Dougasp . We call it in a site-made or escalating border power, which is simple, self-dougasp clearly, standard standard standard standard standard standard workshops and utilizers. Its the early 5 largest number of activities, expressions and five-class ransnotes to reduce a population of the character.Confidentials and South Carolina Belton [Finding Existence| |Strimp| |Sometimes the People of Trimes and South Carolina and Sout
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/scaling/d256_steps2000_s42/metrics.json

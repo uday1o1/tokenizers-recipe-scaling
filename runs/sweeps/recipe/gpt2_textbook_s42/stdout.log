@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe/gpt2_textbook_s42
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,683,840 params (3,159,552 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 6.4409 | lr 2.50e-04 | 243.8k tok/s | 3s
+step    100 | loss 5.4720 | lr 5.00e-04 | 272.1k tok/s | 6s
+step    150 | loss 4.8992 | lr 7.50e-04 | 272.0k tok/s | 9s
+step    200 | loss 4.6616 | lr 1.00e-03 | 272.2k tok/s | 12s
+step    250 | loss 4.5266 | lr 8.69e-04 | 286.9k tok/s | 15s
+  eval step    250 | val_loss 4.4608 | val_bpb 2.6849 | acc 11.0% | 15s
+step    300 | loss 4.4459 | lr 8.16e-04 | 273.9k tok/s | 18s
+step    350 | loss 4.4010 | lr 7.56e-04 | 272.1k tok/s | 21s
+step    400 | loss 4.3987 | lr 6.90e-04 | 272.3k tok/s | 24s
+step    450 | loss 4.3544 | lr 6.22e-04 | 272.3k tok/s | 27s
+step    500 | loss 4.3140 | lr 5.51e-04 | 295.1k tok/s | 30s
+  eval step    500 | val_loss 4.2912 | val_bpb 2.5828 | acc 11.8% | 30s
+step    550 | loss 4.2758 | lr 4.81e-04 | 274.4k tok/s | 33s
+step    600 | loss 4.2968 | lr 4.12e-04 | 272.1k tok/s | 36s
+step    650 | loss 4.2482 | lr 3.47e-04 | 272.2k tok/s | 39s
+step    700 | loss 4.2820 | lr 2.87e-04 | 272.0k tok/s | 42s
+step    750 | loss 4.2793 | lr 2.33e-04 | 295.5k tok/s | 45s
+  eval step    750 | val_loss 4.2038 | val_bpb 2.5302 | acc 12.8% | 45s
+step    800 | loss 4.2380 | lr 1.87e-04 | 275.3k tok/s | 48s
+step    850 | loss 4.2023 | lr 1.50e-04 | 272.3k tok/s | 51s
+step    900 | loss 4.1913 | lr 1.22e-04 | 272.3k tok/s | 54s
+step    950 | loss 4.1769 | lr 1.06e-04 | 272.3k tok/s | 57s
+step   1000 | loss 4.1685 | lr 1.00e-04 | 295.6k tok/s | 60s
+  eval step   1000 | val_loss 4.1250 | val_bpb 2.4828 | acc 14.1% | 60s
+[final] val_loss 4.1445 | val_bpb 2.4862 | ppl 63.09 | acc 14.09% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+Th Ader Ade . We gover it come tolder town or 5 order. Mration, it will be apoarder, this love at this will find for cle to be up without ele to the same, which the cleterest. Ratushoney and Addmission, the Myer, the Nest Stre and Date.C, Nortead of Home Mashle, Scleansports withouthapson and Timpries, Saneammbones, Ps and Siddoidaya. Bel. We would certific termites to date, and maiding mindower. Ones areasily distentering. Indly. For the Uposes
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe/gpt2_textbook_s42/metrics.json

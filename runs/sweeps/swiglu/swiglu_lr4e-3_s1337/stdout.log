@@ -1,0 +1,76 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/swiglu/swiglu_lr4e-3_s1337
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 11,015,040 params (10,621,824 non-embedding)
+[train] 3000 steps x 16,384 tokens/step (0.49 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 5.9066 | lr 1.00e-03 | 89.0k tok/s | 9s
+step    100 | loss 4.6276 | lr 2.00e-03 | 92.2k tok/s | 18s
+step    150 | loss 4.3767 | lr 3.00e-03 | 92.2k tok/s | 27s
+step    200 | loss 4.2361 | lr 4.00e-03 | 92.2k tok/s | 36s
+step    250 | loss 4.0732 | lr 3.94e-03 | 92.2k tok/s | 45s
+step    300 | loss 3.9075 | lr 3.91e-03 | 92.1k tok/s | 54s
+step    350 | loss 3.8400 | lr 3.88e-03 | 92.1k tok/s | 63s
+step    400 | loss 3.8571 | lr 3.85e-03 | 92.2k tok/s | 71s
+step    450 | loss 3.7710 | lr 3.80e-03 | 92.2k tok/s | 80s
+step    500 | loss 3.6961 | lr 3.76e-03 | 107.9k tok/s | 88s
+  eval step    500 | val_loss 3.6602 | val_bpb 2.2030 | acc 23.1% | 88s
+step    550 | loss 3.6277 | lr 3.71e-03 | 92.1k tok/s | 97s
+step    600 | loss 3.6493 | lr 3.66e-03 | 92.1k tok/s | 106s
+step    650 | loss 3.5928 | lr 3.60e-03 | 92.2k tok/s | 115s
+step    700 | loss 3.6403 | lr 3.54e-03 | 92.3k tok/s | 123s
+step    750 | loss 3.6367 | lr 3.47e-03 | 92.1k tok/s | 132s
+step    800 | loss 3.5632 | lr 3.41e-03 | 92.2k tok/s | 141s
+step    850 | loss 3.5171 | lr 3.33e-03 | 92.2k tok/s | 150s
+step    900 | loss 3.4964 | lr 3.26e-03 | 92.2k tok/s | 159s
+step    950 | loss 3.4763 | lr 3.18e-03 | 106.4k tok/s | 167s
+step   1000 | loss 3.4708 | lr 3.10e-03 | 92.1k tok/s | 176s
+  eval step   1000 | val_loss 3.4612 | val_bpb 2.0832 | acc 26.4% | 176s
+step   1050 | loss 3.4194 | lr 3.02e-03 | 92.1k tok/s | 184s
+step   1100 | loss 3.4118 | lr 2.93e-03 | 92.2k tok/s | 193s
+step   1150 | loss 3.3643 | lr 2.85e-03 | 92.2k tok/s | 202s
+step   1200 | loss 3.3528 | lr 2.76e-03 | 92.2k tok/s | 211s
+step   1250 | loss 3.3515 | lr 2.67e-03 | 92.2k tok/s | 220s
+step   1300 | loss 3.3386 | lr 2.58e-03 | 92.3k tok/s | 229s
+step   1350 | loss 3.3635 | lr 2.48e-03 | 92.3k tok/s | 238s
+step   1400 | loss 3.3599 | lr 2.39e-03 | 97.6k tok/s | 246s
+step   1450 | loss 3.3135 | lr 2.30e-03 | 100.0k tok/s | 254s
+step   1500 | loss 3.3788 | lr 2.20e-03 | 92.2k tok/s | 263s
+  eval step   1500 | val_loss 3.2722 | val_bpb 1.9695 | acc 28.9% | 263s
+step   1550 | loss 3.3178 | lr 2.11e-03 | 92.2k tok/s | 272s
+step   1600 | loss 3.2941 | lr 2.01e-03 | 92.2k tok/s | 281s
+step   1650 | loss 3.3048 | lr 1.92e-03 | 92.2k tok/s | 290s
+step   1700 | loss 3.2296 | lr 1.83e-03 | 92.1k tok/s | 299s
+step   1750 | loss 3.2644 | lr 1.74e-03 | 92.1k tok/s | 308s
+step   1800 | loss 3.2103 | lr 1.65e-03 | 92.2k tok/s | 317s
+step   1850 | loss 3.1828 | lr 1.56e-03 | 92.1k tok/s | 325s
+step   1900 | loss 3.1670 | lr 1.47e-03 | 106.5k tok/s | 333s
+step   1950 | loss 3.2283 | lr 1.38e-03 | 92.1k tok/s | 342s
+step   2000 | loss 3.1883 | lr 1.30e-03 | 92.1k tok/s | 351s
+  eval step   2000 | val_loss 3.1542 | val_bpb 1.8985 | acc 31.3% | 351s
+step   2050 | loss 3.1715 | lr 1.22e-03 | 92.2k tok/s | 360s
+step   2100 | loss 3.1649 | lr 1.14e-03 | 92.2k tok/s | 369s
+step   2150 | loss 3.1392 | lr 1.07e-03 | 92.2k tok/s | 378s
+step   2200 | loss 3.1860 | lr 9.97e-04 | 92.2k tok/s | 386s
+step   2250 | loss 3.1655 | lr 9.29e-04 | 92.2k tok/s | 395s
+step   2300 | loss 3.2141 | lr 8.64e-04 | 92.1k tok/s | 404s
+step   2350 | loss 3.1445 | lr 8.02e-04 | 106.5k tok/s | 412s
+step   2400 | loss 3.1476 | lr 7.45e-04 | 92.2k tok/s | 421s
+step   2450 | loss 3.1180 | lr 6.91e-04 | 92.2k tok/s | 430s
+step   2500 | loss 3.1199 | lr 6.42e-04 | 92.2k tok/s | 439s
+  eval step   2500 | val_loss 3.0676 | val_bpb 1.8463 | acc 32.7% | 439s
+step   2550 | loss 3.1068 | lr 5.97e-04 | 92.2k tok/s | 448s
+step   2600 | loss 3.1147 | lr 5.56e-04 | 92.1k tok/s | 456s
+step   2650 | loss 3.0883 | lr 5.20e-04 | 92.3k tok/s | 465s
+step   2700 | loss 3.0814 | lr 4.89e-04 | 92.1k tok/s | 474s
+step   2750 | loss 3.0697 | lr 4.62e-04 | 92.2k tok/s | 483s
+step   2800 | loss 3.0607 | lr 4.40e-04 | 103.9k tok/s | 491s
+step   2850 | loss 3.0549 | lr 4.22e-04 | 155.6k tok/s | 496s
+step   2900 | loss 3.0575 | lr 4.10e-04 | 155.0k tok/s | 501s
+step   2950 | loss 3.0423 | lr 4.03e-04 | 200.9k tok/s | 506s
+step   3000 | loss 3.1071 | lr 4.00e-04 | 353.4k tok/s | 508s
+  eval step   3000 | val_loss 3.0252 | val_bpb 1.8209 | acc 33.6% | 508s
+[final] val_loss 3.0616 | val_bpb 1.8395 | ppl 21.36 | acc 33.08% | 4,194,304 tokens, 2.40 bytes/token
+[sample]
+Save cash pillows! If your brother was a waitraw, you won't have any pupils for you to call, there's some casualty, you have already enjoyed the files, and how to hold on the tail. If you're really kind of cool, you're awadward to hold me down, as I did, you'd got into the stages of the winter so it was a job as the military ended, the barrel recipe was on this pick on a horrill, then crossed the bar. Meady wasn't getting to know, but he said married again. The championships were also usually
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/swiglu/swiglu_lr4e-3_s1337/metrics.json

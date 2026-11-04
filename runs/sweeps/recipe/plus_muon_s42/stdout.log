@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe/plus_muon_s42
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,410,176 params (3,148,032 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=muon schedule=wsd
+step     50 | loss 6.0964 | lr 5.00e-03 | 170.6k tok/s | 5s
+step    100 | loss 4.7594 | lr 1.00e-02 | 181.3k tok/s | 9s
+step    150 | loss 4.4987 | lr 1.50e-02 | 181.5k tok/s | 14s
+step    200 | loss 4.3115 | lr 2.00e-02 | 203.1k tok/s | 18s
+step    250 | loss 4.0390 | lr 2.00e-02 | 317.8k tok/s | 20s
+  eval step    250 | val_loss 3.9210 | val_bpb 2.3600 | acc 19.5% | 20s
+step    300 | loss 3.8348 | lr 2.00e-02 | 182.3k tok/s | 25s
+step    350 | loss 3.7514 | lr 2.00e-02 | 181.5k tok/s | 29s
+step    400 | loss 3.7382 | lr 2.00e-02 | 233.0k tok/s | 33s
+step    450 | loss 3.6434 | lr 2.00e-02 | 271.9k tok/s | 36s
+step    500 | loss 3.5186 | lr 2.00e-02 | 181.4k tok/s | 40s
+  eval step    500 | val_loss 3.4754 | val_bpb 2.0918 | acc 27.5% | 41s
+step    550 | loss 3.4137 | lr 2.00e-02 | 181.9k tok/s | 45s
+step    600 | loss 3.4098 | lr 2.00e-02 | 269.6k tok/s | 48s
+step    650 | loss 3.3429 | lr 2.00e-02 | 234.5k tok/s | 52s
+step    700 | loss 3.3677 | lr 2.00e-02 | 181.5k tok/s | 56s
+step    750 | loss 3.3698 | lr 1.67e-02 | 181.6k tok/s | 61s
+  eval step    750 | val_loss 3.2487 | val_bpb 1.9554 | acc 31.8% | 61s
+step    800 | loss 3.2944 | lr 1.34e-02 | 317.6k tok/s | 63s
+step    850 | loss 3.2183 | lr 1.01e-02 | 318.4k tok/s | 66s
+step    900 | loss 3.1732 | lr 6.73e-03 | 317.9k tok/s | 68s
+step    950 | loss 3.1044 | lr 3.40e-03 | 318.1k tok/s | 71s
+step   1000 | loss 3.0598 | lr 6.67e-05 | 317.8k tok/s | 73s
+  eval step   1000 | val_loss 3.0170 | val_bpb 1.8159 | acc 35.4% | 73s
+[final] val_loss 3.0417 | val_bpb 1.8246 | ppl 20.94 | acc 35.15% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+Tidespread of the 1983 The Holy Hero hasn’t gone it. It’s quite an email to move the large number of hundreds of the 1982. The same is to the case of the Holy Holy Hugher, where the Holy Camera Boaded the history of the head of the ground of Home Master and Tony, the Holy Holy Holy Holy Holy Spain is the moment, and I need to make a major confusion of the Holy Holy Holy Home, and the holy gears. It was a bit of a sleature. It seems a person to go on
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe/plus_muon_s42/metrics.json

@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe/plus_wsd_s1
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,410,176 params (3,148,032 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=wsd
+step     50 | loss 6.3798 | lr 2.50e-04 | 220.4k tok/s | 4s
+step    100 | loss 5.3205 | lr 5.00e-04 | 241.8k tok/s | 7s
+step    150 | loss 4.8228 | lr 7.50e-04 | 242.0k tok/s | 10s
+step    200 | loss 4.5595 | lr 1.00e-03 | 241.8k tok/s | 14s
+step    250 | loss 4.3534 | lr 1.00e-03 | 242.6k tok/s | 17s
+  eval step    250 | val_loss 4.2412 | val_bpb 2.5527 | acc 15.0% | 17s
+step    300 | loss 4.1697 | lr 1.00e-03 | 399.8k tok/s | 19s
+step    350 | loss 4.0496 | lr 1.00e-03 | 333.4k tok/s | 22s
+step    400 | loss 4.0127 | lr 1.00e-03 | 241.5k tok/s | 25s
+step    450 | loss 3.9254 | lr 1.00e-03 | 241.9k tok/s | 29s
+step    500 | loss 3.8389 | lr 1.00e-03 | 243.2k tok/s | 32s
+  eval step    500 | val_loss 3.8109 | val_bpb 2.2937 | acc 20.9% | 32s
+step    550 | loss 3.7644 | lr 1.00e-03 | 242.1k tok/s | 35s
+step    600 | loss 3.7795 | lr 1.00e-03 | 282.5k tok/s | 38s
+step    650 | loss 3.7128 | lr 1.00e-03 | 400.4k tok/s | 40s
+step    700 | loss 3.7489 | lr 1.00e-03 | 281.1k tok/s | 43s
+step    750 | loss 3.7275 | lr 8.37e-04 | 243.0k tok/s | 47s
+  eval step    750 | val_loss 3.6463 | val_bpb 2.1946 | acc 23.4% | 47s
+step    800 | loss 3.6462 | lr 6.70e-04 | 242.0k tok/s | 50s
+step    850 | loss 3.5766 | lr 5.03e-04 | 242.0k tok/s | 53s
+step    900 | loss 3.5341 | lr 3.37e-04 | 241.3k tok/s | 57s
+step    950 | loss 3.4899 | lr 1.70e-04 | 336.4k tok/s | 59s
+step   1000 | loss 3.4635 | lr 3.33e-06 | 404.6k tok/s | 61s
+  eval step   1000 | val_loss 3.4135 | val_bpb 2.0545 | acc 27.2% | 61s
+[final] val_loss 3.4372 | val_bpb 2.0619 | ppl 31.10 | acc 27.00% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+O FOCELLTEWALOED 5000Please be a tree to keep sure I met a smoky demonstration of the MLD federal is also really obvious. Secondly, with the surface of the Lika’s fastest customers, or other hands, and seriously laid. Emplaining the Quinity Marrah Idrael. The point of poor, red issue of this center. There are skin signature skinches with the functionality of the breakfinals. The cost of values in our relevant levels, 180 cups,
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe/plus_wsd_s1/metrics.json

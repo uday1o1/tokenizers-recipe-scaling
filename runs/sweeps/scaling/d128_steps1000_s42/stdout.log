@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/scaling/d128_steps1000_s42
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 918,656 params (787,584 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=muon schedule=wsd
+step     50 | loss 6.4355 | lr 5.00e-03 | 260.7k tok/s | 3s
+step    100 | loss 5.2451 | lr 1.00e-02 | 292.2k tok/s | 6s
+step    150 | loss 4.7170 | lr 1.50e-02 | 293.4k tok/s | 9s
+step    200 | loss 4.4816 | lr 2.00e-02 | 293.4k tok/s | 12s
+step    250 | loss 4.2136 | lr 2.00e-02 | 295.3k tok/s | 14s
+  eval step    250 | val_loss 4.0931 | val_bpb 2.4636 | acc 16.9% | 14s
+step    300 | loss 3.9988 | lr 2.00e-02 | 294.0k tok/s | 17s
+step    350 | loss 3.8993 | lr 2.00e-02 | 292.5k tok/s | 20s
+step    400 | loss 3.8791 | lr 2.00e-02 | 293.5k tok/s | 23s
+step    450 | loss 3.8141 | lr 2.00e-02 | 292.5k tok/s | 25s
+step    500 | loss 3.7439 | lr 2.00e-02 | 294.5k tok/s | 28s
+  eval step    500 | val_loss 3.7184 | val_bpb 2.2380 | acc 22.6% | 28s
+step    550 | loss 3.6763 | lr 2.00e-02 | 295.4k tok/s | 31s
+step    600 | loss 3.6923 | lr 2.00e-02 | 293.0k tok/s | 34s
+step    650 | loss 3.6158 | lr 2.00e-02 | 293.3k tok/s | 37s
+step    700 | loss 3.6504 | lr 2.00e-02 | 293.5k tok/s | 39s
+step    750 | loss 3.6254 | lr 1.67e-02 | 293.7k tok/s | 42s
+  eval step    750 | val_loss 3.5084 | val_bpb 2.1116 | acc 26.7% | 42s
+step    800 | loss 3.5357 | lr 1.34e-02 | 297.1k tok/s | 45s
+step    850 | loss 3.4543 | lr 1.01e-02 | 293.3k tok/s | 48s
+step    900 | loss 3.4090 | lr 6.73e-03 | 293.3k tok/s | 51s
+step    950 | loss 3.3511 | lr 3.40e-03 | 293.3k tok/s | 53s
+step   1000 | loss 3.3082 | lr 6.67e-05 | 292.8k tok/s | 56s
+  eval step   1000 | val_loss 3.2654 | val_bpb 1.9654 | acc 31.0% | 56s
+[final] val_loss 3.2915 | val_bpb 1.9744 | ppl 26.88 | acc 30.77% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+Test-facts of the 18th year old women, and has been suggested to the 30th day. The size of large nursis, and clearly diabetes to the same, which the curbs is 900 mmmmazz is 300 minutes - Majesticians - K.C. Nursis of a 10 mm food of boots without a 300 device in the 10th of the 12th, 10th squared in the women, 180 times, and dangers, and the 2004 squatchy boots, and the 4th stages of person and tag
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/scaling/d128_steps1000_s42/metrics.json

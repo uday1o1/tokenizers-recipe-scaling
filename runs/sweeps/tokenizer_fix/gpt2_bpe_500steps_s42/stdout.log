@@ -1,0 +1,59 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/tokenizer_fix/gpt2_bpe_500steps_s42
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] tinyshakespeare_gpt2_tail100 | tokenizer=gpt2 vocab=50257 | train 301,966 tok | val 36,059 tok
+[model] gpt: 16,011,776 params (3,145,984 non-embedding)
+[train] 500 steps x 8,192 tokens/step (13.56 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 9.0271 | lr 5.00e-04 | 35.2k tok/s | 12s
+step    100 | loss 5.7619 | lr 1.00e-03 | 35.7k tok/s | 23s
+step    150 | loss 4.7097 | lr 8.17e-04 | 35.7k tok/s | 35s
+step    200 | loss 4.2789 | lr 6.92e-04 | 35.7k tok/s | 46s
+step    250 | loss 4.0379 | lr 5.53e-04 | 35.7k tok/s | 58s
+  eval step    250 | val_loss 4.6439 | val_bpb 2.1666 | acc 28.4% | 58s
+step    300 | loss 3.8508 | lr 4.14e-04 | 175.4k tok/s | 60s
+step    350 | loss 3.7366 | lr 2.88e-04 | 191.7k tok/s | 62s
+step    400 | loss 3.6457 | lr 1.88e-04 | 192.4k tok/s | 64s
+step    450 | loss 3.5882 | lr 1.23e-04 | 193.0k tok/s | 66s
+step    500 | loss 3.5312 | lr 1.00e-04 | 190.7k tok/s | 68s
+  eval step    500 | val_loss 4.5641 | val_bpb 2.1294 | acc 30.5% | 68s
+[final] val_loss 4.5641 | val_bpb 2.1294 | ppl 95.97 | acc 30.51% | 35,840 tokens, 3.09 bytes/token
+[sample]
+<|endoftext|>,
+I do you go to-morrow.
+
+ANGELO:
+Go, come, sir; I must to bear you well.
+
+ISABELLA:
+You will, your honour, to you and your son.
+
+ISABELLA:
+Sir,
+I thought it is to them, in the place of it.
+
+ANGELO:
+I'll come to me.
+
+ANGELO:
+And to her, sir.
+
+TRANIO:
+Thou dost, sir?
+
+ISABELLA:
+I can see her,
+And what you know, to die?
+
+ISABELLA:
+I pray you, sir,--
+
+ISABELLA:
+My lord, if you have been a thing,
+And never do, I, I'll not be no more. O,
+We do you not that you have but a friend,
+I must be too late in the house.
+
+Provost:
+And I'll come to you, but that I'll make you,
+To make her name, t
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/tokenizer_fix/gpt2_bpe_500steps_s42/metrics.json

@@ -1,0 +1,45 @@
+# Scaling at fixed recipe (plus_muon of recipe.yaml): 4 layers x 4 heads, widths 128 to 512 so the
+# non-embedding parameter count roughly doubles from one size to the next, trained for 1000, 2000 and
+# 4000 steps x 16,384 tokens (16.4M, 32.8M, 65.5M tokens). The 256-wide model at 1000 steps is
+# recipe/plus_muon (identical config) and is not repeated here. A second series changes depth instead
+# of width: the 256-wide model with 2, 6 and 8 layers at the same three budgets.
+name: scaling
+base: ../../external/DeepDataMiningLearning/DeepDataMiningLearning/llm/nanolm/configs/laptop/L4q_gpt_fineweb_quick.yaml
+out_dir: runs
+seeds: [1337, 42]
+common:
+  train.max_time_sec: 0
+  model.mlp: gelu
+  model.norm: rmsnorm
+  model.pos: rope
+  model.bias: false
+  model.n_layers: 4
+  model.n_heads: 4
+  train.optimizer: muon
+  train.schedule: wsd
+  train.warmdown_frac: 0.3
+  train.min_lr_frac: 0.0
+runs:
+  - {name: d128_steps1000, overrides: {model.dim: 128, train.max_steps: 1000}}
+  - {name: d128_steps2000, overrides: {model.dim: 128, train.max_steps: 2000}}
+  - {name: d128_steps4000, overrides: {model.dim: 128, train.max_steps: 4000}}
+  - {name: d176_steps1000, overrides: {model.dim: 176, train.max_steps: 1000}}
+  - {name: d176_steps2000, overrides: {model.dim: 176, train.max_steps: 2000}}
+  - {name: d176_steps4000, overrides: {model.dim: 176, train.max_steps: 4000}}
+  - {name: d256_steps2000, overrides: {model.dim: 256, train.max_steps: 2000}}
+  - {name: d256_steps4000, overrides: {model.dim: 256, train.max_steps: 4000}}
+  - {name: d352_steps1000, overrides: {model.dim: 352, train.max_steps: 1000}}
+  - {name: d352_steps2000, overrides: {model.dim: 352, train.max_steps: 2000}}
+  - {name: d352_steps4000, overrides: {model.dim: 352, train.max_steps: 4000}}
+  - {name: d512_steps1000, overrides: {model.dim: 512, train.max_steps: 1000}}
+  - {name: d512_steps2000, overrides: {model.dim: 512, train.max_steps: 2000}}
+  - {name: d512_steps4000, overrides: {model.dim: 512, train.max_steps: 4000}}
+  - {name: d256_L2_steps1000, overrides: {model.dim: 256, model.n_layers: 2, train.max_steps: 1000}}
+  - {name: d256_L2_steps2000, overrides: {model.dim: 256, model.n_layers: 2, train.max_steps: 2000}}
+  - {name: d256_L2_steps4000, overrides: {model.dim: 256, model.n_layers: 2, train.max_steps: 4000}}
+  - {name: d256_L6_steps1000, overrides: {model.dim: 256, model.n_layers: 6, train.max_steps: 1000}}
+  - {name: d256_L6_steps2000, overrides: {model.dim: 256, model.n_layers: 6, train.max_steps: 2000}}
+  - {name: d256_L6_steps4000, overrides: {model.dim: 256, model.n_layers: 6, train.max_steps: 4000}}
+  - {name: d256_L8_steps1000, overrides: {model.dim: 256, model.n_layers: 8, train.max_steps: 1000}}
+  - {name: d256_L8_steps2000, overrides: {model.dim: 256, model.n_layers: 8, train.max_steps: 2000}}
+  - {name: d256_L8_steps4000, overrides: {model.dim: 256, model.n_layers: 8, train.max_steps: 4000}}

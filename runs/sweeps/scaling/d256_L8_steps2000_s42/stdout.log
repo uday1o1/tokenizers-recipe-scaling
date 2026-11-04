@@ -1,0 +1,58 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/scaling/d256_L8_steps2000_s42
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 6,557,952 params (6,295,808 non-embedding)
+[train] 2000 steps x 16,384 tokens/step (0.33 passes over train) | optimizer=muon schedule=wsd
+step     50 | loss 6.0231 | lr 5.00e-03 | 102.2k tok/s | 8s
+step    100 | loss 4.7544 | lr 1.00e-02 | 134.6k tok/s | 14s
+step    150 | loss 4.5081 | lr 1.50e-02 | 134.5k tok/s | 20s
+step    200 | loss 4.3180 | lr 2.00e-02 | 174.4k tok/s | 25s
+step    250 | loss 4.0172 | lr 2.00e-02 | 142.2k tok/s | 31s
+  eval step    250 | val_loss 3.8811 | val_bpb 2.3360 | acc 20.0% | 31s
+step    300 | loss 3.7912 | lr 2.00e-02 | 138.4k tok/s | 37s
+step    350 | loss 3.7073 | lr 2.00e-02 | 101.2k tok/s | 45s
+step    400 | loss 3.6906 | lr 2.00e-02 | 127.5k tok/s | 51s
+step    450 | loss 3.5747 | lr 2.00e-02 | 101.2k tok/s | 59s
+step    500 | loss 3.4471 | lr 2.00e-02 | 101.3k tok/s | 67s
+  eval step    500 | val_loss 3.4029 | val_bpb 2.0482 | acc 28.7% | 67s
+step    550 | loss 3.3522 | lr 2.00e-02 | 127.9k tok/s | 74s
+step    600 | loss 3.3392 | lr 2.00e-02 | 126.2k tok/s | 80s
+step    650 | loss 3.2787 | lr 2.00e-02 | 101.2k tok/s | 88s
+step    700 | loss 3.3035 | lr 2.00e-02 | 101.2k tok/s | 96s
+step    750 | loss 3.3184 | lr 2.00e-02 | 101.4k tok/s | 104s
+  eval step    750 | val_loss 3.2052 | val_bpb 1.9292 | acc 32.3% | 104s
+step    800 | loss 3.2609 | lr 2.00e-02 | 155.8k tok/s | 110s
+step    850 | loss 3.2113 | lr 2.00e-02 | 101.4k tok/s | 118s
+step    900 | loss 3.1899 | lr 2.00e-02 | 101.2k tok/s | 126s
+step    950 | loss 3.1427 | lr 2.00e-02 | 101.3k tok/s | 134s
+step   1000 | loss 3.1150 | lr 2.00e-02 | 118.5k tok/s | 141s
+  eval step   1000 | val_loss 3.0955 | val_bpb 1.8631 | acc 34.1% | 141s
+step   1050 | loss 3.0953 | lr 2.00e-02 | 126.2k tok/s | 147s
+step   1100 | loss 3.1020 | lr 2.00e-02 | 101.3k tok/s | 155s
+step   1150 | loss 3.0377 | lr 2.00e-02 | 101.2k tok/s | 164s
+step   1200 | loss 3.0185 | lr 2.00e-02 | 124.2k tok/s | 170s
+step   1250 | loss 3.0135 | lr 2.00e-02 | 103.7k tok/s | 178s
+  eval step   1250 | val_loss 3.0238 | val_bpb 1.8200 | acc 35.3% | 178s
+step   1300 | loss 3.0123 | lr 2.00e-02 | 126.1k tok/s | 185s
+step   1350 | loss 3.0325 | lr 2.00e-02 | 101.3k tok/s | 193s
+step   1400 | loss 3.0537 | lr 2.00e-02 | 127.8k tok/s | 199s
+step   1450 | loss 3.0265 | lr 1.84e-02 | 101.3k tok/s | 207s
+step   1500 | loss 3.0649 | lr 1.67e-02 | 101.3k tok/s | 215s
+  eval step   1500 | val_loss 2.9518 | val_bpb 1.7767 | acc 36.3% | 215s
+step   1550 | loss 2.9824 | lr 1.50e-02 | 126.3k tok/s | 222s
+step   1600 | loss 2.9750 | lr 1.34e-02 | 127.2k tok/s | 228s
+step   1650 | loss 2.9860 | lr 1.17e-02 | 101.3k tok/s | 236s
+step   1700 | loss 2.9098 | lr 1.00e-02 | 101.3k tok/s | 244s
+step   1750 | loss 2.9156 | lr 8.37e-03 | 101.4k tok/s | 252s
+  eval step   1750 | val_loss 2.8485 | val_bpb 1.7145 | acc 38.1% | 252s
+step   1800 | loss 2.8574 | lr 6.70e-03 | 157.1k tok/s | 258s
+step   1850 | loss 2.8203 | lr 5.03e-03 | 101.3k tok/s | 266s
+step   1900 | loss 2.7957 | lr 3.37e-03 | 101.3k tok/s | 274s
+step   1950 | loss 2.8566 | lr 1.70e-03 | 101.2k tok/s | 282s
+step   2000 | loss 2.8036 | lr 3.33e-05 | 117.7k tok/s | 289s
+  eval step   2000 | val_loss 2.7945 | val_bpb 1.6820 | acc 39.0% | 289s
+[final] val_loss 2.8197 | val_bpb 1.6915 | ppl 16.77 | acc 38.73% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+This will be the first time for supporting customers to stack up the Prince's Series. Vancouver's Prince Transportation Industry was founded in the early 30 years, the current maintenance of the Prince, including the Central Marital Nestinians. This is the first time for support of a grade motorcycle detailed in 1987. As a community of the posts of the SAA and SOP member, the New York Times appeared in the United Kingdom. “Consider this the detailed complete sleeping,” he said. For more information, please
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/scaling/d256_L8_steps2000_s42/metrics.json

@@ -1,0 +1,38 @@
+# The training recipe on FineWeb (sp1024) at the size of nanolm's laptop/L4q_gpt_fineweb_quick
+# (4 layers x 256, 1000 steps x 16,384 tokens = 16.4M tokens), one change at a time:
+#   gpt2_textbook -> plus_rmsnorm_rope -> plus_wsd (still AdamW) -> plus_muon (WSD).
+# muon_cosine completes a 2x2 of schedule (cosine, WSD) x optimizer (AdamW, Muon) on the
+# RMSNorm/RoPE model, separating the schedule from the optimizer. textbook_rope and
+# textbook_rmsnorm change one of the two architecture knobs at a time (biases kept), splitting
+# the first step. The MLP is GELU throughout.
+# AdamW runs use nanolm's 03_gpt_fineweb settings (lr 1e-3, cosine to 10%); Muon runs use the
+# L4 settings (Muon lr 0.02 on matrices, Adam lr 3e-3 elsewhere). No wall-clock cap.
+name: recipe
+base: ../../external/DeepDataMiningLearning/DeepDataMiningLearning/llm/nanolm/configs/laptop/L4q_gpt_fineweb_quick.yaml
+out_dir: runs
+seeds: [1337, 42, 1, 2, 3]
+common:
+  train.max_time_sec: 0
+  model.mlp: gelu
+runs:
+  - name: gpt2_textbook
+    overrides: {model.norm: layernorm, model.pos: learned, model.bias: true, train.optimizer: adamw, train.lr: 1e-3,
+                train.embed_lr: 0.0, train.schedule: cosine, train.min_lr_frac: 0.1}
+  - name: textbook_rope
+    overrides: {model.norm: layernorm, model.pos: rope, model.bias: true, train.optimizer: adamw, train.lr: 1e-3,
+                train.embed_lr: 0.0, train.schedule: cosine, train.min_lr_frac: 0.1}
+  - name: textbook_rmsnorm
+    overrides: {model.norm: rmsnorm, model.pos: learned, model.bias: true, train.optimizer: adamw, train.lr: 1e-3,
+                train.embed_lr: 0.0, train.schedule: cosine, train.min_lr_frac: 0.1}
+  - name: plus_rmsnorm_rope
+    overrides: {model.norm: rmsnorm, model.pos: rope, model.bias: false, train.optimizer: adamw, train.lr: 1e-3,
+                train.embed_lr: 0.0, train.schedule: cosine, train.min_lr_frac: 0.1}
+  - name: plus_wsd
+    overrides: {model.norm: rmsnorm, model.pos: rope, model.bias: false, train.optimizer: adamw, train.lr: 1e-3,
+                train.embed_lr: 0.0, train.schedule: wsd, train.warmdown_frac: 0.3, train.min_lr_frac: 0.0}
+  - name: plus_muon
+    overrides: {model.norm: rmsnorm, model.pos: rope, model.bias: false, train.optimizer: muon,
+                train.schedule: wsd, train.warmdown_frac: 0.3, train.min_lr_frac: 0.0}
+  - name: muon_cosine
+    overrides: {model.norm: rmsnorm, model.pos: rope, model.bias: false, train.optimizer: muon,
+                train.schedule: cosine, train.min_lr_frac: 0.1}

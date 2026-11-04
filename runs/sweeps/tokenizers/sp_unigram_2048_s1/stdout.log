@@ -1,0 +1,84 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/tokenizers/sp_unigram_2048_s1
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] tinyshakespeare_sp_trainunigram2048_tail100 | tokenizer=sp:data/nanolm/tinyshakespeare_sp_trainunigram2048_tail100/tokenizer.model vocab=2048 | train 390,398 tok | val 47,328 tok
+[model] gpt: 3,670,272 params (3,145,984 non-embedding)
+[train] 2000 steps x 8,192 tokens/step (41.97 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 6.3452 | lr 5.00e-04 | 162.5k tok/s | 3s
+step    100 | loss 4.4904 | lr 1.00e-03 | 207.1k tok/s | 4s
+step    150 | loss 3.8835 | lr 9.88e-04 | 196.5k tok/s | 7s
+step    200 | loss 3.6127 | lr 9.78e-04 | 200.5k tok/s | 9s
+step    250 | loss 3.4486 | lr 9.66e-04 | 196.4k tok/s | 11s
+  eval step    250 | val_loss 3.6353 | val_bpb 2.2247 | acc 28.3% | 11s
+step    300 | loss 3.3086 | lr 9.51e-04 | 196.7k tok/s | 13s
+step    350 | loss 3.2069 | lr 9.34e-04 | 303.4k tok/s | 14s
+step    400 | loss 3.1103 | lr 9.14e-04 | 348.7k tok/s | 15s
+step    450 | loss 3.0394 | lr 8.93e-04 | 368.9k tok/s | 16s
+step    500 | loss 2.9672 | lr 8.69e-04 | 348.4k tok/s | 18s
+  eval step    500 | val_loss 3.4473 | val_bpb 2.1097 | acc 32.7% | 18s
+step    550 | loss 2.9059 | lr 8.43e-04 | 345.6k tok/s | 19s
+step    600 | loss 2.8315 | lr 8.15e-04 | 352.0k tok/s | 20s
+step    650 | loss 2.7872 | lr 7.86e-04 | 351.0k tok/s | 21s
+step    700 | loss 2.7120 | lr 7.55e-04 | 361.5k tok/s | 22s
+step    750 | loss 2.6615 | lr 7.23e-04 | 381.5k tok/s | 23s
+  eval step    750 | val_loss 3.4752 | val_bpb 2.1268 | acc 33.4% | 23s
+step    800 | loss 2.6034 | lr 6.90e-04 | 378.5k tok/s | 24s
+step    850 | loss 2.5736 | lr 6.56e-04 | 384.0k tok/s | 25s
+step    900 | loss 2.5166 | lr 6.21e-04 | 292.2k tok/s | 27s
+step    950 | loss 2.4766 | lr 5.86e-04 | 189.5k tok/s | 29s
+step   1000 | loss 2.4180 | lr 5.51e-04 | 187.2k tok/s | 31s
+  eval step   1000 | val_loss 3.5487 | val_bpb 2.1718 | acc 33.7% | 31s
+step   1050 | loss 2.3728 | lr 5.15e-04 | 186.5k tok/s | 33s
+step   1100 | loss 2.3339 | lr 4.80e-04 | 186.4k tok/s | 36s
+step   1150 | loss 2.2964 | lr 4.46e-04 | 187.1k tok/s | 38s
+step   1200 | loss 2.2580 | lr 4.12e-04 | 189.5k tok/s | 40s
+step   1250 | loss 2.2279 | lr 3.78e-04 | 187.6k tok/s | 42s
+  eval step   1250 | val_loss 3.6124 | val_bpb 2.2107 | acc 33.7% | 42s
+step   1300 | loss 2.1837 | lr 3.46e-04 | 186.5k tok/s | 44s
+step   1350 | loss 2.1316 | lr 3.15e-04 | 186.6k tok/s | 47s
+step   1400 | loss 2.1178 | lr 2.86e-04 | 187.0k tok/s | 49s
+step   1450 | loss 2.0979 | lr 2.58e-04 | 189.5k tok/s | 51s
+step   1500 | loss 2.0691 | lr 2.32e-04 | 187.2k tok/s | 53s
+  eval step   1500 | val_loss 3.7011 | val_bpb 2.2650 | acc 33.8% | 53s
+step   1550 | loss 2.0451 | lr 2.08e-04 | 186.6k tok/s | 55s
+step   1600 | loss 2.0310 | lr 1.86e-04 | 186.3k tok/s | 57s
+step   1650 | loss 1.9958 | lr 1.67e-04 | 186.9k tok/s | 60s
+step   1700 | loss 1.9870 | lr 1.49e-04 | 189.6k tok/s | 62s
+step   1750 | loss 1.9624 | lr 1.35e-04 | 187.3k tok/s | 64s
+  eval step   1750 | val_loss 3.7590 | val_bpb 2.3004 | acc 33.7% | 64s
+step   1800 | loss 1.9434 | lr 1.22e-04 | 186.9k tok/s | 66s
+step   1850 | loss 1.9399 | lr 1.13e-04 | 186.6k tok/s | 68s
+step   1900 | loss 1.9175 | lr 1.06e-04 | 187.1k tok/s | 71s
+step   1950 | loss 1.9110 | lr 1.01e-04 | 200.3k tok/s | 73s
+step   2000 | loss 1.8903 | lr 1.00e-04 | 217.0k tok/s | 75s
+  eval step   2000 | val_loss 3.7960 | val_bpb 2.3231 | acc 33.5% | 75s
+[final] val_loss 3.7960 | val_bpb 2.3231 | ppl 44.52 | acc 33.53% | 47,104 tokens, 2.36 bytes/token
+[sample]
+!
+
+KING RICHARD III:
+I am your grace unto my friends.
+
+BUCKINGHAM:
+Why, then, go with them here before the Tower,
+Let us alone upon this news: I will claim
+What you have done to cross the elder.
+
+KING RICHARD III:
+Farewell:
+So much to him, and save your lordship
+To save your hands, and you shall have it so.
+
+NORFOLK:
+And I, my liege, to your daughter.
+
+KING RICHARD III:
+With all the luck
+The sons of Walter Heraldones, Buckingham,
+Sorrow and for winters his good direction:
+The rest is fearful of the royal duke,
+That injury's malice should have show'd.
+
+BUCKINGHAM:
+God grant the lords of Bucking
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/tokenizers/sp_unigram_2048_s1/metrics.json

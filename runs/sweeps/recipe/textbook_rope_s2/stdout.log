@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe/textbook_rope_s2
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,421,696 params (3,159,552 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 6.3701 | lr 2.50e-04 | 222.2k tok/s | 4s
+step    100 | loss 5.3145 | lr 5.00e-04 | 243.7k tok/s | 7s
+step    150 | loss 4.8235 | lr 7.50e-04 | 244.2k tok/s | 10s
+step    200 | loss 4.5584 | lr 1.00e-03 | 243.8k tok/s | 14s
+step    250 | loss 4.3408 | lr 8.69e-04 | 245.1k tok/s | 17s
+  eval step    250 | val_loss 4.2291 | val_bpb 2.5455 | acc 15.3% | 17s
+step    300 | loss 4.1551 | lr 8.16e-04 | 244.2k tok/s | 20s
+step    350 | loss 4.0360 | lr 7.56e-04 | 243.8k tok/s | 24s
+step    400 | loss 3.9971 | lr 6.90e-04 | 243.9k tok/s | 27s
+step    450 | loss 3.9073 | lr 6.22e-04 | 243.9k tok/s | 31s
+step    500 | loss 3.8236 | lr 5.51e-04 | 247.8k tok/s | 34s
+  eval step    500 | val_loss 3.8003 | val_bpb 2.2874 | acc 21.2% | 34s
+step    550 | loss 3.7511 | lr 4.81e-04 | 244.4k tok/s | 37s
+step    600 | loss 3.7638 | lr 4.12e-04 | 243.6k tok/s | 41s
+step    650 | loss 3.6919 | lr 3.47e-04 | 243.9k tok/s | 44s
+step    700 | loss 3.7227 | lr 2.87e-04 | 243.6k tok/s | 47s
+step    750 | loss 3.7074 | lr 2.33e-04 | 248.0k tok/s | 51s
+  eval step    750 | val_loss 3.6169 | val_bpb 2.1770 | acc 23.9% | 51s
+step    800 | loss 3.6638 | lr 1.87e-04 | 244.3k tok/s | 54s
+step    850 | loss 3.6011 | lr 1.50e-04 | 243.9k tok/s | 57s
+step    900 | loss 3.5914 | lr 1.22e-04 | 244.2k tok/s | 61s
+step    950 | loss 3.5663 | lr 1.06e-04 | 243.9k tok/s | 64s
+step   1000 | loss 3.5549 | lr 1.00e-04 | 247.6k tok/s | 67s
+  eval step   1000 | val_loss 3.5093 | val_bpb 2.1122 | acc 25.7% | 67s
+[final] val_loss 3.5339 | val_bpb 2.1199 | ppl 34.26 | acc 25.51% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+connical international Agricology, Mahor-Veting and Mr. Pericio of Kellyn is a basic developer. Instructing, the University of Barael, Government was in interfacing, and ones out of the state of the Lounge Live Prinistic Internet, The Experience Suency Science. Gorge, Bristry,, Dught, Dieter (102): Very, Stewingd by Investifering Center Center 108-2. Design McProling Friday: Economics, Simply Finance, Adjustinal,
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe/textbook_rope_s2/metrics.json

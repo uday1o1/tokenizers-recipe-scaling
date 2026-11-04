@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/positions/textbook_nope_s1337
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,421,696 params (3,159,552 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 6.3715 | lr 2.50e-04 | 276.2k tok/s | 3s
+step    100 | loss 5.3065 | lr 5.00e-04 | 310.4k tok/s | 6s
+step    150 | loss 4.8297 | lr 7.50e-04 | 301.6k tok/s | 8s
+step    200 | loss 4.6305 | lr 1.00e-03 | 303.9k tok/s | 11s
+step    250 | loss 4.5057 | lr 8.69e-04 | 312.9k tok/s | 14s
+  eval step    250 | val_loss 4.4435 | val_bpb 2.6745 | acc 11.0% | 14s
+step    300 | loss 4.4285 | lr 8.16e-04 | 449.8k tok/s | 15s
+step    350 | loss 4.3910 | lr 7.56e-04 | 309.6k tok/s | 18s
+step    400 | loss 4.3962 | lr 6.90e-04 | 306.8k tok/s | 21s
+step    450 | loss 4.3472 | lr 6.22e-04 | 306.2k tok/s | 23s
+step    500 | loss 4.3057 | lr 5.51e-04 | 308.0k tok/s | 26s
+  eval step    500 | val_loss 4.2857 | val_bpb 2.5795 | acc 11.9% | 26s
+step    550 | loss 4.2688 | lr 4.81e-04 | 615.8k tok/s | 27s
+step    600 | loss 4.2930 | lr 4.12e-04 | 363.2k tok/s | 30s
+step    650 | loss 4.2473 | lr 3.47e-04 | 304.8k tok/s | 32s
+step    700 | loss 4.2851 | lr 2.87e-04 | 310.1k tok/s | 35s
+step    750 | loss 4.2855 | lr 2.33e-04 | 305.3k tok/s | 38s
+  eval step    750 | val_loss 4.2118 | val_bpb 2.5350 | acc 12.8% | 38s
+step    800 | loss 4.2497 | lr 1.87e-04 | 596.7k tok/s | 39s
+step    850 | loss 4.2216 | lr 1.50e-04 | 438.5k tok/s | 41s
+step    900 | loss 4.2160 | lr 1.22e-04 | 338.3k tok/s | 43s
+step    950 | loss 4.2051 | lr 1.06e-04 | 308.4k tok/s | 46s
+step   1000 | loss 4.2028 | lr 1.00e-04 | 303.7k tok/s | 49s
+  eval step   1000 | val_loss 4.1607 | val_bpb 2.5043 | acc 13.5% | 49s
+[final] val_loss 4.1811 | val_bpb 2.5081 | ppl 65.44 | acc 13.49% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+SUST, F. J: Genn and When, was for wa, when heart. In fached. And, she was not all, I am not, there was a land, it was, my did not. He he was a childrenggoinceed him that the try. I had to my changed his love to did not water. I was turther it was just as I did, why the bording, I had around I was stilled it was made, and as the gotself in a leavor of his frievil it was very good, he was didned to getting crownsoning tryed back 20 minutifuls are told, but he said. I he had staff of chample. It requever,
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/positions/textbook_nope_s1337/metrics.json

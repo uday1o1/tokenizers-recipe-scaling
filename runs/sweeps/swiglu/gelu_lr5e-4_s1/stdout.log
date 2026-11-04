@@ -1,0 +1,76 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/swiglu/gelu_lr5e-4_s1
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 11,015,040 params (10,621,824 non-embedding)
+[train] 3000 steps x 16,384 tokens/step (0.49 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 6.3179 | lr 1.25e-04 | 120.9k tok/s | 7s
+step    100 | loss 5.2573 | lr 2.50e-04 | 140.0k tok/s | 13s
+step    150 | loss 4.8066 | lr 3.75e-04 | 177.8k tok/s | 17s
+step    200 | loss 4.5894 | lr 5.00e-04 | 162.0k tok/s | 22s
+step    250 | loss 4.3884 | lr 4.92e-04 | 98.8k tok/s | 31s
+step    300 | loss 4.2034 | lr 4.89e-04 | 98.7k tok/s | 39s
+step    350 | loss 4.0725 | lr 4.85e-04 | 98.7k tok/s | 47s
+step    400 | loss 4.0159 | lr 4.81e-04 | 98.8k tok/s | 55s
+step    450 | loss 3.9143 | lr 4.76e-04 | 98.9k tok/s | 64s
+step    500 | loss 3.8249 | lr 4.70e-04 | 99.0k tok/s | 72s
+  eval step    500 | val_loss 3.7894 | val_bpb 2.2808 | acc 21.3% | 72s
+step    550 | loss 3.7444 | lr 4.64e-04 | 98.7k tok/s | 80s
+step    600 | loss 3.7502 | lr 4.57e-04 | 98.7k tok/s | 89s
+step    650 | loss 3.6794 | lr 4.50e-04 | 98.7k tok/s | 97s
+step    700 | loss 3.7084 | lr 4.42e-04 | 98.7k tok/s | 105s
+step    750 | loss 3.6881 | lr 4.34e-04 | 108.2k tok/s | 113s
+step    800 | loss 3.6281 | lr 4.26e-04 | 98.8k tok/s | 121s
+step    850 | loss 3.5675 | lr 4.17e-04 | 98.8k tok/s | 129s
+step    900 | loss 3.5403 | lr 4.07e-04 | 98.8k tok/s | 138s
+step    950 | loss 3.5132 | lr 3.98e-04 | 98.8k tok/s | 146s
+step   1000 | loss 3.4940 | lr 3.88e-04 | 98.9k tok/s | 154s
+  eval step   1000 | val_loss 3.4546 | val_bpb 2.0793 | acc 26.4% | 154s
+step   1050 | loss 3.4440 | lr 3.77e-04 | 98.8k tok/s | 163s
+step   1100 | loss 3.4247 | lr 3.67e-04 | 98.7k tok/s | 171s
+step   1150 | loss 3.3881 | lr 3.56e-04 | 98.8k tok/s | 179s
+step   1200 | loss 3.3676 | lr 3.45e-04 | 98.8k tok/s | 187s
+step   1250 | loss 3.3602 | lr 3.33e-04 | 99.4k tok/s | 196s
+step   1300 | loss 3.3518 | lr 3.22e-04 | 106.9k tok/s | 203s
+step   1350 | loss 3.3725 | lr 3.10e-04 | 98.8k tok/s | 212s
+step   1400 | loss 3.3667 | lr 2.99e-04 | 98.8k tok/s | 220s
+step   1450 | loss 3.3219 | lr 2.87e-04 | 98.8k tok/s | 228s
+step   1500 | loss 3.3881 | lr 2.75e-04 | 99.0k tok/s | 236s
+  eval step   1500 | val_loss 3.2755 | val_bpb 1.9715 | acc 29.2% | 237s
+step   1550 | loss 3.3198 | lr 2.63e-04 | 98.8k tok/s | 245s
+step   1600 | loss 3.2984 | lr 2.52e-04 | 98.8k tok/s | 253s
+step   1650 | loss 3.3061 | lr 2.40e-04 | 98.8k tok/s | 261s
+step   1700 | loss 3.2334 | lr 2.28e-04 | 98.9k tok/s | 270s
+step   1750 | loss 3.2663 | lr 2.17e-04 | 98.7k tok/s | 278s
+step   1800 | loss 3.2157 | lr 2.06e-04 | 105.0k tok/s | 286s
+step   1850 | loss 3.1876 | lr 1.95e-04 | 101.0k tok/s | 294s
+step   1900 | loss 3.1679 | lr 1.84e-04 | 98.7k tok/s | 302s
+step   1950 | loss 3.2352 | lr 1.73e-04 | 98.8k tok/s | 310s
+step   2000 | loss 3.1914 | lr 1.63e-04 | 99.0k tok/s | 319s
+  eval step   2000 | val_loss 3.1631 | val_bpb 1.9038 | acc 31.2% | 319s
+step   2050 | loss 3.1747 | lr 1.53e-04 | 98.8k tok/s | 327s
+step   2100 | loss 3.1687 | lr 1.43e-04 | 98.7k tok/s | 335s
+step   2150 | loss 3.1461 | lr 1.34e-04 | 98.8k tok/s | 344s
+step   2200 | loss 3.1952 | lr 1.25e-04 | 98.8k tok/s | 352s
+step   2250 | loss 3.1721 | lr 1.16e-04 | 98.9k tok/s | 360s
+step   2300 | loss 3.2229 | lr 1.08e-04 | 98.8k tok/s | 368s
+step   2350 | loss 3.1555 | lr 1.00e-04 | 107.7k tok/s | 376s
+step   2400 | loss 3.1588 | lr 9.31e-05 | 98.8k tok/s | 384s
+step   2450 | loss 3.1323 | lr 8.64e-05 | 98.7k tok/s | 393s
+step   2500 | loss 3.1344 | lr 8.03e-05 | 99.0k tok/s | 401s
+  eval step   2500 | val_loss 3.0858 | val_bpb 1.8573 | acc 32.5% | 401s
+step   2550 | loss 3.1203 | lr 7.46e-05 | 98.8k tok/s | 409s
+step   2600 | loss 3.1297 | lr 6.95e-05 | 98.7k tok/s | 418s
+step   2650 | loss 3.1031 | lr 6.50e-05 | 98.7k tok/s | 426s
+step   2700 | loss 3.0999 | lr 6.11e-05 | 98.6k tok/s | 434s
+step   2750 | loss 3.0865 | lr 5.77e-05 | 98.8k tok/s | 442s
+step   2800 | loss 3.0771 | lr 5.50e-05 | 98.7k tok/s | 451s
+step   2850 | loss 3.0726 | lr 5.28e-05 | 98.8k tok/s | 459s
+step   2900 | loss 3.0706 | lr 5.13e-05 | 107.7k tok/s | 467s
+step   2950 | loss 3.0569 | lr 5.03e-05 | 98.7k tok/s | 475s
+step   3000 | loss 3.1258 | lr 5.00e-05 | 99.0k tok/s | 483s
+  eval step   3000 | val_loss 3.0501 | val_bpb 1.8358 | acc 33.3% | 483s
+[final] val_loss 3.0823 | val_bpb 1.8520 | ppl 21.81 | acc 32.92% | 4,194,304 tokens, 2.40 bytes/token
+[sample]
+Ammen says: The Pastrico Service, Nice Leader, who is welcome to Hyperbridge and the Surveillance Equivalent: Leo City California, Upgrading, Leffairs, 1811-1112:08:02:00-05-0070:000:00:00:00:02:00:00::00:00:08:01 German: Metro Local Lead Button: A: Congon: September 1:60-2010:20 A. 10:09:30:00:00:000,
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/swiglu/gelu_lr5e-4_s1/metrics.json

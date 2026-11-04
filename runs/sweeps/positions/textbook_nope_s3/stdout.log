@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/positions/textbook_nope_s3
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,421,696 params (3,159,552 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 6.3635 | lr 2.50e-04 | 249.5k tok/s | 3s
+step    100 | loss 5.3159 | lr 5.00e-04 | 266.9k tok/s | 6s
+step    150 | loss 4.8302 | lr 7.50e-04 | 267.5k tok/s | 9s
+step    200 | loss 4.6289 | lr 1.00e-03 | 270.0k tok/s | 12s
+step    250 | loss 4.5051 | lr 8.69e-04 | 358.9k tok/s | 15s
+  eval step    250 | val_loss 4.4404 | val_bpb 2.6726 | acc 11.0% | 15s
+step    300 | loss 4.4267 | lr 8.16e-04 | 272.3k tok/s | 18s
+step    350 | loss 4.3878 | lr 7.56e-04 | 272.0k tok/s | 21s
+step    400 | loss 4.3894 | lr 6.90e-04 | 269.7k tok/s | 24s
+step    450 | loss 4.3436 | lr 6.22e-04 | 282.7k tok/s | 27s
+step    500 | loss 4.3043 | lr 5.51e-04 | 509.5k tok/s | 28s
+  eval step    500 | val_loss 4.2830 | val_bpb 2.5779 | acc 11.9% | 28s
+step    550 | loss 4.2677 | lr 4.81e-04 | 275.4k tok/s | 31s
+step    600 | loss 4.2914 | lr 4.12e-04 | 268.5k tok/s | 34s
+step    650 | loss 4.2437 | lr 3.47e-04 | 268.3k tok/s | 37s
+step    700 | loss 4.2834 | lr 2.87e-04 | 352.0k tok/s | 40s
+step    750 | loss 4.2826 | lr 2.33e-04 | 576.0k tok/s | 41s
+  eval step    750 | val_loss 4.2077 | val_bpb 2.5325 | acc 12.9% | 41s
+step    800 | loss 4.2463 | lr 1.87e-04 | 280.8k tok/s | 44s
+step    850 | loss 4.2197 | lr 1.50e-04 | 265.7k tok/s | 47s
+step    900 | loss 4.2138 | lr 1.22e-04 | 301.0k tok/s | 50s
+step    950 | loss 4.2030 | lr 1.06e-04 | 436.0k tok/s | 52s
+step   1000 | loss 4.1986 | lr 1.00e-04 | 635.0k tok/s | 53s
+  eval step   1000 | val_loss 4.1580 | val_bpb 2.5027 | acc 13.6% | 53s
+[final] val_loss 4.1782 | val_bpb 2.5063 | ppl 65.25 | acc 13.57% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+ne 50. I’ll never auty is a puture a lads online and it. I's the runs just to a feways efun up that the time for a day for any thing it. I am cause and I’derful, but I begalk a new midy. I have a surround my best way to make someways infirling I have a simul. I'm dways that I should all of the one of the necess of the programed airing about the I's online and I was one's another time on the sure about the time I light simbly topars a step packingle for ans really, so I know that I was age somet. id not only. I marked to
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/positions/textbook_nope_s3/metrics.json

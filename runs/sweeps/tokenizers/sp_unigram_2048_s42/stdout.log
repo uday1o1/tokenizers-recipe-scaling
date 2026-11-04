@@ -1,0 +1,76 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/tokenizers/sp_unigram_2048_s42
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] tinyshakespeare_sp_trainunigram2048_tail100 | tokenizer=sp:data/nanolm/tinyshakespeare_sp_trainunigram2048_tail100/tokenizer.model vocab=2048 | train 390,398 tok | val 47,328 tok
+[model] gpt: 3,670,272 params (3,145,984 non-embedding)
+[train] 2000 steps x 8,192 tokens/step (41.97 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 6.3615 | lr 5.00e-04 | 160.2k tok/s | 3s
+step    100 | loss 4.4991 | lr 1.00e-03 | 207.1k tok/s | 5s
+step    150 | loss 3.9057 | lr 9.88e-04 | 196.4k tok/s | 7s
+step    200 | loss 3.6024 | lr 9.78e-04 | 200.5k tok/s | 9s
+step    250 | loss 3.4396 | lr 9.66e-04 | 196.8k tok/s | 11s
+  eval step    250 | val_loss 3.6473 | val_bpb 2.2321 | acc 28.9% | 11s
+step    300 | loss 3.3065 | lr 9.51e-04 | 196.3k tok/s | 13s
+step    350 | loss 3.1957 | lr 9.34e-04 | 307.8k tok/s | 14s
+step    400 | loss 3.1163 | lr 9.14e-04 | 353.1k tok/s | 15s
+step    450 | loss 3.0058 | lr 8.93e-04 | 369.2k tok/s | 16s
+step    500 | loss 2.9463 | lr 8.69e-04 | 348.6k tok/s | 18s
+  eval step    500 | val_loss 3.4437 | val_bpb 2.1075 | acc 32.9% | 18s
+step    550 | loss 2.8850 | lr 8.43e-04 | 348.4k tok/s | 19s
+step    600 | loss 2.8157 | lr 8.15e-04 | 351.9k tok/s | 20s
+step    650 | loss 2.7597 | lr 7.86e-04 | 351.3k tok/s | 21s
+step    700 | loss 2.7081 | lr 7.55e-04 | 368.9k tok/s | 22s
+step    750 | loss 2.6660 | lr 7.23e-04 | 375.3k tok/s | 23s
+  eval step    750 | val_loss 3.4719 | val_bpb 2.1247 | acc 33.5% | 23s
+step    800 | loss 2.5933 | lr 6.90e-04 | 379.1k tok/s | 24s
+step    850 | loss 2.5376 | lr 6.56e-04 | 388.0k tok/s | 25s
+step    900 | loss 2.4928 | lr 6.21e-04 | 302.2k tok/s | 27s
+step    950 | loss 2.4676 | lr 5.86e-04 | 189.5k tok/s | 29s
+step   1000 | loss 2.4177 | lr 5.51e-04 | 186.6k tok/s | 31s
+  eval step   1000 | val_loss 3.5431 | val_bpb 2.1683 | acc 33.7% | 31s
+step   1050 | loss 2.3712 | lr 5.15e-04 | 187.6k tok/s | 33s
+step   1100 | loss 2.3277 | lr 4.80e-04 | 186.6k tok/s | 36s
+step   1150 | loss 2.2701 | lr 4.46e-04 | 187.1k tok/s | 38s
+step   1200 | loss 2.2348 | lr 4.12e-04 | 189.6k tok/s | 40s
+step   1250 | loss 2.2000 | lr 3.78e-04 | 186.4k tok/s | 42s
+  eval step   1250 | val_loss 3.6361 | val_bpb 2.2252 | acc 33.8% | 42s
+step   1300 | loss 2.1687 | lr 3.46e-04 | 187.5k tok/s | 44s
+step   1350 | loss 2.1423 | lr 3.15e-04 | 186.3k tok/s | 46s
+step   1400 | loss 2.0925 | lr 2.86e-04 | 187.0k tok/s | 49s
+step   1450 | loss 2.0863 | lr 2.58e-04 | 189.4k tok/s | 51s
+step   1500 | loss 2.0536 | lr 2.32e-04 | 186.4k tok/s | 53s
+  eval step   1500 | val_loss 3.7040 | val_bpb 2.2668 | acc 33.9% | 53s
+step   1550 | loss 2.0181 | lr 2.08e-04 | 187.8k tok/s | 55s
+step   1600 | loss 1.9960 | lr 1.86e-04 | 186.3k tok/s | 57s
+step   1650 | loss 1.9775 | lr 1.67e-04 | 186.9k tok/s | 60s
+step   1700 | loss 1.9633 | lr 1.49e-04 | 190.0k tok/s | 62s
+step   1750 | loss 1.9456 | lr 1.35e-04 | 186.6k tok/s | 64s
+  eval step   1750 | val_loss 3.7601 | val_bpb 2.3011 | acc 33.6% | 64s
+step   1800 | loss 1.9280 | lr 1.22e-04 | 187.4k tok/s | 66s
+step   1850 | loss 1.9130 | lr 1.13e-04 | 186.7k tok/s | 68s
+step   1900 | loss 1.8937 | lr 1.06e-04 | 187.1k tok/s | 71s
+step   1950 | loss 1.8942 | lr 1.01e-04 | 198.5k tok/s | 73s
+step   2000 | loss 1.8900 | lr 1.00e-04 | 216.1k tok/s | 74s
+  eval step   2000 | val_loss 3.7967 | val_bpb 2.3235 | acc 33.5% | 74s
+[final] val_loss 3.7967 | val_bpb 2.3235 | ppl 44.56 | acc 33.52% | 47,104 tokens, 2.36 bytes/token
+[sample]
+itself
+That no less than a man's afeard;
+Therefore, to the journey, are ready and kept
+Their stocks, as lie, to required courses,
+That brought before the last last, to have heard
+Say that he had been snow.
+
+CAMILLO:
+Sir, the king's own son,
+It cannot be so; and in his eye so happy
+By this most noble man was seldom from his eye,
+By emulation and greatness ignorant
+To what he would have wrunn out of honour,
+And yet his physicians have drawn;
+But that he doth continue the nuptial
+To be contradict and scorn his eye
+And his own rushions: in that vizard
+And with so noble and unaway'd;
+Which we have 
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/tokenizers/sp_unigram_2048_s42/metrics.json

@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe/textbook_rmsnorm_s2
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,681,536 params (3,157,248 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 6.4287 | lr 2.50e-04 | 328.6k tok/s | 2s
+step    100 | loss 5.4619 | lr 5.00e-04 | 375.9k tok/s | 5s
+step    150 | loss 4.9033 | lr 7.50e-04 | 375.5k tok/s | 7s
+step    200 | loss 4.6691 | lr 1.00e-03 | 376.6k tok/s | 9s
+step    250 | loss 4.5315 | lr 8.69e-04 | 378.7k tok/s | 11s
+  eval step    250 | val_loss 4.4642 | val_bpb 2.6869 | acc 11.0% | 11s
+step    300 | loss 4.4499 | lr 8.16e-04 | 377.2k tok/s | 13s
+step    350 | loss 4.4042 | lr 7.56e-04 | 375.7k tok/s | 16s
+step    400 | loss 4.4025 | lr 6.90e-04 | 375.8k tok/s | 18s
+step    450 | loss 4.3589 | lr 6.22e-04 | 376.1k tok/s | 20s
+step    500 | loss 4.3168 | lr 5.51e-04 | 384.0k tok/s | 22s
+  eval step    500 | val_loss 4.2948 | val_bpb 2.5850 | acc 11.8% | 22s
+step    550 | loss 4.2790 | lr 4.81e-04 | 377.0k tok/s | 24s
+step    600 | loss 4.3007 | lr 4.12e-04 | 376.0k tok/s | 26s
+step    650 | loss 4.2499 | lr 3.47e-04 | 376.1k tok/s | 29s
+step    700 | loss 4.2866 | lr 2.87e-04 | 375.9k tok/s | 31s
+step    750 | loss 4.2829 | lr 2.33e-04 | 387.1k tok/s | 33s
+  eval step    750 | val_loss 4.2056 | val_bpb 2.5313 | acc 12.8% | 33s
+step    800 | loss 4.2415 | lr 1.87e-04 | 376.3k tok/s | 35s
+step    850 | loss 4.2092 | lr 1.50e-04 | 375.8k tok/s | 37s
+step    900 | loss 4.1985 | lr 1.22e-04 | 375.3k tok/s | 39s
+step    950 | loss 4.1854 | lr 1.06e-04 | 375.9k tok/s | 42s
+step   1000 | loss 4.1812 | lr 1.00e-04 | 390.8k tok/s | 44s
+  eval step   1000 | val_loss 4.1361 | val_bpb 2.4895 | acc 13.9% | 44s
+[final] val_loss 4.1553 | val_bpb 2.4926 | ppl 63.77 | acc 13.89% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+BEPEL. | Amer Aricatega, Machemmber Mron, Franon, J. Aribuildinglearian., Colisprisk. Ohngressure of I was at Adeli, in Pracity, and Mara, Soes, Scounce 1 Prguicii, Sm, and Oboduarlad, H.-gragga, Fr, Du and Drami, Sci, Schi, Pop, Ste, Mrida., Spott, R. Col 1-6-S., Cram, Oracc. Crt: Eco, Partph, Center, Kon, and in Can, F
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe/textbook_rmsnorm_s2/metrics.json

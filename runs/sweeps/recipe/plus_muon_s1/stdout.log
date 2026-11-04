@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe/plus_muon_s1
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,410,176 params (3,148,032 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=muon schedule=wsd
+step     50 | loss 6.1041 | lr 5.00e-03 | 168.9k tok/s | 5s
+step    100 | loss 4.7587 | lr 1.00e-02 | 181.3k tok/s | 9s
+step    150 | loss 4.4912 | lr 1.50e-02 | 181.6k tok/s | 14s
+step    200 | loss 4.2964 | lr 2.00e-02 | 204.0k tok/s | 18s
+step    250 | loss 4.0403 | lr 2.00e-02 | 318.3k tok/s | 20s
+  eval step    250 | val_loss 3.9266 | val_bpb 2.3634 | acc 19.2% | 20s
+step    300 | loss 3.8349 | lr 2.00e-02 | 181.8k tok/s | 25s
+step    350 | loss 3.7510 | lr 2.00e-02 | 181.5k tok/s | 29s
+step    400 | loss 3.7537 | lr 2.00e-02 | 234.1k tok/s | 33s
+step    450 | loss 3.6769 | lr 2.00e-02 | 270.3k tok/s | 36s
+step    500 | loss 3.5775 | lr 2.00e-02 | 181.6k tok/s | 41s
+  eval step    500 | val_loss 3.5311 | val_bpb 2.1253 | acc 26.1% | 41s
+step    550 | loss 3.4583 | lr 2.00e-02 | 181.4k tok/s | 45s
+step    600 | loss 3.4434 | lr 2.00e-02 | 271.1k tok/s | 48s
+step    650 | loss 3.3721 | lr 2.00e-02 | 233.4k tok/s | 52s
+step    700 | loss 3.3982 | lr 2.00e-02 | 181.5k tok/s | 56s
+step    750 | loss 3.3942 | lr 1.67e-02 | 181.8k tok/s | 61s
+  eval step    750 | val_loss 3.2738 | val_bpb 1.9705 | acc 31.0% | 61s
+step    800 | loss 3.3144 | lr 1.34e-02 | 317.7k tok/s | 63s
+step    850 | loss 3.2344 | lr 1.01e-02 | 318.4k tok/s | 66s
+step    900 | loss 3.1938 | lr 6.73e-03 | 317.9k tok/s | 68s
+step    950 | loss 3.1264 | lr 3.40e-03 | 318.1k tok/s | 71s
+step   1000 | loss 3.0832 | lr 6.67e-05 | 318.0k tok/s | 73s
+  eval step   1000 | val_loss 3.0409 | val_bpb 1.8303 | acc 34.8% | 73s
+[final] val_loss 3.0645 | val_bpb 1.8383 | ppl 21.42 | acc 34.62% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+Omegahhhhhhhhhhhhhhihihhunhihkhhuhhbrichmanhihhihakinhhhhmedhhhhalholhhand. Sideshihabhihatahihehav. Sadenhihuhalahahi-richmanhihuho. Sadenhoudam Marrahihihjihis (Sideshimerha Graspanthrote, Ethkin Buttero), Brandon Sideshto (Numbahinae, Sadenha, 1990), Praderyan Womanho
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe/plus_muon_s1/metrics.json

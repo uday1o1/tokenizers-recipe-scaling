@@ -1,0 +1,20 @@
+{
+ "name": "swiglu_steps6000",
+ "seed": 42,
+ "date": "2026-11-04T21:54:51",
+ "git": {
+  "commit": "8418fc1bae85657190f11749483bf2e729b9702c",
+  "branch": "HEAD",
+  "dirty": false
+ },
+ "host": "e909bcf33ed3",
+ "platform": "Linux-6.6.0-hiveos-x86_64-with-glibc2.35",
+ "python": "3.11.11",
+ "torch": "2.6.0+cu124",
+ "device": "cuda (precision=bfloat16, compile=yes)",
+ "world_size": 1,
+ "command": "/root/tokenizers-recipe-scaling/external/DeepDataMiningLearning/DeepDataMiningLearning/llm/nanolm/train.py --config /root/tokenizers-recipe-scaling/external/DeepDataMiningLearning/DeepDataMiningLearning/llm/nanolm/configs/03_gpt_fineweb.yaml model.mlp=\"swiglu\" train.max_steps=6000 name=swiglu_steps6000 seed=42 run_dir=/root/tokenizers-recipe-scaling/runs/sweeps/swiglu/swiglu_steps6000_s42 tags=[\"swiglu\"]",
+ "tags": [
+  "swiglu"
+ ]
+}

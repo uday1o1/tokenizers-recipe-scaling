@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe/gpt2_textbook_s1337
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,683,840 params (3,159,552 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 6.4325 | lr 2.50e-04 | 265.1k tok/s | 3s
+step    100 | loss 5.4877 | lr 5.00e-04 | 272.0k tok/s | 6s
+step    150 | loss 4.9035 | lr 7.50e-04 | 272.0k tok/s | 9s
+step    200 | loss 4.6663 | lr 1.00e-03 | 272.1k tok/s | 12s
+step    250 | loss 4.5295 | lr 8.69e-04 | 274.3k tok/s | 15s
+  eval step    250 | val_loss 4.4602 | val_bpb 2.6845 | acc 11.0% | 15s
+step    300 | loss 4.4468 | lr 8.16e-04 | 299.1k tok/s | 18s
+step    350 | loss 4.4044 | lr 7.56e-04 | 272.2k tok/s | 21s
+step    400 | loss 4.4025 | lr 6.90e-04 | 272.2k tok/s | 24s
+step    450 | loss 4.3571 | lr 6.22e-04 | 272.3k tok/s | 27s
+step    500 | loss 4.3170 | lr 5.51e-04 | 274.9k tok/s | 30s
+  eval step    500 | val_loss 4.2946 | val_bpb 2.5848 | acc 11.8% | 30s
+step    550 | loss 4.2780 | lr 4.81e-04 | 299.7k tok/s | 33s
+step    600 | loss 4.3003 | lr 4.12e-04 | 272.1k tok/s | 36s
+step    650 | loss 4.2496 | lr 3.47e-04 | 272.1k tok/s | 39s
+step    700 | loss 4.2864 | lr 2.87e-04 | 272.1k tok/s | 42s
+step    750 | loss 4.2814 | lr 2.33e-04 | 275.3k tok/s | 45s
+  eval step    750 | val_loss 4.2059 | val_bpb 2.5315 | acc 12.8% | 45s
+step    800 | loss 4.2425 | lr 1.87e-04 | 300.6k tok/s | 47s
+step    850 | loss 4.2077 | lr 1.50e-04 | 272.4k tok/s | 50s
+step    900 | loss 4.1980 | lr 1.22e-04 | 272.3k tok/s | 53s
+step    950 | loss 4.1849 | lr 1.06e-04 | 272.3k tok/s | 56s
+step   1000 | loss 4.1775 | lr 1.00e-04 | 275.9k tok/s | 59s
+  eval step   1000 | val_loss 4.1349 | val_bpb 2.4887 | acc 13.9% | 59s
+[final] val_loss 4.1539 | val_bpb 2.4918 | ppl 63.68 | acc 13.92% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+Wing" Cons are billengen of its first 28 for 19509. In Yourtt of president of the full-f, there’s to creative and the 180. 20.9-way at 208000018. 6,006. 15100675.0, 3. -4, the M., M.: the 150150170199, and HEU. AN:880%7, 25:43 J. 25, 1:1097:293: 1:019 M 2.2300-1207689 m.., AM.4-10. 1) - Del
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe/gpt2_textbook_s1337/metrics.json

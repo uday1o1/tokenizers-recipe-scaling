@@ -1,0 +1,76 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/swiglu/swiglu_lr4e-3_s3
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 11,015,040 params (10,621,824 non-embedding)
+[train] 3000 steps x 16,384 tokens/step (0.49 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 5.9121 | lr 1.00e-03 | 130.4k tok/s | 6s
+step    100 | loss 4.6200 | lr 2.00e-03 | 136.9k tok/s | 12s
+step    150 | loss 4.3724 | lr 3.00e-03 | 136.8k tok/s | 18s
+step    200 | loss 4.2484 | lr 4.00e-03 | 136.9k tok/s | 24s
+step    250 | loss 4.0793 | lr 3.94e-03 | 136.9k tok/s | 30s
+step    300 | loss 3.8975 | lr 3.91e-03 | 136.9k tok/s | 36s
+step    350 | loss 3.8325 | lr 3.88e-03 | 136.8k tok/s | 42s
+step    400 | loss 3.8486 | lr 3.85e-03 | 136.9k tok/s | 48s
+step    450 | loss 3.7673 | lr 3.80e-03 | 136.9k tok/s | 54s
+step    500 | loss 3.6910 | lr 3.76e-03 | 137.4k tok/s | 60s
+  eval step    500 | val_loss 3.6490 | val_bpb 2.1963 | acc 23.4% | 60s
+step    550 | loss 3.6255 | lr 3.71e-03 | 137.2k tok/s | 66s
+step    600 | loss 3.6518 | lr 3.66e-03 | 136.9k tok/s | 72s
+step    650 | loss 3.5914 | lr 3.60e-03 | 137.0k tok/s | 78s
+step    700 | loss 3.6428 | lr 3.54e-03 | 136.9k tok/s | 84s
+step    750 | loss 3.6367 | lr 3.47e-03 | 137.0k tok/s | 90s
+step    800 | loss 3.5628 | lr 3.41e-03 | 136.9k tok/s | 96s
+step    850 | loss 3.5218 | lr 3.33e-03 | 137.0k tok/s | 102s
+step    900 | loss 3.4983 | lr 3.26e-03 | 136.8k tok/s | 108s
+step    950 | loss 3.4799 | lr 3.18e-03 | 137.0k tok/s | 114s
+step   1000 | loss 3.4718 | lr 3.10e-03 | 137.4k tok/s | 120s
+  eval step   1000 | val_loss 3.4593 | val_bpb 2.0821 | acc 26.3% | 120s
+step   1050 | loss 3.4262 | lr 3.02e-03 | 136.9k tok/s | 126s
+step   1100 | loss 3.4194 | lr 2.93e-03 | 136.9k tok/s | 132s
+step   1150 | loss 3.3722 | lr 2.85e-03 | 136.9k tok/s | 138s
+step   1200 | loss 3.3555 | lr 2.76e-03 | 136.9k tok/s | 144s
+step   1250 | loss 3.3601 | lr 2.67e-03 | 136.9k tok/s | 150s
+step   1300 | loss 3.3472 | lr 2.58e-03 | 137.0k tok/s | 156s
+step   1350 | loss 3.3700 | lr 2.48e-03 | 136.8k tok/s | 162s
+step   1400 | loss 3.3649 | lr 2.39e-03 | 136.9k tok/s | 168s
+step   1450 | loss 3.3215 | lr 2.30e-03 | 137.0k tok/s | 174s
+step   1500 | loss 3.3858 | lr 2.20e-03 | 137.6k tok/s | 180s
+  eval step   1500 | val_loss 3.2814 | val_bpb 1.9750 | acc 28.8% | 180s
+step   1550 | loss 3.3250 | lr 2.11e-03 | 136.9k tok/s | 186s
+step   1600 | loss 3.3064 | lr 2.01e-03 | 136.8k tok/s | 192s
+step   1650 | loss 3.3147 | lr 1.92e-03 | 136.9k tok/s | 198s
+step   1700 | loss 3.2368 | lr 1.83e-03 | 136.9k tok/s | 204s
+step   1750 | loss 3.2728 | lr 1.74e-03 | 136.9k tok/s | 210s
+step   1800 | loss 3.2190 | lr 1.65e-03 | 136.8k tok/s | 216s
+step   1850 | loss 3.1937 | lr 1.56e-03 | 136.8k tok/s | 222s
+step   1900 | loss 3.1769 | lr 1.47e-03 | 137.1k tok/s | 228s
+step   1950 | loss 3.2365 | lr 1.38e-03 | 136.9k tok/s | 234s
+step   2000 | loss 3.1965 | lr 1.30e-03 | 137.4k tok/s | 240s
+  eval step   2000 | val_loss 3.1644 | val_bpb 1.9046 | acc 31.1% | 240s
+step   2050 | loss 3.1823 | lr 1.22e-03 | 137.1k tok/s | 246s
+step   2100 | loss 3.1735 | lr 1.14e-03 | 136.8k tok/s | 251s
+step   2150 | loss 3.1487 | lr 1.07e-03 | 137.0k tok/s | 257s
+step   2200 | loss 3.1978 | lr 9.97e-04 | 136.8k tok/s | 263s
+step   2250 | loss 3.1737 | lr 9.29e-04 | 136.8k tok/s | 269s
+step   2300 | loss 3.2275 | lr 8.64e-04 | 137.0k tok/s | 275s
+step   2350 | loss 3.1555 | lr 8.02e-04 | 136.8k tok/s | 281s
+step   2400 | loss 3.1566 | lr 7.45e-04 | 136.9k tok/s | 287s
+step   2450 | loss 3.1299 | lr 6.91e-04 | 136.8k tok/s | 293s
+step   2500 | loss 3.1325 | lr 6.42e-04 | 137.6k tok/s | 299s
+  eval step   2500 | val_loss 3.0811 | val_bpb 1.8545 | acc 32.4% | 299s
+step   2550 | loss 3.1175 | lr 5.97e-04 | 136.9k tok/s | 305s
+step   2600 | loss 3.1258 | lr 5.56e-04 | 136.9k tok/s | 311s
+step   2650 | loss 3.0990 | lr 5.20e-04 | 136.9k tok/s | 317s
+step   2700 | loss 3.0951 | lr 4.89e-04 | 137.0k tok/s | 323s
+step   2750 | loss 3.0807 | lr 4.62e-04 | 137.0k tok/s | 329s
+step   2800 | loss 3.0722 | lr 4.40e-04 | 136.9k tok/s | 335s
+step   2850 | loss 3.0667 | lr 4.22e-04 | 137.0k tok/s | 341s
+step   2900 | loss 3.0667 | lr 4.10e-04 | 136.9k tok/s | 347s
+step   2950 | loss 3.0536 | lr 4.03e-04 | 137.0k tok/s | 353s
+step   3000 | loss 3.1197 | lr 4.00e-04 | 137.6k tok/s | 359s
+  eval step   3000 | val_loss 3.0400 | val_bpb 1.8297 | acc 33.3% | 359s
+[final] val_loss 3.0744 | val_bpb 1.8472 | ppl 21.64 | acc 32.81% | 4,194,304 tokens, 2.40 bytes/token
+[sample]
+Clänr • • • These kinds of filtering reports are the benefits of a huge facility in which air efforts are open and powerful. Expression, the airports must be dispeled by the future. • Architecture and malfunction. (All-wise police) Quashin is existing. • Dread in a bilateral scene. • Wooden Transfer Desktop (who does this?) Good brand of sunglasses with a fabric. The filter area. Impact t
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/swiglu/swiglu_lr4e-3_s3/metrics.json

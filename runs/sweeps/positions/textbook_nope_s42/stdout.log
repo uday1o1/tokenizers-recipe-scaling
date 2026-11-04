@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/positions/textbook_nope_s42
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,421,696 params (3,159,552 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 6.3720 | lr 2.50e-04 | 261.1k tok/s | 3s
+step    100 | loss 5.3172 | lr 5.00e-04 | 279.3k tok/s | 6s
+step    150 | loss 4.8280 | lr 7.50e-04 | 287.0k tok/s | 9s
+step    200 | loss 4.6286 | lr 1.00e-03 | 285.3k tok/s | 12s
+step    250 | loss 4.5056 | lr 8.69e-04 | 319.8k tok/s | 14s
+  eval step    250 | val_loss 4.4411 | val_bpb 2.6731 | acc 11.1% | 14s
+step    300 | loss 4.4281 | lr 8.16e-04 | 314.3k tok/s | 17s
+step    350 | loss 4.3876 | lr 7.56e-04 | 279.2k tok/s | 20s
+step    400 | loss 4.3923 | lr 6.90e-04 | 280.9k tok/s | 23s
+step    450 | loss 4.3463 | lr 6.22e-04 | 276.9k tok/s | 26s
+step    500 | loss 4.3060 | lr 5.51e-04 | 379.4k tok/s | 28s
+  eval step    500 | val_loss 4.2839 | val_bpb 2.5784 | acc 11.8% | 28s
+step    550 | loss 4.2681 | lr 4.81e-04 | 342.9k tok/s | 30s
+step    600 | loss 4.2930 | lr 4.12e-04 | 282.5k tok/s | 33s
+step    650 | loss 4.2448 | lr 3.47e-04 | 285.8k tok/s | 36s
+step    700 | loss 4.2839 | lr 2.87e-04 | 291.1k tok/s | 39s
+step    750 | loss 4.2837 | lr 2.33e-04 | 425.2k tok/s | 41s
+  eval step    750 | val_loss 4.2072 | val_bpb 2.5322 | acc 12.9% | 41s
+step    800 | loss 4.2477 | lr 1.87e-04 | 376.7k tok/s | 43s
+step    850 | loss 4.2191 | lr 1.50e-04 | 290.6k tok/s | 46s
+step    900 | loss 4.2144 | lr 1.22e-04 | 278.9k tok/s | 49s
+step    950 | loss 4.2035 | lr 1.06e-04 | 312.5k tok/s | 51s
+step   1000 | loss 4.1997 | lr 1.00e-04 | 449.2k tok/s | 53s
+  eval step   1000 | val_loss 4.1580 | val_bpb 2.5026 | acc 13.6% | 53s
+[final] val_loss 4.1792 | val_bpb 2.5069 | ppl 65.31 | acc 13.57% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+ci-f-sete . We squiffircrier to the or es order.comface to timumbing might. Don: 22000007:51002. 3, Sporal,1019498., which is just like that are the nexture the earge, breate of the nice. 20. You exply, Mas motelving, the limplex 3-A.9. 2019660002, and 113018-10., iss ords of termitorm is the Phwellers, buttomm.27 Privice:4, the supton was. For more thanknes
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/positions/textbook_nope_s42/metrics.json

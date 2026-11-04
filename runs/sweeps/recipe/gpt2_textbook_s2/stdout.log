@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe/gpt2_textbook_s2
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,683,840 params (3,159,552 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 6.4276 | lr 2.50e-04 | 257.4k tok/s | 3s
+step    100 | loss 5.4578 | lr 5.00e-04 | 272.0k tok/s | 6s
+step    150 | loss 4.8987 | lr 7.50e-04 | 272.0k tok/s | 9s
+step    200 | loss 4.6649 | lr 1.00e-03 | 272.1k tok/s | 12s
+step    250 | loss 4.5287 | lr 8.69e-04 | 278.4k tok/s | 15s
+  eval step    250 | val_loss 4.4624 | val_bpb 2.6859 | acc 11.0% | 15s
+step    300 | loss 4.4480 | lr 8.16e-04 | 289.4k tok/s | 18s
+step    350 | loss 4.4032 | lr 7.56e-04 | 272.2k tok/s | 21s
+step    400 | loss 4.4008 | lr 6.90e-04 | 272.2k tok/s | 24s
+step    450 | loss 4.3573 | lr 6.22e-04 | 272.3k tok/s | 27s
+step    500 | loss 4.3154 | lr 5.51e-04 | 278.9k tok/s | 30s
+  eval step    500 | val_loss 4.2929 | val_bpb 2.5839 | acc 11.8% | 30s
+step    550 | loss 4.2776 | lr 4.81e-04 | 290.8k tok/s | 33s
+step    600 | loss 4.2997 | lr 4.12e-04 | 272.1k tok/s | 36s
+step    650 | loss 4.2491 | lr 3.47e-04 | 272.1k tok/s | 39s
+step    700 | loss 4.2861 | lr 2.87e-04 | 272.1k tok/s | 42s
+step    750 | loss 4.2826 | lr 2.33e-04 | 279.2k tok/s | 45s
+  eval step    750 | val_loss 4.2046 | val_bpb 2.5307 | acc 12.8% | 45s
+step    800 | loss 4.2413 | lr 1.87e-04 | 291.3k tok/s | 48s
+step    850 | loss 4.2088 | lr 1.50e-04 | 272.3k tok/s | 51s
+step    900 | loss 4.1983 | lr 1.22e-04 | 272.3k tok/s | 54s
+step    950 | loss 4.1850 | lr 1.06e-04 | 272.3k tok/s | 57s
+step   1000 | loss 4.1759 | lr 1.00e-04 | 280.2k tok/s | 59s
+  eval step   1000 | val_loss 4.1355 | val_bpb 2.4891 | acc 13.9% | 60s
+[final] val_loss 4.1551 | val_bpb 2.4925 | ppl 63.76 | acc 13.89% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+BEPEL. | Amer Aricatega,0-1722 Mron-23| |1997999188874935059599592189818687 | 79.4,67367, Med es, 's award 9 Prgesticiation of Sm,0, 51% of the 4.-33, 3019, D.68: Di-4 (1029:015-14:1970.2098406059 166-2.14, Mces.4, FM.55000137888; Finnow, 41397
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe/gpt2_textbook_s2/metrics.json

@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/scaling/d512_steps1000_s42
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 13,111,808 params (12,587,520 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=muon schedule=wsd
+step     50 | loss 5.7795 | lr 5.00e-03 | 110.3k tok/s | 7s
+step    100 | loss 4.5115 | lr 1.00e-02 | 91.5k tok/s | 16s
+step    150 | loss 4.3921 | lr 1.50e-02 | 89.8k tok/s | 25s
+step    200 | loss 4.1476 | lr 2.00e-02 | 100.5k tok/s | 34s
+step    250 | loss 3.9324 | lr 2.00e-02 | 126.8k tok/s | 40s
+  eval step    250 | val_loss 3.8244 | val_bpb 2.3018 | acc 21.1% | 40s
+step    300 | loss 3.7484 | lr 2.00e-02 | 122.5k tok/s | 47s
+step    350 | loss 3.6806 | lr 2.00e-02 | 126.0k tok/s | 53s
+step    400 | loss 3.6551 | lr 2.00e-02 | 168.0k tok/s | 58s
+step    450 | loss 3.5099 | lr 2.00e-02 | 111.5k tok/s | 66s
+step    500 | loss 3.3831 | lr 2.00e-02 | 95.6k tok/s | 74s
+  eval step    500 | val_loss 3.3508 | val_bpb 2.0168 | acc 29.7% | 74s
+step    550 | loss 3.2972 | lr 2.00e-02 | 112.4k tok/s | 81s
+step    600 | loss 3.2938 | lr 2.00e-02 | 90.6k tok/s | 90s
+step    650 | loss 3.2344 | lr 2.00e-02 | 93.3k tok/s | 99s
+step    700 | loss 3.2619 | lr 2.00e-02 | 105.1k tok/s | 107s
+step    750 | loss 3.2699 | lr 1.67e-02 | 119.5k tok/s | 114s
+  eval step    750 | val_loss 3.1457 | val_bpb 1.8933 | acc 33.2% | 114s
+step    800 | loss 3.1932 | lr 1.34e-02 | 90.9k tok/s | 123s
+step    850 | loss 3.1152 | lr 1.01e-02 | 90.8k tok/s | 132s
+step    900 | loss 3.0694 | lr 6.73e-03 | 102.3k tok/s | 140s
+step    950 | loss 2.9970 | lr 3.40e-03 | 119.5k tok/s | 147s
+step   1000 | loss 2.9549 | lr 6.67e-05 | 96.2k tok/s | 155s
+  eval step   1000 | val_loss 2.9095 | val_bpb 1.7512 | acc 37.1% | 155s
+[final] val_loss 2.9335 | val_bpb 1.7597 | ppl 18.79 | acc 36.83% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+This will be beginning. We have created a site-my-ray and we can help you get an endless fire. They are self-downtown for clean and endless fire. There are no three delicious miles of tone which is just like that. In a casual case, the biggest and non-downtown for expressions and fire and fire. We will not be able to touch your house in the case of tonight. Stop, PAFEDP, and Google, is the only one. They use moisturized producers that are not given. We will have basically sleepy. They will be able to boost
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/scaling/d512_steps1000_s42/metrics.json

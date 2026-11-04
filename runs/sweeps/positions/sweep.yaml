@@ -1,0 +1,21 @@
+# The position encoding of recipe.yaml's GPT-2 textbook model (LayerNorm, biases, AdamW + cosine, L4q
+# size): no position embedding at all (causal attention only) at 1000 steps, and learned positions
+# against RoPE at 4000 steps (65.5M tokens), to see whether the gap between them depends on the budget.
+name: positions
+base: ../../external/DeepDataMiningLearning/DeepDataMiningLearning/llm/nanolm/configs/laptop/L4q_gpt_fineweb_quick.yaml
+out_dir: runs
+seeds: [1337, 42, 1, 2, 3]
+common:
+  train.max_time_sec: 0
+  model.mlp: gelu
+  model.norm: layernorm
+  model.bias: true
+  train.optimizer: adamw
+  train.lr: 1e-3
+  train.embed_lr: 0.0
+  train.schedule: cosine
+  train.min_lr_frac: 0.1
+runs:
+  - {name: textbook_nope, overrides: {model.pos: none}}
+  - {name: textbook_steps4000, overrides: {model.pos: learned, train.max_steps: 4000}}
+  - {name: textbook_rope_steps4000, overrides: {model.pos: rope, train.max_steps: 4000}}

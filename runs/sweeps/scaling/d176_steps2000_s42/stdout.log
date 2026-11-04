@@ -1,0 +1,58 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/scaling/d176_steps2000_s42
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 1,668,656 params (1,488,432 non-embedding)
+[train] 2000 steps x 16,384 tokens/step (0.33 passes over train) | optimizer=muon schedule=wsd
+step     50 | loss 6.3119 | lr 5.00e-03 | 217.6k tok/s | 4s
+step    100 | loss 4.9983 | lr 1.00e-02 | 311.4k tok/s | 6s
+step    150 | loss 4.5899 | lr 1.50e-02 | 222.5k tok/s | 10s
+step    200 | loss 4.4035 | lr 2.00e-02 | 219.7k tok/s | 14s
+step    250 | loss 4.1380 | lr 2.00e-02 | 287.9k tok/s | 17s
+  eval step    250 | val_loss 4.0196 | val_bpb 2.4194 | acc 17.8% | 17s
+step    300 | loss 3.9289 | lr 2.00e-02 | 445.3k tok/s | 18s
+step    350 | loss 3.8322 | lr 2.00e-02 | 309.8k tok/s | 21s
+step    400 | loss 3.8159 | lr 2.00e-02 | 299.1k tok/s | 24s
+step    450 | loss 3.7477 | lr 2.00e-02 | 300.9k tok/s | 27s
+step    500 | loss 3.6718 | lr 2.00e-02 | 326.8k tok/s | 29s
+  eval step    500 | val_loss 3.6351 | val_bpb 2.1879 | acc 24.0% | 29s
+step    550 | loss 3.5817 | lr 2.00e-02 | 331.3k tok/s | 32s
+step    600 | loss 3.5643 | lr 2.00e-02 | 299.4k tok/s | 34s
+step    650 | loss 3.4778 | lr 2.00e-02 | 231.6k tok/s | 38s
+step    700 | loss 3.5023 | lr 2.00e-02 | 249.3k tok/s | 41s
+step    750 | loss 3.4935 | lr 2.00e-02 | 312.0k tok/s | 44s
+  eval step    750 | val_loss 3.3807 | val_bpb 2.0348 | acc 29.4% | 44s
+step    800 | loss 3.4281 | lr 2.00e-02 | 252.3k tok/s | 47s
+step    850 | loss 3.3775 | lr 2.00e-02 | 282.1k tok/s | 50s
+step    900 | loss 3.3533 | lr 2.00e-02 | 309.2k tok/s | 53s
+step    950 | loss 3.3073 | lr 2.00e-02 | 274.0k tok/s | 56s
+step   1000 | loss 3.3046 | lr 2.00e-02 | 218.4k tok/s | 59s
+  eval step   1000 | val_loss 3.2648 | val_bpb 1.9650 | acc 31.4% | 59s
+step   1050 | loss 3.2506 | lr 2.00e-02 | 266.6k tok/s | 62s
+step   1100 | loss 3.2637 | lr 2.00e-02 | 401.2k tok/s | 64s
+step   1150 | loss 3.1998 | lr 2.00e-02 | 222.3k tok/s | 68s
+step   1200 | loss 3.1803 | lr 2.00e-02 | 218.4k tok/s | 72s
+step   1250 | loss 3.1741 | lr 2.00e-02 | 218.7k tok/s | 76s
+  eval step   1250 | val_loss 3.1821 | val_bpb 1.9153 | acc 32.8% | 76s
+step   1300 | loss 3.1708 | lr 2.00e-02 | 378.9k tok/s | 78s
+step   1350 | loss 3.1905 | lr 2.00e-02 | 406.7k tok/s | 80s
+step   1400 | loss 3.2152 | lr 2.00e-02 | 321.0k tok/s | 82s
+step   1450 | loss 3.1844 | lr 1.84e-02 | 312.4k tok/s | 85s
+step   1500 | loss 3.2253 | lr 1.67e-02 | 312.4k tok/s | 88s
+  eval step   1500 | val_loss 3.1093 | val_bpb 1.8715 | acc 33.8% | 88s
+step   1550 | loss 3.1493 | lr 1.50e-02 | 357.0k tok/s | 90s
+step   1600 | loss 3.1375 | lr 1.34e-02 | 387.0k tok/s | 92s
+step   1650 | loss 3.1495 | lr 1.17e-02 | 333.9k tok/s | 94s
+step   1700 | loss 3.0721 | lr 1.00e-02 | 223.8k tok/s | 98s
+step   1750 | loss 3.0786 | lr 8.37e-03 | 220.3k tok/s | 102s
+  eval step   1750 | val_loss 3.0128 | val_bpb 1.8133 | acc 35.5% | 102s
+step   1800 | loss 3.0170 | lr 6.70e-03 | 273.2k tok/s | 105s
+step   1850 | loss 2.9861 | lr 5.03e-03 | 273.5k tok/s | 108s
+step   1900 | loss 2.9594 | lr 3.37e-03 | 280.0k tok/s | 111s
+step   1950 | loss 3.0177 | lr 1.70e-03 | 284.1k tok/s | 114s
+step   2000 | loss 2.9691 | lr 3.33e-05 | 220.5k tok/s | 117s
+  eval step   2000 | val_loss 2.9629 | val_bpb 1.7833 | acc 36.4% | 117s
+[final] val_loss 2.9898 | val_bpb 1.7935 | ppl 19.88 | acc 36.02% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+Tampae to be the first 15th year old warranty has been escalated with the 301 day. The Toppa, this year is an official form that doesn’t end up on a couple of weeks to 949 hours which is 2014. Its the 830 billion of the name. 2014 to be a game five-day light, but the trouble was 300 hours of the 1966 coronavour, 1930 to 110. In case students, the term members the Philips have been 405 dines based on Tampae and 1945. Just like those
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/scaling/d176_steps2000_s42/metrics.json

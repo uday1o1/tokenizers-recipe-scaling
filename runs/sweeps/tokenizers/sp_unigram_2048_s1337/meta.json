@@ -1,0 +1,20 @@
+{
+ "name": "sp_unigram_2048",
+ "seed": 1337,
+ "date": "2026-11-04T21:02:18",
+ "git": {
+  "commit": "8418fc1bae85657190f11749483bf2e729b9702c",
+  "branch": "HEAD",
+  "dirty": false
+ },
+ "host": "e909bcf33ed3",
+ "platform": "Linux-6.6.0-hiveos-x86_64-with-glibc2.35",
+ "python": "3.11.11",
+ "torch": "2.6.0+cu124",
+ "device": "cuda (precision=bfloat16, compile=yes)",
+ "world_size": 1,
+ "command": "/root/tokenizers-recipe-scaling/external/DeepDataMiningLearning/DeepDataMiningLearning/llm/nanolm/train.py --config /root/tokenizers-recipe-scaling/external/DeepDataMiningLearning/DeepDataMiningLearning/llm/nanolm/configs/laptop/L3_tokenizer.yaml train.max_time_sec=0 data.tokenizer=\"sp_train:unigram:2048\" name=sp_unigram_2048 seed=1337 run_dir=/root/tokenizers-recipe-scaling/runs/sweeps/tokenizers/sp_unigram_2048_s1337 tags=[\"tokenizers\"]",
+ "tags": [
+  "tokenizers"
+ ]
+}

@@ -1,0 +1,58 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/scaling/d176_steps2000_s1337
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 1,668,656 params (1,488,432 non-embedding)
+[train] 2000 steps x 16,384 tokens/step (0.33 passes over train) | optimizer=muon schedule=wsd
+step     50 | loss 6.2890 | lr 5.00e-03 | 218.1k tok/s | 4s
+step    100 | loss 4.9944 | lr 1.00e-02 | 311.3k tok/s | 6s
+step    150 | loss 4.5893 | lr 1.50e-02 | 222.3k tok/s | 10s
+step    200 | loss 4.3966 | lr 2.00e-02 | 219.7k tok/s | 14s
+step    250 | loss 4.1308 | lr 2.00e-02 | 287.9k tok/s | 17s
+  eval step    250 | val_loss 4.0002 | val_bpb 2.4077 | acc 18.2% | 17s
+step    300 | loss 3.9110 | lr 2.00e-02 | 439.3k tok/s | 19s
+step    350 | loss 3.8144 | lr 2.00e-02 | 309.2k tok/s | 21s
+step    400 | loss 3.7992 | lr 2.00e-02 | 299.1k tok/s | 24s
+step    450 | loss 3.7334 | lr 2.00e-02 | 300.9k tok/s | 27s
+step    500 | loss 3.6612 | lr 2.00e-02 | 320.3k tok/s | 29s
+  eval step    500 | val_loss 3.6301 | val_bpb 2.1849 | acc 23.9% | 29s
+step    550 | loss 3.5832 | lr 2.00e-02 | 333.2k tok/s | 32s
+step    600 | loss 3.5698 | lr 2.00e-02 | 294.9k tok/s | 34s
+step    650 | loss 3.4851 | lr 2.00e-02 | 229.2k tok/s | 38s
+step    700 | loss 3.5120 | lr 2.00e-02 | 255.3k tok/s | 41s
+step    750 | loss 3.5091 | lr 2.00e-02 | 315.1k tok/s | 44s
+  eval step    750 | val_loss 3.3943 | val_bpb 2.0430 | acc 28.9% | 44s
+step    800 | loss 3.4390 | lr 2.00e-02 | 254.5k tok/s | 47s
+step    850 | loss 3.3840 | lr 2.00e-02 | 278.9k tok/s | 50s
+step    900 | loss 3.3645 | lr 2.00e-02 | 314.6k tok/s | 53s
+step    950 | loss 3.3222 | lr 2.00e-02 | 267.1k tok/s | 56s
+step   1000 | loss 3.2950 | lr 2.00e-02 | 220.2k tok/s | 59s
+  eval step   1000 | val_loss 3.2743 | val_bpb 1.9707 | acc 31.0% | 59s
+step   1050 | loss 3.2623 | lr 2.00e-02 | 275.5k tok/s | 62s
+step   1100 | loss 3.2631 | lr 2.00e-02 | 385.5k tok/s | 64s
+step   1150 | loss 3.2092 | lr 2.00e-02 | 220.0k tok/s | 68s
+step   1200 | loss 3.1895 | lr 2.00e-02 | 218.4k tok/s | 72s
+step   1250 | loss 3.1848 | lr 2.00e-02 | 220.5k tok/s | 76s
+  eval step   1250 | val_loss 3.1953 | val_bpb 1.9232 | acc 32.6% | 76s
+step   1300 | loss 3.1800 | lr 2.00e-02 | 382.3k tok/s | 78s
+step   1350 | loss 3.1990 | lr 2.00e-02 | 401.4k tok/s | 80s
+step   1400 | loss 3.2238 | lr 2.00e-02 | 316.5k tok/s | 82s
+step   1450 | loss 3.1913 | lr 1.84e-02 | 312.4k tok/s | 85s
+step   1500 | loss 3.2335 | lr 1.67e-02 | 316.4k tok/s | 88s
+  eval step   1500 | val_loss 3.1215 | val_bpb 1.8788 | acc 33.5% | 88s
+step   1550 | loss 3.1594 | lr 1.50e-02 | 359.4k tok/s | 90s
+step   1600 | loss 3.1488 | lr 1.34e-02 | 387.4k tok/s | 92s
+step   1650 | loss 3.1588 | lr 1.17e-02 | 325.9k tok/s | 95s
+step   1700 | loss 3.0800 | lr 1.00e-02 | 220.3k tok/s | 98s
+step   1750 | loss 3.0872 | lr 8.37e-03 | 222.2k tok/s | 102s
+  eval step   1750 | val_loss 3.0256 | val_bpb 1.8211 | acc 35.2% | 102s
+step   1800 | loss 3.0279 | lr 6.70e-03 | 273.2k tok/s | 105s
+step   1850 | loss 2.9939 | lr 5.03e-03 | 270.8k tok/s | 108s
+step   1900 | loss 2.9667 | lr 3.37e-03 | 283.5k tok/s | 111s
+step   1950 | loss 3.0289 | lr 1.70e-03 | 277.6k tok/s | 114s
+step   2000 | loss 2.9789 | lr 3.33e-05 | 222.3k tok/s | 117s
+  eval step   2000 | val_loss 2.9739 | val_bpb 1.7899 | acc 36.1% | 117s
+[final] val_loss 2.9993 | val_bpb 1.7992 | ppl 20.07 | acc 35.81% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+Single Review Loan General Broader for Max 59.6% of a picture of “Hebrid”, “Constructance and Germany, and is the most dealing logging,” said Single Real Care. “That is the brain from the direction of a Pad,” said Justice said, “Hebrid the brain’s marketing at the mountain of the “batch that hit the end of a hit of the racks.” At this point, she said, “He got a salting title in 2013, that Max 76%, moved to the brain’s foreign requirements,
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/scaling/d176_steps2000_s1337/metrics.json

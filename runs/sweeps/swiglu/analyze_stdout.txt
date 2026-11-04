@@ -1,0 +1,19 @@
+
+metric = val_bpb  (lower is better)
+
+                  n_seeds  val_bpb_mean  val_bpb_std  params_M  train_min
+name                                                                     
+gelu_lr2e-3             5        1.7036       0.0072   11.0150     8.0919
+gelu_lr4e-3             5        1.7004       0.0072   11.0150     8.2364
+gelu_lr5e-4             5        1.8408       0.0191   11.0150     8.1230
+gelu                    5        1.7528       0.0238   11.0150     8.2321
+gelu_steps6000          5        1.6119       0.0051   11.0150    14.1383
+swiglu_lr2e-3           5        1.7612       0.0287   11.0150     8.6660
+swiglu_lr4e-3           5        1.8428       0.0041   11.0150     6.4807
+swiglu_lr5e-4           5        1.8168       0.0033   11.0150     8.6582
+swiglu                  5        1.7809       0.0214   11.0150     8.6283
+swiglu_steps6000        5        1.6349       0.0121   11.0150    14.3319
+
+seed noise floor: median within-experiment std = 0.0096 bpb (differences below ~2x this are not trustworthy without more seeds)
+
+wrote runs/sweeps/swiglu/summary.csv, summary.md, curves.png, bars.png

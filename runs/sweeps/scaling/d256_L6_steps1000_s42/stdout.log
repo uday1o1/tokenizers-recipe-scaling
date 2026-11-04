@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/scaling/d256_L6_steps1000_s42
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 4,984,064 params (4,721,920 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=muon schedule=wsd
+step     50 | loss 6.0715 | lr 5.00e-03 | 143.1k tok/s | 6s
+step    100 | loss 4.7608 | lr 1.00e-02 | 167.8k tok/s | 11s
+step    150 | loss 4.5017 | lr 1.50e-02 | 249.7k tok/s | 14s
+step    200 | loss 4.3168 | lr 2.00e-02 | 155.2k tok/s | 19s
+step    250 | loss 4.0374 | lr 2.00e-02 | 155.6k tok/s | 24s
+  eval step    250 | val_loss 3.9100 | val_bpb 2.3534 | acc 19.5% | 24s
+step    300 | loss 3.8158 | lr 2.00e-02 | 210.9k tok/s | 28s
+step    350 | loss 3.7333 | lr 2.00e-02 | 211.3k tok/s | 32s
+step    400 | loss 3.7170 | lr 2.00e-02 | 254.3k tok/s | 35s
+step    450 | loss 3.6339 | lr 2.00e-02 | 246.2k tok/s | 39s
+step    500 | loss 3.5153 | lr 2.00e-02 | 215.0k tok/s | 43s
+  eval step    500 | val_loss 3.4600 | val_bpb 2.0825 | acc 27.5% | 43s
+step    550 | loss 3.3996 | lr 2.00e-02 | 193.5k tok/s | 47s
+step    600 | loss 3.3863 | lr 2.00e-02 | 143.4k tok/s | 52s
+step    650 | loss 3.3162 | lr 2.00e-02 | 150.9k tok/s | 58s
+step    700 | loss 3.3417 | lr 2.00e-02 | 179.8k tok/s | 62s
+step    750 | loss 3.3433 | lr 1.67e-02 | 143.4k tok/s | 68s
+  eval step    750 | val_loss 3.2160 | val_bpb 1.9357 | acc 32.1% | 68s
+step    800 | loss 3.2634 | lr 1.34e-02 | 221.8k tok/s | 72s
+step    850 | loss 3.1854 | lr 1.01e-02 | 153.5k tok/s | 77s
+step    900 | loss 3.1436 | lr 6.73e-03 | 143.3k tok/s | 83s
+step    950 | loss 3.0717 | lr 3.40e-03 | 151.6k tok/s | 88s
+step   1000 | loss 3.0262 | lr 6.67e-05 | 178.8k tok/s | 93s
+  eval step   1000 | val_loss 2.9852 | val_bpb 1.7967 | acc 35.9% | 93s
+[final] val_loss 3.0094 | val_bpb 1.8052 | ppl 20.27 | acc 35.64% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+This will be here to buy. We squeeze your moral or escan website. They are moved to mighty, but you are doing it. I know that you are looking for each other, sustainability you will be hoping an outdoing time and you will look at the next time and then we can save later and lack their technician to find out how many tasks and foods, the limit to pass the ground and we pick the characters of the moral, and a lot of sweet-class, issue to annytical effects, and the morality of the session was able to create an apartment of the sculpters and their cl
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/scaling/d256_L6_steps1000_s42/metrics.json

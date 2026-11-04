@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe/textbook_rope_s3
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,421,696 params (3,159,552 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 6.3637 | lr 2.50e-04 | 225.4k tok/s | 4s
+step    100 | loss 5.3160 | lr 5.00e-04 | 243.7k tok/s | 7s
+step    150 | loss 4.8212 | lr 7.50e-04 | 244.2k tok/s | 10s
+step    200 | loss 4.5533 | lr 1.00e-03 | 243.9k tok/s | 14s
+step    250 | loss 4.3358 | lr 8.69e-04 | 244.0k tok/s | 17s
+  eval step    250 | val_loss 4.2213 | val_bpb 2.5408 | acc 15.4% | 17s
+step    300 | loss 4.1519 | lr 8.16e-04 | 249.7k tok/s | 20s
+step    350 | loss 4.0364 | lr 7.56e-04 | 243.8k tok/s | 24s
+step    400 | loss 3.9967 | lr 6.90e-04 | 243.9k tok/s | 27s
+step    450 | loss 3.9052 | lr 6.22e-04 | 244.0k tok/s | 30s
+step    500 | loss 3.8234 | lr 5.51e-04 | 244.1k tok/s | 34s
+  eval step    500 | val_loss 3.7949 | val_bpb 2.2841 | acc 21.3% | 34s
+step    550 | loss 3.7492 | lr 4.81e-04 | 250.3k tok/s | 37s
+step    600 | loss 3.7613 | lr 4.12e-04 | 243.7k tok/s | 40s
+step    650 | loss 3.6872 | lr 3.47e-04 | 243.8k tok/s | 44s
+step    700 | loss 3.7228 | lr 2.87e-04 | 243.6k tok/s | 47s
+step    750 | loss 3.7035 | lr 2.33e-04 | 244.1k tok/s | 50s
+  eval step    750 | val_loss 3.6114 | val_bpb 2.1737 | acc 24.0% | 51s
+step    800 | loss 3.6605 | lr 1.87e-04 | 250.7k tok/s | 54s
+step    850 | loss 3.5995 | lr 1.50e-04 | 243.9k tok/s | 57s
+step    900 | loss 3.5893 | lr 1.22e-04 | 244.1k tok/s | 60s
+step    950 | loss 3.5614 | lr 1.06e-04 | 243.9k tok/s | 64s
+step   1000 | loss 3.5500 | lr 1.00e-04 | 243.7k tok/s | 67s
+  eval step   1000 | val_loss 3.5082 | val_bpb 2.1116 | acc 25.6% | 67s
+[final] val_loss 3.5317 | val_bpb 2.1186 | ppl 34.18 | acc 25.53% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+Olen and Prince (Arading)This is the Apart Maint. Poly the Windowd Dance Brandafield The Lamball's Arivance 3-5 Baby My Bart Perhotographs makes a face of 2019. 19-805, 2000, 2010.56 (2950) Powers 189, 10716 Deleni Apilota (GBS): Value To 145 4. Carbain Blacks Allen. Grace Four Carrass of District Carge (207) 206, 109
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe/textbook_rope_s3/metrics.json

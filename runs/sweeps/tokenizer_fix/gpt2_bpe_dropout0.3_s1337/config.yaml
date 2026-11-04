@@ -1,0 +1,110 @@
+name: gpt2_bpe_dropout0.3
+seed: 1337
+device: auto
+precision: auto
+out_dir: outputs/nanolm
+run_dir: /root/tokenizers-recipe-scaling/runs/sweeps/tokenizer_fix/gpt2_bpe_dropout0.3_s1337
+tags:
+- tokenizer_fix
+data:
+  source: tinyshakespeare
+  files: []
+  hf_name: ''
+  hf_config: ''
+  hf_split: train
+  hf_text_fields:
+  - text
+  hf_max_docs: 0
+  tokenizer: gpt2
+  val_fraction: 0.1
+  split_by: tail
+  shard_dir: ''
+  train_pattern: '*_train_*.bin'
+  val_pattern: '*_val_*.bin'
+  max_train_shards: 0
+  cache_dir: data/nanolm
+  sampler: random
+model:
+  arch: gpt
+  vocab_size: 0
+  dim: 256
+  n_layers: 4
+  dropout: 0.3
+  tie_embeddings: true
+  rnn_hidden: 0
+  n_heads: 4
+  n_kv_heads: 0
+  max_seq_len: 1024
+  norm: rmsnorm
+  pos: rope
+  rope_base: 10000.0
+  mlp: swiglu
+  mlp_mult: 4.0
+  bias: false
+  init_std: 0.02
+  embed_init_std: 0.0
+  qk_norm: false
+  qk_gain_init: 0.0
+  logit_softcap: 0.0
+  rope_dims: 0
+  zero_init_proj: false
+  embed_norm: false
+  layer_scales: false
+  resid_mix: false
+  ln_scale: false
+  unet_skips: false
+  recur_layers: []
+  recur_times: 1
+  recur_start_frac: 0.0
+  parallel_from: -1
+  xsa_last_n: 0
+  smear_gate: false
+  bigram_buckets: 0
+  bigram_dim: 128
+  value_residual: false
+  attn_gate: false
+train:
+  seq_len: 256
+  batch_size: 8
+  grad_accum: 4
+  max_steps: 2000
+  max_time_sec: 0.0
+  optimizer: adamw
+  lr: 0.001
+  embed_lr: 0.0
+  matrix_lr: 0.02
+  weight_decay: 0.1
+  muon_wd: 0.0
+  muon_momentum: 0.95
+  muon_ns_steps: 5
+  betas:
+  - 0.9
+  - 0.95
+  grad_clip: 1.0
+  schedule: cosine
+  warmup_steps: 100
+  warmdown_frac: 0.2
+  min_lr_frac: 0.1
+  ema_decay: 0.0
+  qat_bits: 0
+  qat_start_frac: 0.0
+  compile: false
+  loss_on: all
+  log_every: 50
+  eval_every: 250
+  eval_tokens: 131072
+  save_checkpoint: true
+eval:
+  final_eval_tokens: 0
+  eval_seq_len: 0
+  sliding_stride: 0
+  batch_size: 32
+  sample_tokens: 400
+  sample_prompt: ''
+  temperature: 0.8
+  top_k: 50
+  top_p: 1.0
+export:
+  quant_bits: 0
+  compressor: lzma
+  budget_mb: 16.0

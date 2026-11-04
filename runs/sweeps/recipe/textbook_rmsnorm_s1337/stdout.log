@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe/textbook_rmsnorm_s1337
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,681,536 params (3,157,248 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 6.4331 | lr 2.50e-04 | 220.8k tok/s | 4s
+step    100 | loss 5.4904 | lr 5.00e-04 | 243.7k tok/s | 7s
+step    150 | loss 4.9082 | lr 7.50e-04 | 244.2k tok/s | 10s
+step    200 | loss 4.6707 | lr 1.00e-03 | 243.8k tok/s | 14s
+step    250 | loss 4.5321 | lr 8.69e-04 | 246.0k tok/s | 17s
+  eval step    250 | val_loss 4.4624 | val_bpb 2.6859 | acc 11.0% | 17s
+step    300 | loss 4.4491 | lr 8.16e-04 | 245.5k tok/s | 20s
+step    350 | loss 4.4067 | lr 7.56e-04 | 243.9k tok/s | 24s
+step    400 | loss 4.4041 | lr 6.90e-04 | 243.9k tok/s | 27s
+step    450 | loss 4.3590 | lr 6.22e-04 | 243.9k tok/s | 31s
+step    500 | loss 4.3188 | lr 5.51e-04 | 246.2k tok/s | 34s
+  eval step    500 | val_loss 4.2970 | val_bpb 2.5863 | acc 11.8% | 34s
+step    550 | loss 4.2801 | lr 4.81e-04 | 245.1k tok/s | 37s
+step    600 | loss 4.3027 | lr 4.12e-04 | 243.6k tok/s | 41s
+step    650 | loss 4.2513 | lr 3.47e-04 | 243.9k tok/s | 44s
+step    700 | loss 4.2887 | lr 2.87e-04 | 243.6k tok/s | 47s
+step    750 | loss 4.2838 | lr 2.33e-04 | 246.3k tok/s | 51s
+  eval step    750 | val_loss 4.2065 | val_bpb 2.5318 | acc 12.8% | 51s
+step    800 | loss 4.2444 | lr 1.87e-04 | 245.0k tok/s | 54s
+step    850 | loss 4.2098 | lr 1.50e-04 | 244.0k tok/s | 57s
+step    900 | loss 4.1999 | lr 1.22e-04 | 244.2k tok/s | 61s
+step    950 | loss 4.1867 | lr 1.06e-04 | 243.9k tok/s | 64s
+step   1000 | loss 4.1799 | lr 1.00e-04 | 246.2k tok/s | 67s
+  eval step   1000 | val_loss 4.1377 | val_bpb 2.4904 | acc 13.9% | 67s
+[final] val_loss 4.1566 | val_bpb 2.4934 | ppl 63.85 | acc 13.87% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+Wing City, Fe, Cliverncovernment for wa, 59. Interves. Andersonncribbers who are, there’s to creative and you’t alth. Herest. Howern’t be made more harden’t want to go that is, and possible with your owner to be waterial. All below - Ell take anything, you’s budience’t meanking to see you do it’s, or just want that you need to go. There do?It have the funching up. Realking of the 20195, you trying back 200300 Mountry in yourself, mov. That's one would does. 1) - Del
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe/textbook_rmsnorm_s1337/metrics.json

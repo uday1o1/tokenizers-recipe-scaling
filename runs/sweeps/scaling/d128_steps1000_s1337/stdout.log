@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/scaling/d128_steps1000_s1337
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 918,656 params (787,584 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=muon schedule=wsd
+step     50 | loss 6.4391 | lr 5.00e-03 | 264.1k tok/s | 3s
+step    100 | loss 5.2342 | lr 1.00e-02 | 293.4k tok/s | 6s
+step    150 | loss 4.7161 | lr 1.50e-02 | 293.4k tok/s | 9s
+step    200 | loss 4.4937 | lr 2.00e-02 | 293.3k tok/s | 11s
+step    250 | loss 4.2316 | lr 2.00e-02 | 293.4k tok/s | 14s
+  eval step    250 | val_loss 4.0954 | val_bpb 2.4650 | acc 16.8% | 14s
+step    300 | loss 4.0071 | lr 2.00e-02 | 295.9k tok/s | 17s
+step    350 | loss 3.9021 | lr 2.00e-02 | 293.6k tok/s | 20s
+step    400 | loss 3.8823 | lr 2.00e-02 | 293.4k tok/s | 23s
+step    450 | loss 3.8148 | lr 2.00e-02 | 293.4k tok/s | 25s
+step    500 | loss 3.7447 | lr 2.00e-02 | 293.4k tok/s | 28s
+  eval step    500 | val_loss 3.7155 | val_bpb 2.2363 | acc 22.7% | 28s
+step    550 | loss 3.6787 | lr 2.00e-02 | 295.4k tok/s | 31s
+step    600 | loss 3.6964 | lr 2.00e-02 | 294.3k tok/s | 34s
+step    650 | loss 3.6346 | lr 2.00e-02 | 293.3k tok/s | 37s
+step    700 | loss 3.6739 | lr 2.00e-02 | 293.4k tok/s | 39s
+step    750 | loss 3.6554 | lr 1.67e-02 | 293.4k tok/s | 42s
+  eval step    750 | val_loss 3.5402 | val_bpb 2.1308 | acc 25.8% | 42s
+step    800 | loss 3.5627 | lr 1.34e-02 | 297.8k tok/s | 45s
+step    850 | loss 3.4759 | lr 1.01e-02 | 293.3k tok/s | 48s
+step    900 | loss 3.4301 | lr 6.73e-03 | 293.4k tok/s | 50s
+step    950 | loss 3.3705 | lr 3.40e-03 | 293.3k tok/s | 53s
+step   1000 | loss 3.3296 | lr 6.67e-05 | 293.5k tok/s | 56s
+  eval step   1000 | val_loss 3.2837 | val_bpb 1.9764 | acc 30.6% | 56s
+[final] val_loss 3.3120 | val_bpb 1.9867 | ppl 27.44 | acc 30.32% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+Singing Considents:: Generaco and Traitrum Dambo. In our last year, I presented all the following, there’s some cases and saying it’s time to make a child full details to him or even tail. I’ll be really thought I’ve been a water office, I’m loveful as I’m not sure the bottom stages of I’ve mentioned how much? Enjoy! They have been alleged after that the horse was a piece of horse of 2016, and the bottom 2013, that was sleeping his own life. The first stiff of my seast. It required to
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/scaling/d128_steps1000_s1337/metrics.json

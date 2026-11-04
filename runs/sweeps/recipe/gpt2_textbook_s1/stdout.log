@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe/gpt2_textbook_s1
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,683,840 params (3,159,552 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 6.4239 | lr 2.50e-04 | 279.4k tok/s | 3s
+step    100 | loss 5.4671 | lr 5.00e-04 | 273.7k tok/s | 6s
+step    150 | loss 4.8996 | lr 7.50e-04 | 272.0k tok/s | 9s
+step    200 | loss 4.6626 | lr 1.00e-03 | 272.0k tok/s | 12s
+step    250 | loss 4.5268 | lr 8.69e-04 | 272.2k tok/s | 15s
+  eval step    250 | val_loss 4.4618 | val_bpb 2.6855 | acc 11.1% | 15s
+step    300 | loss 4.4463 | lr 8.16e-04 | 317.7k tok/s | 18s
+step    350 | loss 4.4021 | lr 7.56e-04 | 272.2k tok/s | 21s
+step    400 | loss 4.4011 | lr 6.90e-04 | 272.2k tok/s | 24s
+step    450 | loss 4.3564 | lr 6.22e-04 | 272.3k tok/s | 27s
+step    500 | loss 4.3157 | lr 5.51e-04 | 272.3k tok/s | 30s
+  eval step    500 | val_loss 4.2947 | val_bpb 2.5849 | acc 11.7% | 30s
+step    550 | loss 4.2774 | lr 4.81e-04 | 323.1k tok/s | 32s
+step    600 | loss 4.2997 | lr 4.12e-04 | 272.0k tok/s | 35s
+step    650 | loss 4.2498 | lr 3.47e-04 | 272.1k tok/s | 38s
+step    700 | loss 4.2866 | lr 2.87e-04 | 272.1k tok/s | 41s
+step    750 | loss 4.2831 | lr 2.33e-04 | 272.2k tok/s | 44s
+  eval step    750 | val_loss 4.2079 | val_bpb 2.5327 | acc 12.9% | 44s
+step    800 | loss 4.2439 | lr 1.87e-04 | 325.9k tok/s | 47s
+step    850 | loss 4.2087 | lr 1.50e-04 | 272.4k tok/s | 50s
+step    900 | loss 4.1984 | lr 1.22e-04 | 272.2k tok/s | 53s
+step    950 | loss 4.1841 | lr 1.06e-04 | 272.3k tok/s | 56s
+step   1000 | loss 4.1745 | lr 1.00e-04 | 272.3k tok/s | 59s
+  eval step   1000 | val_loss 4.1350 | val_bpb 2.4888 | acc 14.0% | 59s
+[final] val_loss 4.1534 | val_bpb 2.4915 | ppl 63.65 | acc 13.95% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+OI LC. The confaction on a factional, you need topresent sunity of the funity, I met a small you can get it’t be dince you that doesn’t be usucker ser without any eart and that would be us a difffect plankinning that. Ourrently, the 200000--007000. Amod. The mill ser is dighershaping the best presidential didder, replitable for the fulants gral, there's signatestion. Brandony, fight be animpicles are all of poluteadembority, followed in following outs. Taling coral,
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe/gpt2_textbook_s1/metrics.json

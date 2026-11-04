@@ -1,0 +1,76 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/swiglu/swiglu_lr2e-3_s2
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 11,015,040 params (10,621,824 non-embedding)
+[train] 3000 steps x 16,384 tokens/step (0.49 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 6.0585 | lr 5.00e-04 | 87.5k tok/s | 9s
+step    100 | loss 4.7424 | lr 1.00e-03 | 100.0k tok/s | 18s
+step    150 | loss 4.4079 | lr 1.50e-03 | 91.6k tok/s | 26s
+step    200 | loss 4.2014 | lr 2.00e-03 | 91.6k tok/s | 35s
+step    250 | loss 4.0144 | lr 1.97e-03 | 91.6k tok/s | 44s
+step    300 | loss 3.8356 | lr 1.96e-03 | 91.7k tok/s | 53s
+step    350 | loss 3.7652 | lr 1.94e-03 | 91.6k tok/s | 62s
+step    400 | loss 3.7725 | lr 1.92e-03 | 91.6k tok/s | 71s
+step    450 | loss 3.7074 | lr 1.90e-03 | 91.6k tok/s | 80s
+step    500 | loss 3.6305 | lr 1.88e-03 | 91.6k tok/s | 89s
+  eval step    500 | val_loss 3.5896 | val_bpb 2.1606 | acc 24.3% | 89s
+step    550 | loss 3.5678 | lr 1.86e-03 | 95.5k tok/s | 98s
+step    600 | loss 3.5913 | lr 1.83e-03 | 95.4k tok/s | 106s
+step    650 | loss 3.5345 | lr 1.80e-03 | 91.7k tok/s | 115s
+step    700 | loss 3.5811 | lr 1.77e-03 | 91.7k tok/s | 124s
+step    750 | loss 3.5783 | lr 1.74e-03 | 91.7k tok/s | 133s
+step    800 | loss 3.5038 | lr 1.70e-03 | 91.7k tok/s | 142s
+step    850 | loss 3.4560 | lr 1.67e-03 | 91.7k tok/s | 151s
+step    900 | loss 3.4333 | lr 1.63e-03 | 91.7k tok/s | 160s
+step    950 | loss 3.4159 | lr 1.59e-03 | 91.6k tok/s | 169s
+step   1000 | loss 3.4202 | lr 1.55e-03 | 91.6k tok/s | 178s
+  eval step   1000 | val_loss 3.3820 | val_bpb 2.0356 | acc 27.6% | 178s
+step   1050 | loss 3.3670 | lr 1.51e-03 | 99.8k tok/s | 186s
+step   1100 | loss 3.3670 | lr 1.47e-03 | 91.6k tok/s | 195s
+step   1150 | loss 3.3025 | lr 1.42e-03 | 91.6k tok/s | 204s
+step   1200 | loss 3.2891 | lr 1.38e-03 | 91.6k tok/s | 213s
+step   1250 | loss 3.2912 | lr 1.33e-03 | 91.6k tok/s | 222s
+step   1300 | loss 3.2702 | lr 1.29e-03 | 91.6k tok/s | 231s
+step   1350 | loss 3.2903 | lr 1.24e-03 | 91.7k tok/s | 240s
+step   1400 | loss 3.2803 | lr 1.20e-03 | 91.7k tok/s | 249s
+step   1450 | loss 3.2353 | lr 1.15e-03 | 91.6k tok/s | 257s
+step   1500 | loss 3.2938 | lr 1.10e-03 | 97.9k tok/s | 266s
+  eval step   1500 | val_loss 3.1835 | val_bpb 1.9161 | acc 30.9% | 266s
+step   1550 | loss 3.2231 | lr 1.05e-03 | 91.7k tok/s | 275s
+step   1600 | loss 3.1952 | lr 1.01e-03 | 91.6k tok/s | 284s
+step   1650 | loss 3.1983 | lr 9.60e-04 | 91.6k tok/s | 293s
+step   1700 | loss 3.1130 | lr 9.14e-04 | 91.7k tok/s | 302s
+step   1750 | loss 3.1319 | lr 8.68e-04 | 91.6k tok/s | 311s
+step   1800 | loss 3.0703 | lr 8.23e-04 | 91.7k tok/s | 319s
+step   1850 | loss 3.0362 | lr 7.78e-04 | 91.6k tok/s | 328s
+step   1900 | loss 3.0078 | lr 7.35e-04 | 91.7k tok/s | 337s
+step   1950 | loss 3.0670 | lr 6.92e-04 | 91.7k tok/s | 346s
+step   2000 | loss 3.0254 | lr 6.51e-04 | 99.7k tok/s | 354s
+  eval step   2000 | val_loss 2.9974 | val_bpb 1.8041 | acc 35.0% | 354s
+step   2050 | loss 2.9982 | lr 6.11e-04 | 91.8k tok/s | 363s
+step   2100 | loss 2.9818 | lr 5.72e-04 | 91.7k tok/s | 372s
+step   2150 | loss 2.9630 | lr 5.34e-04 | 91.7k tok/s | 381s
+step   2200 | loss 3.0091 | lr 4.98e-04 | 91.7k tok/s | 390s
+step   2250 | loss 2.9870 | lr 4.64e-04 | 91.6k tok/s | 399s
+step   2300 | loss 3.0472 | lr 4.32e-04 | 91.6k tok/s | 408s
+step   2350 | loss 2.9735 | lr 4.01e-04 | 91.7k tok/s | 417s
+step   2400 | loss 2.9886 | lr 3.72e-04 | 91.6k tok/s | 426s
+step   2450 | loss 2.9525 | lr 3.46e-04 | 110.4k tok/s | 433s
+step   2500 | loss 2.9569 | lr 3.21e-04 | 121.0k tok/s | 440s
+  eval step   2500 | val_loss 2.8940 | val_bpb 1.7419 | acc 37.0% | 440s
+step   2550 | loss 2.9250 | lr 2.99e-04 | 125.7k tok/s | 447s
+step   2600 | loss 2.9338 | lr 2.78e-04 | 161.8k tok/s | 452s
+step   2650 | loss 2.8960 | lr 2.60e-04 | 176.9k tok/s | 456s
+step   2700 | loss 2.9033 | lr 2.44e-04 | 91.7k tok/s | 465s
+step   2750 | loss 2.8881 | lr 2.31e-04 | 91.7k tok/s | 474s
+step   2800 | loss 2.8762 | lr 2.20e-04 | 91.6k tok/s | 483s
+step   2850 | loss 2.8760 | lr 2.11e-04 | 91.7k tok/s | 492s
+step   2900 | loss 2.8682 | lr 2.05e-04 | 91.7k tok/s | 501s
+step   2950 | loss 2.8539 | lr 2.01e-04 | 91.7k tok/s | 510s
+step   3000 | loss 2.9186 | lr 2.00e-04 | 91.6k tok/s | 519s
+  eval step   3000 | val_loss 2.8491 | val_bpb 1.7148 | acc 37.8% | 519s
+[final] val_loss 2.8753 | val_bpb 1.7276 | ppl 17.73 | acc 37.63% | 4,194,304 tokens, 2.40 bytes/token
+[sample]
+BEPELLING ANT SURCAN IS THEST TOUTE KIEN LART CELIST CRURS TO CKONTS. FORN AND AT FORST WARD YEAT OURS OF LOL PHINT In 2012 IST SURSGE HING BOLS HISAT LOLT! FROM BATY: VIE! STATTER! Our memories are used by 3% of our processing customer supplies. Check: PATENT SURD FING ANT COUT
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/swiglu/swiglu_lr2e-3_s2/metrics.json

@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/scaling/d256_L8_steps1000_s1337
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 6,557,952 params (6,295,808 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=muon schedule=wsd
+step     50 | loss 6.0177 | lr 5.00e-03 | 96.2k tok/s | 9s
+step    100 | loss 4.7549 | lr 1.00e-02 | 102.4k tok/s | 17s
+step    150 | loss 4.5044 | lr 1.50e-02 | 168.6k tok/s | 21s
+step    200 | loss 4.3197 | lr 2.00e-02 | 102.0k tok/s | 29s
+step    250 | loss 4.0212 | lr 2.00e-02 | 102.0k tok/s | 37s
+  eval step    250 | val_loss 3.8842 | val_bpb 2.3379 | acc 19.9% | 37s
+step    300 | loss 3.7894 | lr 2.00e-02 | 113.4k tok/s | 45s
+step    350 | loss 3.7024 | lr 2.00e-02 | 143.5k tok/s | 50s
+step    400 | loss 3.6944 | lr 2.00e-02 | 101.9k tok/s | 58s
+step    450 | loss 3.6037 | lr 2.00e-02 | 101.9k tok/s | 66s
+step    500 | loss 3.4853 | lr 2.00e-02 | 101.8k tok/s | 75s
+  eval step    500 | val_loss 3.4346 | val_bpb 2.0672 | acc 27.9% | 75s
+step    550 | loss 3.3778 | lr 2.00e-02 | 127.6k tok/s | 81s
+step    600 | loss 3.3653 | lr 2.00e-02 | 101.9k tok/s | 89s
+step    650 | loss 3.2905 | lr 2.00e-02 | 101.8k tok/s | 97s
+step    700 | loss 3.3120 | lr 2.00e-02 | 101.7k tok/s | 105s
+step    750 | loss 3.3132 | lr 1.67e-02 | 167.6k tok/s | 110s
+  eval step    750 | val_loss 3.1909 | val_bpb 1.9206 | acc 32.5% | 110s
+step    800 | loss 3.2362 | lr 1.34e-02 | 138.1k tok/s | 116s
+step    850 | loss 3.1562 | lr 1.01e-02 | 137.7k tok/s | 122s
+step    900 | loss 3.1122 | lr 6.73e-03 | 140.1k tok/s | 128s
+step    950 | loss 3.0433 | lr 3.40e-03 | 199.3k tok/s | 132s
+step   1000 | loss 2.9986 | lr 6.67e-05 | 111.3k tok/s | 139s
+  eval step   1000 | val_loss 2.9557 | val_bpb 1.7790 | acc 36.4% | 139s
+[final] val_loss 2.9790 | val_bpb 1.7870 | ppl 19.67 | acc 36.15% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+Singer creation. Jennifer and Broadcaster Nov 5, 1994. And, she has not allowed her songs interesting to make, but she has gotten the food as it comes to the money in Gaza. I’ll be really bad with them to drive the chance to lead him against the Middle Creation of the Waterhouse, I’ve moved herself and asked him if anyone is alleged. I’ve started herself. I didn’t know. Jennifering a bit more 2013, my Middle Creation, moved to the broadcaster. I required to
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/scaling/d256_L8_steps1000_s1337/metrics.json

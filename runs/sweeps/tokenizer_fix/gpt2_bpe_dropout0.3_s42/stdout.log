@@ -1,0 +1,90 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/tokenizer_fix/gpt2_bpe_dropout0.3_s42
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] tinyshakespeare_gpt2_tail100 | tokenizer=gpt2 vocab=50257 | train 301,966 tok | val 36,059 tok
+[model] gpt: 16,011,776 params (3,145,984 non-embedding)
+[train] 2000 steps x 8,192 tokens/step (54.26 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 9.1013 | lr 5.00e-04 | 99.6k tok/s | 4s
+step    100 | loss 5.9721 | lr 1.00e-03 | 107.0k tok/s | 8s
+step    150 | loss 5.0291 | lr 9.88e-04 | 106.9k tok/s | 12s
+step    200 | loss 4.5266 | lr 9.78e-04 | 106.9k tok/s | 16s
+step    250 | loss 4.2775 | lr 9.66e-04 | 107.0k tok/s | 19s
+  eval step    250 | val_loss 4.7532 | val_bpb 2.2176 | acc 26.8% | 19s
+step    300 | loss 4.0826 | lr 9.51e-04 | 107.0k tok/s | 23s
+step    350 | loss 3.9523 | lr 9.34e-04 | 107.0k tok/s | 27s
+step    400 | loss 3.8382 | lr 9.14e-04 | 107.0k tok/s | 31s
+step    450 | loss 3.7435 | lr 8.93e-04 | 107.0k tok/s | 35s
+step    500 | loss 3.6440 | lr 8.69e-04 | 107.0k tok/s | 39s
+  eval step    500 | val_loss 4.6293 | val_bpb 2.1598 | acc 30.2% | 39s
+step    550 | loss 3.5565 | lr 8.43e-04 | 107.0k tok/s | 42s
+step    600 | loss 3.4680 | lr 8.15e-04 | 106.9k tok/s | 46s
+step    650 | loss 3.4331 | lr 7.86e-04 | 106.9k tok/s | 50s
+step    700 | loss 3.3545 | lr 7.55e-04 | 106.9k tok/s | 54s
+step    750 | loss 3.3022 | lr 7.23e-04 | 107.0k tok/s | 58s
+  eval step    750 | val_loss 4.6975 | val_bpb 2.1916 | acc 30.9% | 58s
+step    800 | loss 3.2288 | lr 6.90e-04 | 107.0k tok/s | 62s
+step    850 | loss 3.2078 | lr 6.56e-04 | 107.0k tok/s | 65s
+step    900 | loss 3.1539 | lr 6.21e-04 | 107.0k tok/s | 69s
+step    950 | loss 3.0959 | lr 5.86e-04 | 107.0k tok/s | 73s
+step   1000 | loss 3.0570 | lr 5.51e-04 | 107.0k tok/s | 77s
+  eval step   1000 | val_loss 4.8170 | val_bpb 2.2474 | acc 31.3% | 77s
+step   1050 | loss 3.0201 | lr 5.15e-04 | 106.9k tok/s | 81s
+step   1100 | loss 2.9618 | lr 4.80e-04 | 107.0k tok/s | 85s
+step   1150 | loss 2.9334 | lr 4.46e-04 | 107.0k tok/s | 88s
+step   1200 | loss 2.8924 | lr 4.12e-04 | 107.0k tok/s | 92s
+step   1250 | loss 2.8633 | lr 3.78e-04 | 106.9k tok/s | 96s
+  eval step   1250 | val_loss 4.9345 | val_bpb 2.3022 | acc 31.0% | 96s
+step   1300 | loss 2.8477 | lr 3.46e-04 | 107.0k tok/s | 100s
+step   1350 | loss 2.8346 | lr 3.15e-04 | 106.9k tok/s | 104s
+step   1400 | loss 2.7909 | lr 2.86e-04 | 107.0k tok/s | 108s
+step   1450 | loss 2.7729 | lr 2.58e-04 | 107.0k tok/s | 111s
+step   1500 | loss 2.7606 | lr 2.32e-04 | 107.0k tok/s | 115s
+  eval step   1500 | val_loss 4.9723 | val_bpb 2.3198 | acc 31.4% | 115s
+step   1550 | loss 2.7300 | lr 2.08e-04 | 107.0k tok/s | 119s
+step   1600 | loss 2.7099 | lr 1.86e-04 | 107.0k tok/s | 123s
+step   1650 | loss 2.6973 | lr 1.67e-04 | 107.0k tok/s | 127s
+step   1700 | loss 2.6682 | lr 1.49e-04 | 106.9k tok/s | 130s
+step   1750 | loss 2.6608 | lr 1.35e-04 | 106.9k tok/s | 134s
+  eval step   1750 | val_loss 5.0260 | val_bpb 2.3449 | acc 31.2% | 134s
+step   1800 | loss 2.6477 | lr 1.22e-04 | 107.0k tok/s | 138s
+step   1850 | loss 2.6523 | lr 1.13e-04 | 106.9k tok/s | 142s
+step   1900 | loss 2.6301 | lr 1.06e-04 | 107.0k tok/s | 146s
+step   1950 | loss 2.6240 | lr 1.01e-04 | 106.9k tok/s | 150s
+step   2000 | loss 2.6257 | lr 1.00e-04 | 106.9k tok/s | 153s
+  eval step   2000 | val_loss 5.0488 | val_bpb 2.3555 | acc 31.2% | 153s
+[final] val_loss 5.0488 | val_bpb 2.3555 | ppl 155.84 | acc 31.24% | 35,840 tokens, 3.09 bytes/token
+[sample]
+<|endoftext|>.
+
+LUCIO:
+No, not for any thing hath done any man,
+But the greater man, to bear him so near
+As any man's, he doth scorn his looks.
+
+LUCIO:
+Even he that might have died in quarrel,
+To begot in his office, by the least:
+He hath a brother, and his brother lived.
+
+ISABELLA:
+Believe me, even to his death with him!
+Heaven keep him! I have him not a man!
+
+LUCIO:
+So will I live with words: my lord, I'll warrant.
+
+DUKE VINCENTIO:
+Yes, he is come to him.
+
+LUCIO:
+Yes, ay, as he is.
+
+LUCIO:
+But, sir, no, he will answer him.
+
+LUCIO:
+Why, so; he is a quarrel of his death.
+
+DUKE VINCENTIO:
+I thi
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/tokenizer_fix/gpt2_bpe_dropout0.3_s42/metrics.json
