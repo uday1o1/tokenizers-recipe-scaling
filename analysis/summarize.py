@@ -120,7 +120,8 @@ def recipe_lr():
                 "8e-3": ("recipe_lr", f"{n}_lr8e-3")}
         v = {lr: np.array([metrics(sw, rn, s)["val_bpb"] for s in RECIPE_SEEDS]) for lr, (sw, rn) in runs.items()}
         best = min(v, key=lambda lr: v[lr].mean())
-        out[n] = {"by_lr": {lr: describe(x) for lr, x in v.items()}, "best_lr": best, "best_values": v[best].tolist()}
+        out[n] = {"by_lr": {lr: describe(x) for lr, x in v.items()}, "best_lr": best, "best_values": v[best].tolist(),
+                  "best_vs_other": {lr: paired(v[best], x) for lr, x in v.items() if lr != best}}
     muon = np.array([metrics("recipe", "plus_muon", s)["val_bpb"] for s in RECIPE_SEEDS])
     b = {n: np.array(out[n]["best_values"]) for n in out}
     res = {"configs": out,
@@ -162,7 +163,7 @@ def scaling():
                               {"from": a, "to": b, "param_ratio": pts[f"{b}_{st}"]["params_non_embedding"] /
                                pts[f"{a}_{st}"]["params_non_embedding"]}
                               for a, b in zip(WIDTHS, WIDTHS[1:])] for st in STEPS}
-    # the same gains per doubling of N (the width steps multiply N by 1.89 or 2.11)
+    # the same gains per doubling of N (the width steps multiply N by 1.89 to 2.12)
     for st in STEPS:
         for x in res["size_steps"][st]:
             x["gain_per_doubling"] = -x["mean_diff"] / np.log2(x["param_ratio"])

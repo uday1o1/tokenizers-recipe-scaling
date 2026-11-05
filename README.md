@@ -26,7 +26,7 @@ All results are validation bits per byte (bpb; lower is better), as mean ± std 
 | BPE 2048 | 2,048 | 2.41 | 43.4 | 3.96 | 2.371 ± 0.004 | 2.113 ± 0.004 (500, 500, 500) |
 | GPT-2 BPE | 50,257 | 3.09 | 54.3 | 6.14 | 2.862 ± 0.075 | 2.166 ± 0.006 (250, 250, 500) |
 
-- **Per-token loss ranks the tokenizers by token length, not by quality.** Loss orders the eight exactly by bytes per token. Word 2048 has a far higher loss than char (2.33 against 1.47 nats per token) but a lower bpb, because each of its tokens covers 1.62 bytes. bpb = loss / (ln 2 × bytes per token) charges every tokenizer per byte of the same validation split (each tokenizer's evaluation windows cover 110,827 to 111,403 of its 111,540 bytes).
+- **Per-token loss ranks the tokenizers by token length, not by quality.** Loss orders the eight exactly by bytes per token. Word 2048 has a far higher loss than char (2.33 against 1.47 nats per token) but a lower bpb, because each of its tokens covers 1.62 bytes. bpb = loss / (ln 2 × bytes per token) charges every tokenizer per byte of the same validation split (each tokenizer's evaluation windows cover 110,827 to 111,403 of the 111,540 bytes of the validation split, as each run's stdout.log reports).
 - **Long-token tokenizers overfit.** Word 8192, unigram 2048, BPE 2048 and GPT-2 BPE (1.98 to 3.09 bytes per token) pass over the 1 MB corpus 36.6 to 54.3 times in the same number of steps. They reach their best bpb by step 750 and then get worse, and the gap between final and best rises with the passes. The best points of all eight tokenizers span 0.127 bpb, the final values 0.792.
 - **Fixing GPT-2 BPE.** A 500-step schedule (the step at which nanolm's tutorial reports this tokenizer's best bpb) gives 2.146 ± 0.018, −0.716 from the 2000-step final (paired p = 0.005). Dropout 0.3 gives 2.344 ± 0.021, slowing the overfitting without stopping it.
 
@@ -49,7 +49,7 @@ All results are validation bits per byte (bpb; lower is better), as mean ± std 
 
 ### Scaling (2 seeds)
 
-- **Trend.** Along the width series bpb falls with every width step at every budget, and the gain per doubling of non-embedding parameters N shrinks at every step: from 0.092 to 0.031 bpb at 16.4M tokens and from 0.073 to 0.038 at 65.5M (each width step multiplies N by 1.89 or 2.11). The curve flattens, less so with more tokens.
+- **Trend.** Along the width series bpb falls with every width step at every budget, and the gain per doubling of non-embedding parameters N shrinks at every step: from 0.092 to 0.031 bpb at 16.4M tokens and from 0.073 to 0.038 at 65.5M (each width step multiplies N by 1.89 to 2.12). The curve flattens, less so with more tokens.
 - **Shape.** 8 layers × 256 (5.8% more non-embedding parameters than 4 layers × 352) beats 4 × 352 by 0.005 to 0.015 bpb across the budgets. 2 layers × 256 (5.8% more non-embedding parameters than 4 layers × 176) is 0.020 to 0.069 worse than 4 × 176.
 - **2× model or 2× tokens.** At about equal compute (6ND within 6%), a width-series model with twice the tokens beats the next width up in 7 of 8 pairs, by 0.008 to 0.058 bpb. The eighth pair (−0.002) is not resolved; its larger model has the most tokens per non-embedding parameter of all pairs (22). A doubling of tokens gains 0.068 to 0.114 bpb at every width, a doubling of N 0.031 to 0.092. Along the depth series the same holds from 4 to 8 layers, but 2 layers on twice the tokens is no better than 4 layers.
 
@@ -75,7 +75,7 @@ All results are validation bits per byte (bpb; lower is better), as mean ± std 
 
 ## Reproducing
 
-Requires Python 3.11 or later and one NVIDIA GPU. Training used one RTX 4090 with bf16 autocast, PyTorch 2.6.0, CUDA 12.4 and Python 3.11; `requirements.txt` pins the package versions.
+Requires Python 3.11 to 3.13 and one NVIDIA GPU. Training used one RTX 4090 with bf16 autocast, PyTorch 2.6.0, CUDA 12.4 and Python 3.11; `requirements.txt` pins the package versions.
 
 ```bash
 bash scripts/setup.sh          # clone nanolm at commit 8418fc1 into external/, install requirements

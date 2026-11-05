@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Download FineWeb (sp1024), then train every run (GPU). SLOTS = how many runs share one GPU at a
 # time (default 4; at most 2 for tokenizer_fix, all of whose runs use the 50,257-token GPT-2
-# vocabulary and reach the highest peak memory of any run, 4.6 GB). Finished runs are skipped and failed runs are retried,
+# vocabulary and reach the highest peak memory of any run, 4.5 GiB). Finished runs are skipped and failed runs are retried,
 # so the script can be re-run to resume; after a killed sweep, add --reclaim to the nanolm.sweep call
 # to clear the run claims it left behind.
 set -euo pipefail
