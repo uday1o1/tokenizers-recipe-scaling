@@ -20,8 +20,8 @@ PAL = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#6250d
 TOK_LABEL = {"char": "char (65)", "byte": "byte (256)", "word_2048": "word 2048", "word_8192": "word 8192",
              "sp_bpe_512": "BPE 512", "sp_bpe_2048": "BPE 2048", "sp_unigram_2048": "unigram 2048",
              "gpt2_bpe": "GPT-2 BPE (50,257)"}
-RECIPE_LABEL = {"gpt2_textbook": "GPT-2 textbook (AdamW, cosine)", "plus_rmsnorm_rope": "+ RMSNorm, RoPE",
-                "plus_wsd": "+ WSD (AdamW)", "plus_muon": "+ Muon (WSD)", "muon_cosine": "control: Muon, cosine"}
+RECIPE_LABEL = {"gpt2_textbook": "textbook", "plus_rmsnorm_rope": "+ RMSNorm, RoPE", "plus_wsd": "+ WSD",
+                "plus_muon": "+ Muon", "muon_cosine": "Muon, cosine"}
 plt.rcParams.update({"font.size": 8.5, "axes.spines.top": False, "axes.spines.right": False, "axes.grid": True,
                      "grid.color": "#e4e4e4", "legend.frameon": False, "lines.linewidth": 1.5})
 
@@ -72,6 +72,7 @@ def tokenizers():
     band(ax, T["char"]["curve"], PAL[8], "char", x="steps", scale=1, ls="--")
     ax.set_ylim(2.0, 3.0)
     ax.set_xlabel("optimizer step")
+    ax.set_ylabel("validation bits per byte")
     ax.legend(fontsize=6.3, loc="upper left")
     ax.set_title("(c) fixes for GPT-2 BPE", loc="left", fontsize=8.5)
     fig.tight_layout()
@@ -96,8 +97,9 @@ def recipe():
             ("+ WSD (AdamW)", R["chain"]["plus_rmsnorm_rope->plus_wsd"]),
             ("+ Muon (WSD)", R["chain"]["plus_wsd->plus_muon"]),
             ("WSD, under Muon", R["factorial"]["schedule_under_muon"]),
-            ("Muon, under cosine", R["factorial"]["optimizer_under_cosine"])]
-    colors = [PAL[8], PAL[8], PAL[1], PAL[2], PAL[3], PAL[8], PAL[8]]
+            ("Muon, under cosine", R["factorial"]["optimizer_under_cosine"]),
+            ("Muon, vs matched AdamW", R["parts"]["optimizer_matched"])]
+    colors = [PAL[8], PAL[8], PAL[1], PAL[2], PAL[3], PAL[8], PAL[8], PAL[8]]
     for i, (lab, d) in enumerate(rows):
         ax.errorbar(d["mean_diff"], i, xerr=d["std_diff"], fmt="o", color=colors[i], ms=4, capsize=2,
                     mfc="white" if colors[i] == PAL[8] else colors[i])
@@ -108,15 +110,18 @@ def recipe():
     ax.set_xlabel("paired change in final bpb")
     ax.set_title("(b) each change (− = better)", loc="left", fontsize=8.5)
     ax = axes[2]
-    band(ax, R["configs"]["gpt2_textbook"]["curve"], PAL[0], "learned, 16.4M tokens")
-    band(ax, Q["textbook_steps4000"]["curve"], PAL[0], "learned, 65.5M tokens", ls="--")
-    band(ax, R["configs"]["textbook_rope"]["curve"], PAL[1], "RoPE, 16.4M tokens")
-    band(ax, Q["textbook_rope_steps4000"]["curve"], PAL[1], "RoPE, 65.5M tokens", ls="--")
-    band(ax, Q["textbook_nope"]["curve"], PAL[8], "no positions, 16.4M tokens", ls=":")
+    band(ax, R["configs"]["gpt2_textbook"]["curve"], PAL[0], "learned, 16.4M")
+    band(ax, Q["textbook_steps4000"]["curve"], PAL[0], "learned, 65.5M", ls="--")
+    band(ax, R["configs"]["textbook_rope"]["curve"], PAL[1], "RoPE, 16.4M")
+    band(ax, Q["textbook_rope_steps4000"]["curve"], PAL[1], "RoPE, 65.5M", ls="--")
+    c = Q["textbook_nope"]["curve"]
+    ax.plot(np.array(c["tokens"]) / 1e6, c["mean"], color=PAL[8], ls=":", marker="x", ms=4,
+            label="none, 16.4M")
     ax.set_ylim(1.75, 3.0)
     ax.set_xlabel("training tokens (millions)")
-    ax.legend(fontsize=5.6, loc="upper right")
-    ax.set_title("(c) positions, textbook model", loc="left", fontsize=8.5)
+    ax.set_ylabel("validation bpb")
+    ax.legend(fontsize=6, loc="upper right", title="positions, tokens", title_fontsize=6)
+    ax.set_title("(c) position encoding, textbook", loc="left", fontsize=8.5)
     fig.tight_layout()
     save(fig, "recipe")
 
@@ -139,6 +144,8 @@ def scaling():
     axes[0].set_xlabel("non-embedding parameters")
     axes[1].set_xlabel("training FLOPs (6ND)")
     axes[0].set_ylabel("validation bpb (first 2,097,152 tokens)")
+    axes[1].set_ylabel("validation bpb (first 2,097,152 tokens)")
+    axes[1].yaxis.set_tick_params(labelleft=True)
     axes[1].legend(fontsize=5.8, loc="upper right")
     axes[0].set_title("(a) bpb against model size", loc="left", fontsize=8.5)
     axes[1].set_title("(b) bpb against compute", loc="left", fontsize=8.5)

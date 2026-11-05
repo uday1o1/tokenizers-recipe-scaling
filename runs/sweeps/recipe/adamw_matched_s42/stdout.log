@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe/adamw_matched_s42
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,410,176 params (3,148,032 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=wsd
+step     50 | loss 6.1408 | lr 2.50e-04 | 265.1k tok/s | 3s
+step    100 | loss 4.9284 | lr 5.00e-04 | 282.1k tok/s | 6s
+step    150 | loss 4.5852 | lr 7.50e-04 | 282.2k tok/s | 9s
+step    200 | loss 4.4157 | lr 1.00e-03 | 282.6k tok/s | 12s
+step    250 | loss 4.2505 | lr 1.00e-03 | 282.6k tok/s | 15s
+  eval step    250 | val_loss 4.1585 | val_bpb 2.5030 | acc 16.0% | 15s
+step    300 | loss 4.1017 | lr 1.00e-03 | 301.9k tok/s | 17s
+step    350 | loss 4.0192 | lr 1.00e-03 | 282.2k tok/s | 20s
+step    400 | loss 4.0050 | lr 1.00e-03 | 282.2k tok/s | 23s
+step    450 | loss 3.9310 | lr 1.00e-03 | 282.2k tok/s | 26s
+step    500 | loss 3.8451 | lr 1.00e-03 | 282.4k tok/s | 29s
+  eval step    500 | val_loss 3.8095 | val_bpb 2.2929 | acc 20.8% | 29s
+step    550 | loss 3.7741 | lr 1.00e-03 | 294.9k tok/s | 32s
+step    600 | loss 3.7975 | lr 1.00e-03 | 281.8k tok/s | 35s
+step    650 | loss 3.7328 | lr 1.00e-03 | 282.5k tok/s | 38s
+step    700 | loss 3.7702 | lr 1.00e-03 | 282.2k tok/s | 41s
+step    750 | loss 3.7454 | lr 8.37e-04 | 282.1k tok/s | 43s
+  eval step    750 | val_loss 3.6555 | val_bpb 2.2002 | acc 23.3% | 43s
+step    800 | loss 3.6537 | lr 6.70e-04 | 292.8k tok/s | 46s
+step    850 | loss 3.5820 | lr 5.03e-04 | 282.2k tok/s | 49s
+step    900 | loss 3.5380 | lr 3.37e-04 | 282.1k tok/s | 52s
+step    950 | loss 3.4925 | lr 1.70e-04 | 282.2k tok/s | 55s
+step   1000 | loss 3.4569 | lr 3.33e-06 | 282.3k tok/s | 58s
+  eval step   1000 | val_loss 3.4109 | val_bpb 2.0530 | acc 27.3% | 58s
+[final] val_loss 3.4335 | val_bpb 2.0596 | ppl 30.98 | acc 27.05% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+Ti-face Norton 188-327 ID6636 58:324 30185895 (109:00) Impino filled with the end of the same Spring: There are away journey source that I am a distance to any choice later and Indian. I’ll be able to see about Master and Timbers will be trouble-chocalise. I practice this is very part of the moment, and I need to make a major confuseds or certificate, moke dangers, and the highest times in the Privice Times. And for these stays. For more information and more of
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe/adamw_matched_s42/metrics.json

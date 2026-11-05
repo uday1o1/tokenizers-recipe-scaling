@@ -9,6 +9,7 @@ per-seed differences (the same seeds in both arms).
 from __future__ import annotations
 
 import json
+import math
 
 import numpy as np
 
@@ -52,7 +53,8 @@ def tokenizers():
                   "curve": curve("tokenizers", n, TOK_SEEDS)}
     final = {n: np.array(out[n]["final_bpb"]["values"]) for n in TOKENIZERS}
     res = {"by_tokenizer": out, "noise_floor": noise_floor(final.values()),
-           "vs_char_final": {n: paired(final["char"], final[n]) for n in TOKENIZERS if n != "char"}}
+           "vs_char_final": {n: paired(final["char"], final[n]) for n in TOKENIZERS if n != "char"},
+           "word_2048_vs_byte_final": paired(final["byte"], final["word_2048"])}
     gpt2 = final["gpt2_bpe"]
     best_gpt2 = np.array(out["gpt2_bpe"]["best_bpb"]["values"])
     fix = {}
@@ -79,7 +81,6 @@ def recipe():
     chain = ["gpt2_textbook", "plus_rmsnorm_rope", "plus_wsd", "plus_muon"]
     res["chain"] = {f"{a}->{b}": paired(v[a], v[b]) for a, b in zip(chain, chain[1:])}
     res["chain"]["gpt2_textbook->plus_muon"] = paired(v["gpt2_textbook"], v["plus_muon"])
-    # the first step split: each architecture knob alone on the textbook model
     # the position encoding of the textbook model: none at all, and learned against RoPE at 4x the tokens
     pv = {n: np.array([metrics("positions", n, s)["val_bpb"] for s in RECIPE_SEEDS])
           for n in ("textbook_nope", "textbook_steps4000", "textbook_rope_steps4000")}
@@ -90,9 +91,14 @@ def recipe():
                         "nope_vs_rope": paired(v["textbook_rope"], pv["textbook_nope"]),
                         "rope_vs_learned_4000": paired(pv["textbook_steps4000"], pv["textbook_rope_steps4000"]),
                         "noise_floor": noise_floor(pv.values())}
+    # the first step split: each architecture knob alone on the textbook model
     res["parts"] = {"rope_alone": paired(v["gpt2_textbook"], v["textbook_rope"]),
                     "rmsnorm_alone": paired(v["gpt2_textbook"], v["textbook_rmsnorm"]),
-                    "rmsnorm_and_no_bias_after_rope": paired(v["textbook_rope"], v["plus_rmsnorm_rope"])}
+                    "rmsnorm_and_no_bias_after_rope": paired(v["textbook_rope"], v["plus_rmsnorm_rope"]),
+                    # the Muon runs also raise the embedding learning rate and drop weight decay; adamw_matched has
+                    # those settings with AdamW, so it splits the +Muon step into the two
+                    "muon_settings_with_adamw": paired(v["plus_wsd"], v["adamw_matched"]),
+                    "optimizer_matched": paired(v["adamw_matched"], v["plus_muon"])}
     # 2x2: schedule (cosine, WSD) x optimizer (AdamW, Muon) on the RMSNorm/RoPE model
     sched_adamw = v["plus_wsd"] - v["plus_rmsnorm_rope"]
     sched_muon = v["plus_muon"] - v["muon_cosine"]
@@ -124,19 +130,26 @@ def scaling():
                                   **describe([m["val_bpb"] for m in ms])}
     groups = [p["values"] for p in pts.values()] + [p["values"] for k, p in depth.items() if not k.startswith("4_")]
     res = {"points": pts, "depth_points": depth, "noise_floor": noise_floor(groups)}
-    # deeper-and-narrower against wider-and-shallower at about the same non-embedding parameters
-    res["depth_vs_width"] = {st: [{"deep": f"256x{Ld}", "wide": f"{w}x4",
+    # the depth series (width 256) against the width series (4 layers) at about the same non-embedding parameters
+    res["depth_vs_width"] = {st: [{"depth_series": f"256x{Ld}", "width_series": f"{w}x4",
                                    "param_ratio": depth[f"{Ld}_{st}"]["params_non_embedding"] /
                                    pts[f"{w}_{st}"]["params_non_embedding"],
                                    **paired(pts[f"{w}_{st}"]["values"], depth[f"{Ld}_{st}"]["values"])}
                                   for Ld, w in ((2, 176), (8, 352))] for st in STEPS}
-    # gain per doubling of size at each budget, and 2x model against 2x tokens at equal compute
+    # gain per width step (about 2x N) at each budget, and 2x model against 2x tokens at about equal compute
     res["size_steps"] = {st: [paired(pts[f"{a}_{st}"]["values"], pts[f"{b}_{st}"]["values"]) |
                               {"from": a, "to": b, "param_ratio": pts[f"{b}_{st}"]["params_non_embedding"] /
                                pts[f"{a}_{st}"]["params_non_embedding"]}
                               for a, b in zip(WIDTHS, WIDTHS[1:])] for st in STEPS}
     res["token_steps"] = {w: [paired(pts[f"{w}_{a}"]["values"], pts[f"{w}_{b}"]["values"]) | {"from": a, "to": b}
                               for a, b in zip(STEPS, STEPS[1:])] for w in WIDTHS}
+    # the same comparison along the depth series: 2 -> 4 and 4 -> 8 layers double N at width 256
+    res["depth_model_vs_tokens"] = [{"small": a, "big": b, "steps": st,
+                                     "flops_ratio": depth[f"{a}_{2 * st}"]["flops_6ND"] / depth[f"{b}_{st}"]["flops_6ND"],
+                                     "bigger_model": depth[f"{b}_{st}"]["mean"], "more_tokens": depth[f"{a}_{2 * st}"]["mean"],
+                                     "more_tokens_minus_bigger_model": paired(depth[f"{b}_{st}"]["values"],
+                                                                              depth[f"{a}_{2 * st}"]["values"])}
+                                    for st in STEPS[:-1] for a, b in ((2, 4), (4, 8))]
     res["model_vs_tokens"] = []
     for st in STEPS[:-1]:
         for a, b in zip(WIDTHS, WIDTHS[1:]):
@@ -182,7 +195,7 @@ def main():
     out["nanolm_git"], out["torch"] = meta["git"], meta["torch"]
     allm = list((ROOT / "runs" / "sweeps").rglob("metrics.json"))
     out["n_runs"] = len(allm)
-    out["total_train_hours"] = sum(json.loads(p.read_text())["train_time_sec"] for p in allm) / 3600
+    out["total_train_hours"] = math.fsum(json.loads(p.read_text())["train_time_sec"] for p in allm) / 3600
     out["devices"] = sorted({json.loads(p.read_text())["device"] for p in allm})
     save("summary", out)
     print(json.dumps({k: out[k] for k in ("n_runs", "total_train_hours", "devices")}, indent=1))

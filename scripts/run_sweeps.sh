@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 # Download FineWeb (sp1024), then train every run (GPU). SLOTS = how many runs share one GPU at a
-# time (default 4; tokenizer_fix, whose runs all use the 50,257-token GPT-2 vocabulary and need about
-# 7 GB each during evaluation, at most 2). Finished runs are skipped, so the script can be re-run to
-# resume; add --reclaim to a nanolm.sweep call to retry runs that failed.
+# time (default 4; tokenizer_fix, whose runs all use the 50,257-token GPT-2 vocabulary and have the
+# highest peak memory of any sweep, at most 2). Finished runs are skipped and failed runs are retried,
+# so the script can be re-run to resume; after a killed sweep, add --reclaim to the nanolm.sweep call
+# to clear the run claims it left behind.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 source scripts/env.sh

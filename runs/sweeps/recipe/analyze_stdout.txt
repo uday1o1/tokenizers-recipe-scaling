@@ -3,6 +3,7 @@ metric = val_bpb  (lower is better)
 
                    n_seeds  val_bpb_mean  val_bpb_std  params_M  train_min
 name                                                                      
+adamw_matched            5        2.0581       0.0060    3.4102     0.9674
 gpt2_textbook            5        2.4912       0.0030    3.6838     0.9892
 muon_cosine              5        1.8454       0.0073    3.4102     1.1550
 plus_muon                5        1.8308       0.0052    3.4102     1.2528
@@ -11,6 +12,6 @@ plus_wsd                 5        2.0660       0.0024    3.4102     1.0766
 textbook_rmsnorm         5        2.4918       0.0035    3.6815     0.8082
 textbook_rope            5        2.1138       0.0053    3.4217     1.1212
 
-seed noise floor: median within-experiment std = 0.0035 bpb (differences below ~2x this are not trustworthy without more seeds)
+seed noise floor: median within-experiment std = 0.0043 bpb (differences below ~2x this are not trustworthy without more seeds)
 
 wrote runs/sweeps/recipe/summary.csv, summary.md, curves.png, bars.png
