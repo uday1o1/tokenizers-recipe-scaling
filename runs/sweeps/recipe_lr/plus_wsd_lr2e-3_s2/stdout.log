@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_wsd_lr2e-3_s2
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,410,176 params (3,148,032 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=wsd
+step     50 | loss 6.1694 | lr 5.00e-04 | 216.8k tok/s | 4s
+step    100 | loss 5.0235 | lr 1.00e-03 | 235.6k tok/s | 7s
+step    150 | loss 4.6152 | lr 1.50e-03 | 235.3k tok/s | 11s
+step    200 | loss 4.4072 | lr 2.00e-03 | 264.7k tok/s | 14s
+step    250 | loss 4.2251 | lr 2.00e-03 | 270.9k tok/s | 17s
+  eval step    250 | val_loss 4.1179 | val_bpb 2.4785 | acc 16.6% | 17s
+step    300 | loss 4.0561 | lr 2.00e-03 | 237.5k tok/s | 20s
+step    350 | loss 3.9700 | lr 2.00e-03 | 235.6k tok/s | 24s
+step    400 | loss 3.9484 | lr 2.00e-03 | 235.6k tok/s | 27s
+step    450 | loss 3.8751 | lr 2.00e-03 | 264.7k tok/s | 30s
+step    500 | loss 3.7925 | lr 2.00e-03 | 270.7k tok/s | 33s
+  eval step    500 | val_loss 3.7599 | val_bpb 2.2630 | acc 21.9% | 33s
+step    550 | loss 3.7208 | lr 2.00e-03 | 237.2k tok/s | 37s
+step    600 | loss 3.7448 | lr 2.00e-03 | 235.5k tok/s | 40s
+step    650 | loss 3.6814 | lr 2.00e-03 | 235.4k tok/s | 44s
+step    700 | loss 3.7295 | lr 2.00e-03 | 263.8k tok/s | 47s
+step    750 | loss 3.7128 | lr 1.67e-03 | 271.7k tok/s | 50s
+  eval step    750 | val_loss 3.6105 | val_bpb 2.1731 | acc 24.0% | 50s
+step    800 | loss 3.6171 | lr 1.34e-03 | 237.0k tok/s | 53s
+step    850 | loss 3.5497 | lr 1.01e-03 | 235.2k tok/s | 57s
+step    900 | loss 3.5000 | lr 6.73e-04 | 235.3k tok/s | 60s
+step    950 | loss 3.4506 | lr 3.40e-04 | 263.1k tok/s | 63s
+step   1000 | loss 3.4225 | lr 6.67e-06 | 274.2k tok/s | 66s
+  eval step   1000 | val_loss 3.3673 | val_bpb 2.0268 | acc 27.9% | 66s
+[final] val_loss 3.3915 | val_bpb 2.0344 | ppl 29.71 | acc 27.71% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+Big Matt. | A Boat Vol. Atorist Improduction: To focus on Japanese Game Capito.com. His release, College Baraébo Adeli, F. (RTCA)||Mlimines, Senate (2016). The Bokwi Smirre, Enterprise, H.-Mode, Knows, Dukey, Mihuki, Synthesical, Succique, In., 2012There’s no longer-over-lawy, you think, just a full-size, I have clearly cared the morning, you can p
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_wsd_lr2e-3_s2/metrics.json

@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/gpt2_textbook_lr8e-3_s42
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,683,840 params (3,159,552 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 5.9703 | lr 2.00e-03 | 254.7k tok/s | 3s
+step    100 | loss 4.8438 | lr 4.00e-03 | 274.4k tok/s | 6s
+step    150 | loss 4.6477 | lr 6.00e-03 | 273.6k tok/s | 9s
+step    200 | loss 4.6176 | lr 8.00e-03 | 276.7k tok/s | 12s
+step    250 | loss 4.5135 | lr 6.95e-03 | 288.7k tok/s | 15s
+  eval step    250 | val_loss 4.4535 | val_bpb 2.6805 | acc 10.6% | 15s
+step    300 | loss 4.4369 | lr 6.53e-03 | 299.1k tok/s | 18s
+step    350 | loss 4.4085 | lr 6.04e-03 | 275.9k tok/s | 21s
+step    400 | loss 4.4272 | lr 5.52e-03 | 277.6k tok/s | 24s
+step    450 | loss 4.3712 | lr 4.97e-03 | 277.6k tok/s | 27s
+step    500 | loss 4.3177 | lr 4.41e-03 | 289.0k tok/s | 29s
+  eval step    500 | val_loss 4.2877 | val_bpb 2.5807 | acc 11.6% | 29s
+step    550 | loss 4.2696 | lr 3.85e-03 | 321.9k tok/s | 32s
+step    600 | loss 4.2833 | lr 3.30e-03 | 278.8k tok/s | 35s
+step    650 | loss 4.2195 | lr 2.78e-03 | 280.5k tok/s | 38s
+step    700 | loss 4.2435 | lr 2.29e-03 | 278.5k tok/s | 41s
+step    750 | loss 4.2232 | lr 1.86e-03 | 298.0k tok/s | 44s
+  eval step    750 | val_loss 4.1416 | val_bpb 2.4928 | acc 13.9% | 44s
+step    800 | loss 4.1502 | lr 1.49e-03 | 368.7k tok/s | 46s
+step    850 | loss 4.0883 | lr 1.20e-03 | 276.1k tok/s | 49s
+step    900 | loss 4.0497 | lr 9.80e-04 | 276.1k tok/s | 52s
+step    950 | loss 4.0232 | lr 8.46e-04 | 278.7k tok/s | 55s
+step   1000 | loss 3.9866 | lr 8.00e-04 | 308.8k tok/s | 57s
+  eval step   1000 | val_loss 3.9483 | val_bpb 2.3764 | acc 17.5% | 57s
+[final] val_loss 3.9665 | val_bpb 2.3794 | ppl 52.80 | acc 17.58% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+Th Aderngust . Webout the interviewer town or es order.com 30101895 (105: 28000007 (51) 20/35 Sporggo 19498.46201: 2024: 8.05 National Fest Date. 207,550, M. Our Timb, 09: 10.207.6.20, J.6,0.2, 19; 19.8.0.,07. 8: 1.7.9.m.c.126., 3,14:2.:4://.t//.:2.,3.
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/gpt2_textbook_lr8e-3_s42/metrics.json

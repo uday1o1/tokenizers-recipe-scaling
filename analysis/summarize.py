@@ -65,6 +65,8 @@ def tokenizers():
                   "best_bpb": describe([min(e["bpb"] for e in eval_log("tokenizer_fix", n, s)) for s in TOK_SEEDS]),
                   "curve": curve("tokenizer_fix", n, TOK_SEEDS)}
     res["fix"] = fix
+    # the fixes are compared with the 2000-step GPT-2 runs and with char: their own noise floor
+    res["fix_noise_floor"] = noise_floor([gpt2, final["char"]] + [np.array(fix[n]["final_bpb"]["values"]) for n in fix])
     return res
 
 
@@ -110,6 +112,25 @@ def recipe():
     return res
 
 
+def recipe_lr():
+    """The AdamW configurations at lr 1e-3 (recipe sweep), 2e-3, 4e-3 and 8e-3 (recipe_lr sweep)."""
+    out = {}
+    for n in ("gpt2_textbook", "plus_rmsnorm_rope", "plus_wsd"):
+        runs = {"1e-3": ("recipe", n), "2e-3": ("recipe_lr", f"{n}_lr2e-3"), "4e-3": ("recipe_lr", f"{n}_lr4e-3"),
+                "8e-3": ("recipe_lr", f"{n}_lr8e-3")}
+        v = {lr: np.array([metrics(sw, rn, s)["val_bpb"] for s in RECIPE_SEEDS]) for lr, (sw, rn) in runs.items()}
+        best = min(v, key=lambda lr: v[lr].mean())
+        out[n] = {"by_lr": {lr: describe(x) for lr, x in v.items()}, "best_lr": best, "best_values": v[best].tolist()}
+    muon = np.array([metrics("recipe", "plus_muon", s)["val_bpb"] for s in RECIPE_SEEDS])
+    b = {n: np.array(out[n]["best_values"]) for n in out}
+    res = {"configs": out,
+           "noise_floor": noise_floor([np.array(x["values"]) for c in out.values() for x in c["by_lr"].values()]),
+           "chain_best_lr": {"gpt2_textbook->plus_rmsnorm_rope": paired(b["gpt2_textbook"], b["plus_rmsnorm_rope"]),
+                             "plus_rmsnorm_rope->plus_wsd": paired(b["plus_rmsnorm_rope"], b["plus_wsd"]),
+                             "plus_wsd->plus_muon": paired(b["plus_wsd"], muon)}}
+    return res
+
+
 def scaling():
     pts = {}
     for w in WIDTHS:
@@ -141,6 +162,10 @@ def scaling():
                               {"from": a, "to": b, "param_ratio": pts[f"{b}_{st}"]["params_non_embedding"] /
                                pts[f"{a}_{st}"]["params_non_embedding"]}
                               for a, b in zip(WIDTHS, WIDTHS[1:])] for st in STEPS}
+    # the same gains per doubling of N (the width steps multiply N by 1.89 or 2.11)
+    for st in STEPS:
+        for x in res["size_steps"][st]:
+            x["gain_per_doubling"] = -x["mean_diff"] / np.log2(x["param_ratio"])
     res["token_steps"] = {w: [paired(pts[f"{w}_{a}"]["values"], pts[f"{w}_{b}"]["values"]) | {"from": a, "to": b}
                               for a, b in zip(STEPS, STEPS[1:])] for w in WIDTHS}
     # the same comparison along the depth series: 2 -> 4 and 4 -> 8 layers double N at width 256
@@ -190,7 +215,8 @@ def swiglu():
 
 
 def main():
-    out = {"tokenizers": tokenizers(), "recipe": recipe(), "scaling": scaling(), "swiglu": swiglu()}
+    out = {"tokenizers": tokenizers(), "recipe": recipe(), "recipe_lr": recipe_lr(), "scaling": scaling(),
+           "swiglu": swiglu()}
     meta = json.loads((ROOT / "runs" / "sweeps" / "recipe" / "plus_muon_s1337" / "meta.json").read_text())
     out["nanolm_git"], out["torch"] = meta["git"], meta["torch"]
     allm = list((ROOT / "runs" / "sweeps").rglob("metrics.json"))

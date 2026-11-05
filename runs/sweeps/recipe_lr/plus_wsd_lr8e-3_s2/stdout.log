@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_wsd_lr8e-3_s2
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,410,176 params (3,148,032 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=wsd
+step     50 | loss 5.7311 | lr 2.00e-03 | 403.5k tok/s | 2s
+step    100 | loss 4.6584 | lr 4.00e-03 | 473.5k tok/s | 4s
+step    150 | loss 4.4482 | lr 6.00e-03 | 472.5k tok/s | 5s
+step    200 | loss 4.3860 | lr 8.00e-03 | 605.4k tok/s | 7s
+step    250 | loss 4.2068 | lr 8.00e-03 | 651.1k tok/s | 8s
+  eval step    250 | val_loss 4.0936 | val_bpb 2.4639 | acc 16.8% | 8s
+step    300 | loss 4.0272 | lr 8.00e-03 | 476.3k tok/s | 10s
+step    350 | loss 3.9514 | lr 8.00e-03 | 473.1k tok/s | 12s
+step    400 | loss 3.9425 | lr 8.00e-03 | 473.0k tok/s | 13s
+step    450 | loss 3.8622 | lr 8.00e-03 | 473.4k tok/s | 15s
+step    500 | loss 3.7844 | lr 8.00e-03 | 631.0k tok/s | 16s
+  eval step    500 | val_loss 3.7424 | val_bpb 2.2525 | acc 21.9% | 16s
+step    550 | loss 3.7136 | lr 8.00e-03 | 477.9k tok/s | 18s
+step    600 | loss 3.7346 | lr 8.00e-03 | 473.4k tok/s | 20s
+step    650 | loss 3.6744 | lr 8.00e-03 | 472.7k tok/s | 21s
+step    700 | loss 3.7271 | lr 8.00e-03 | 473.8k tok/s | 23s
+step    750 | loss 3.7116 | lr 6.69e-03 | 537.8k tok/s | 25s
+  eval step    750 | val_loss 3.6076 | val_bpb 2.1714 | acc 24.2% | 25s
+step    800 | loss 3.6077 | lr 5.36e-03 | 477.0k tok/s | 26s
+step    850 | loss 3.5353 | lr 4.03e-03 | 472.7k tok/s | 28s
+step    900 | loss 3.4830 | lr 2.69e-03 | 472.8k tok/s | 30s
+step    950 | loss 3.4309 | lr 1.36e-03 | 472.8k tok/s | 32s
+step   1000 | loss 3.3868 | lr 2.67e-05 | 501.8k tok/s | 33s
+  eval step   1000 | val_loss 3.3309 | val_bpb 2.0048 | acc 28.5% | 33s
+[final] val_loss 3.3589 | val_bpb 2.0149 | ppl 28.76 | acc 28.16% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+BEPELLING ANTIS AR05 IS TH MELLINTERIENFARD CESISSARCORANDIONTS URDIN ANANTIOTRICARD YERONDISATINT PHIFEURECILS OF SANSGERIDATCASPSBATIRLECAROMSATIRTIE-ET:Ordev. 2008GVR 108-2.14, McETHA FMIE: EANE PLAM CD FINGEDURINY
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_wsd_lr8e-3_s2/metrics.json

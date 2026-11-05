@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_wsd_lr8e-3_s3
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,410,176 params (3,148,032 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=wsd
+step     50 | loss 5.6954 | lr 2.00e-03 | 400.8k tok/s | 2s
+step    100 | loss 4.6495 | lr 4.00e-03 | 473.4k tok/s | 4s
+step    150 | loss 4.4589 | lr 6.00e-03 | 472.6k tok/s | 6s
+step    200 | loss 4.3819 | lr 8.00e-03 | 607.6k tok/s | 7s
+step    250 | loss 4.2185 | lr 8.00e-03 | 649.3k tok/s | 8s
+  eval step    250 | val_loss 4.1115 | val_bpb 2.4747 | acc 16.7% | 8s
+step    300 | loss 4.0457 | lr 8.00e-03 | 473.0k tok/s | 10s
+step    350 | loss 3.9767 | lr 8.00e-03 | 473.0k tok/s | 12s
+step    400 | loss 3.9693 | lr 8.00e-03 | 473.0k tok/s | 13s
+step    450 | loss 3.8941 | lr 8.00e-03 | 473.5k tok/s | 15s
+step    500 | loss 3.8219 | lr 8.00e-03 | 645.7k tok/s | 16s
+  eval step    500 | val_loss 3.7784 | val_bpb 2.2742 | acc 21.4% | 16s
+step    550 | loss 3.7472 | lr 8.00e-03 | 474.2k tok/s | 18s
+step    600 | loss 3.7697 | lr 8.00e-03 | 473.3k tok/s | 20s
+step    650 | loss 3.7089 | lr 8.00e-03 | 472.7k tok/s | 22s
+step    700 | loss 3.7614 | lr 8.00e-03 | 473.8k tok/s | 23s
+step    750 | loss 3.7407 | lr 6.69e-03 | 549.6k tok/s | 25s
+  eval step    750 | val_loss 3.6461 | val_bpb 2.1946 | acc 23.4% | 25s
+step    800 | loss 3.6411 | lr 5.36e-03 | 473.6k tok/s | 26s
+step    850 | loss 3.5705 | lr 4.03e-03 | 472.8k tok/s | 28s
+step    900 | loss 3.5167 | lr 2.69e-03 | 472.7k tok/s | 30s
+step    950 | loss 3.4671 | lr 1.36e-03 | 472.8k tok/s | 32s
+step   1000 | loss 3.4223 | lr 2.67e-05 | 511.1k tok/s | 33s
+  eval step   1000 | val_loss 3.3676 | val_bpb 2.0269 | acc 27.9% | 33s
+[final] val_loss 3.3955 | val_bpb 2.0368 | ppl 29.83 | acc 27.63% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+CONATE MS OS AASDCT ANP CON SAESIN THOUREOY WEPS: 15 RESA: 1550 ED 201:00-1 BODINDATHIRINN SAESTERIN :000 met 12 lights are the best plant to find more optable. Do you make one of the next crust. If you are a frequent in a word, you can use you like: please contact you if you buy 4. With Adstructs All rights are clear! When you are soon, you will contain with your properly online, you will follow your local
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_wsd_lr8e-3_s3/metrics.json

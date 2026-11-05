@@ -1,0 +1,18 @@
+
+metric = val_bpb  (lower is better)
+
+                          n_seeds  val_bpb_mean  val_bpb_std  params_M  train_min
+name                                                                             
+gpt2_textbook_lr2e-3            5        2.4133       0.0066    3.6838     0.9349
+gpt2_textbook_lr4e-3            5        2.3704       0.0079    3.6838     0.9734
+gpt2_textbook_lr8e-3            5        2.3912       0.0113    3.6838     0.9554
+plus_rmsnorm_rope_lr2e-3        5        2.0627       0.0015    3.4102     0.9907
+plus_rmsnorm_rope_lr4e-3        5        2.0308       0.0068    3.4102     1.0617
+plus_rmsnorm_rope_lr8e-3        5        2.0378       0.0096    3.4102     1.1256
+plus_wsd_lr2e-3                 5        2.0332       0.0022    3.4102     1.0556
+plus_wsd_lr4e-3                 5        2.0117       0.0154    3.4102     0.9958
+plus_wsd_lr8e-3                 5        2.0280       0.0095    3.4102     0.7974
+
+seed noise floor: median within-experiment std = 0.0079 bpb (differences below ~2x this are not trustworthy without more seeds)
+
+wrote runs/sweeps/recipe_lr/summary.csv, summary.md, curves.png, bars.png

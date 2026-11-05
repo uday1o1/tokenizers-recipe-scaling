@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_wsd_lr4e-3_s1337
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,410,176 params (3,148,032 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=wsd
+step     50 | loss 5.9360 | lr 1.00e-03 | 392.2k tok/s | 2s
+step    100 | loss 4.7865 | lr 2.00e-03 | 289.0k tok/s | 5s
+step    150 | loss 4.4728 | lr 3.00e-03 | 235.2k tok/s | 8s
+step    200 | loss 4.3486 | lr 4.00e-03 | 260.6k tok/s | 12s
+step    250 | loss 4.1893 | lr 4.00e-03 | 272.9k tok/s | 15s
+  eval step    250 | val_loss 4.0818 | val_bpb 2.4568 | acc 17.1% | 15s
+step    300 | loss 4.0207 | lr 4.00e-03 | 402.7k tok/s | 17s
+step    350 | loss 3.9470 | lr 4.00e-03 | 280.9k tok/s | 20s
+step    400 | loss 3.9446 | lr 4.00e-03 | 235.5k tok/s | 23s
+step    450 | loss 3.8633 | lr 4.00e-03 | 260.8k tok/s | 26s
+step    500 | loss 3.7830 | lr 4.00e-03 | 273.0k tok/s | 29s
+  eval step    500 | val_loss 3.7478 | val_bpb 2.2557 | acc 21.8% | 29s
+step    550 | loss 3.7118 | lr 4.00e-03 | 402.8k tok/s | 31s
+step    600 | loss 3.7320 | lr 4.00e-03 | 280.7k tok/s | 34s
+step    650 | loss 3.6692 | lr 4.00e-03 | 235.4k tok/s | 38s
+step    700 | loss 3.7146 | lr 4.00e-03 | 260.9k tok/s | 41s
+step    750 | loss 3.7011 | lr 3.35e-03 | 272.9k tok/s | 44s
+  eval step    750 | val_loss 3.5978 | val_bpb 2.1655 | acc 24.3% | 44s
+step    800 | loss 3.5978 | lr 2.68e-03 | 403.3k tok/s | 46s
+step    850 | loss 3.5247 | lr 2.01e-03 | 280.9k tok/s | 49s
+step    900 | loss 3.4731 | lr 1.35e-03 | 235.3k tok/s | 52s
+step    950 | loss 3.4237 | lr 6.80e-04 | 260.8k tok/s | 55s
+step   1000 | loss 3.3809 | lr 1.33e-05 | 272.8k tok/s | 58s
+  eval step   1000 | val_loss 3.3323 | val_bpb 2.0057 | acc 28.6% | 58s
+[final] val_loss 3.3561 | val_bpb 2.0132 | ppl 28.68 | acc 28.32% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+Singuite, February 109443: 1955, International Accounting, Master Scheckers, Richard Test, Hub, L., and Labor Emby Controllment, Society, U.S.,, 6711, Parison, Constitutional Polish, Marin, Architectural, Marketing and Traditional His pattern that the Generaland, the German Apsori Scienced: From Doza in the France, January, and Kniffson told Manager, a Drtiff of the Augustealual Del
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_wsd_lr4e-3_s1337/metrics.json

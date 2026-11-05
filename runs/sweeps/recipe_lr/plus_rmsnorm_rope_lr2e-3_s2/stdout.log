@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_rmsnorm_rope_lr2e-3_s2
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,410,176 params (3,148,032 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 6.1694 | lr 5.00e-04 | 214.9k tok/s | 4s
+step    100 | loss 5.0235 | lr 1.00e-03 | 236.5k tok/s | 7s
+step    150 | loss 4.6152 | lr 1.50e-03 | 236.5k tok/s | 11s
+step    200 | loss 4.4075 | lr 2.00e-03 | 273.0k tok/s | 14s
+step    250 | loss 4.2159 | lr 1.74e-03 | 264.8k tok/s | 17s
+  eval step    250 | val_loss 4.1078 | val_bpb 2.4724 | acc 16.7% | 17s
+step    300 | loss 4.0454 | lr 1.63e-03 | 236.1k tok/s | 20s
+step    350 | loss 3.9502 | lr 1.51e-03 | 235.8k tok/s | 24s
+step    400 | loss 3.9243 | lr 1.38e-03 | 235.6k tok/s | 27s
+step    450 | loss 3.8380 | lr 1.24e-03 | 273.2k tok/s | 30s
+step    500 | loss 3.7499 | lr 1.10e-03 | 267.0k tok/s | 33s
+  eval step    500 | val_loss 3.7215 | val_bpb 2.2399 | acc 22.4% | 33s
+step    550 | loss 3.6755 | lr 9.62e-04 | 236.0k tok/s | 37s
+step    600 | loss 3.6834 | lr 8.25e-04 | 235.8k tok/s | 40s
+step    650 | loss 3.6134 | lr 6.94e-04 | 237.3k tok/s | 44s
+step    700 | loss 3.6500 | lr 5.73e-04 | 273.2k tok/s | 47s
+step    750 | loss 3.6273 | lr 4.66e-04 | 264.3k tok/s | 50s
+  eval step    750 | val_loss 3.5321 | val_bpb 2.1259 | acc 25.1% | 50s
+step    800 | loss 3.5765 | lr 3.74e-04 | 236.1k tok/s | 53s
+step    850 | loss 3.5164 | lr 2.99e-04 | 235.6k tok/s | 57s
+step    900 | loss 3.5000 | lr 2.45e-04 | 237.5k tok/s | 60s
+step    950 | loss 3.4723 | lr 2.12e-04 | 273.2k tok/s | 63s
+step   1000 | loss 3.4620 | lr 2.00e-04 | 279.1k tok/s | 66s
+  eval step   1000 | val_loss 3.4160 | val_bpb 2.0561 | acc 27.1% | 66s
+[final] val_loss 3.4407 | val_bpb 2.0639 | ppl 31.21 | acc 26.87% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+HEPES. | AS ANTIS ARAN IS TH MELLIUTERIE IF BID CEEISISRCOUSERKOUTESI IIN ANANTIOTEREARENERONERSATHOL PHIFEURE OILIIN SENSGERIDIALLARSBATIRLEOAROREATITTIEOET:OTER. ONTIITIOVEOEIE-OOWE IITETHE FOOE: EANE ITAM COUS ITEIU COUN
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_rmsnorm_rope_lr2e-3_s2/metrics.json

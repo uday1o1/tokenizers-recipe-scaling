@@ -1,18 +1,18 @@
 
 metric = val_bpb  (lower is better)
 
-                  n_seeds  val_bpb_mean  val_bpb_std  params_M  train_min
-name                                                                     
-gelu_lr2e-3             5        1.7036       0.0072   11.0150     8.0919
-gelu_lr4e-3             5        1.7004       0.0072   11.0150     8.2364
-gelu_lr5e-4             5        1.8408       0.0191   11.0150     8.1230
-gelu                    5        1.7528       0.0238   11.0150     8.2321
-gelu_steps6000          5        1.6119       0.0051   11.0150    14.1383
-swiglu_lr2e-3           5        1.7612       0.0287   11.0150     8.6660
-swiglu_lr4e-3           5        1.8428       0.0041   11.0150     6.4807
-swiglu_lr5e-4           5        1.8168       0.0033   11.0150     8.6582
-swiglu                  5        1.7809       0.0214   11.0150     8.6283
-swiglu_steps6000        5        1.6349       0.0121   11.0150    14.3319
+                  n_seeds  val_bpb_mean  val_bpb_std  params_M  train_min  delta_vs_gelu  paired_p
+name                                                                                              
+gelu_steps6000          5        1.6119       0.0051   11.0150    14.1383        -0.1410    0.0001
+swiglu_steps6000        5        1.6349       0.0121   11.0150    14.3319        -0.1179    0.0005
+gelu_lr4e-3             5        1.7004       0.0072   11.0150     8.2364        -0.0524    0.0088
+gelu_lr2e-3             5        1.7036       0.0072   11.0150     8.0919        -0.0492    0.0070
+gelu                    5        1.7528       0.0238   11.0150     8.2321         0.0000       NaN
+swiglu_lr2e-3           5        1.7612       0.0287   11.0150     8.6660         0.0084    0.5554
+swiglu                  5        1.7809       0.0214   11.0150     8.6283         0.0281    0.0788
+swiglu_lr5e-4           5        1.8168       0.0033   11.0150     8.6582         0.0640    0.0027
+gelu_lr5e-4             5        1.8408       0.0191   11.0150     8.1230         0.0880    0.0018
+swiglu_lr4e-3           5        1.8428       0.0041   11.0150     6.4807         0.0900    0.0008
 
 seed noise floor: median within-experiment std = 0.0096 bpb (differences below ~2x this are not trustworthy without more seeds)
 

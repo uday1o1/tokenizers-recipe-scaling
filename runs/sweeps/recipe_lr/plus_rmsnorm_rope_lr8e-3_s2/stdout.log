@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_rmsnorm_rope_lr8e-3_s2
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,410,176 params (3,148,032 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 5.7315 | lr 2.00e-03 | 215.6k tok/s | 4s
+step    100 | loss 4.6572 | lr 4.00e-03 | 235.1k tok/s | 7s
+step    150 | loss 4.4454 | lr 6.00e-03 | 235.1k tok/s | 11s
+step    200 | loss 4.3724 | lr 8.00e-03 | 235.2k tok/s | 14s
+step    250 | loss 4.1906 | lr 6.95e-03 | 235.0k tok/s | 18s
+  eval step    250 | val_loss 4.0709 | val_bpb 2.4502 | acc 17.1% | 18s
+step    300 | loss 4.0037 | lr 6.53e-03 | 237.8k tok/s | 21s
+step    350 | loss 3.9183 | lr 6.04e-03 | 235.1k tok/s | 25s
+step    400 | loss 3.8993 | lr 5.52e-03 | 235.2k tok/s | 28s
+step    450 | loss 3.8123 | lr 4.97e-03 | 235.0k tok/s | 32s
+step    500 | loss 3.7251 | lr 4.41e-03 | 235.2k tok/s | 35s
+  eval step    500 | val_loss 3.6847 | val_bpb 2.2178 | acc 22.8% | 35s
+step    550 | loss 3.6438 | lr 3.85e-03 | 238.0k tok/s | 39s
+step    600 | loss 3.6480 | lr 3.30e-03 | 235.0k tok/s | 42s
+step    650 | loss 3.5781 | lr 2.78e-03 | 235.2k tok/s | 46s
+step    700 | loss 3.6123 | lr 2.29e-03 | 235.1k tok/s | 49s
+step    750 | loss 3.5923 | lr 1.86e-03 | 235.2k tok/s | 52s
+  eval step    750 | val_loss 3.4900 | val_bpb 2.1006 | acc 25.8% | 53s
+step    800 | loss 3.5279 | lr 1.49e-03 | 238.2k tok/s | 56s
+step    850 | loss 3.4623 | lr 1.20e-03 | 235.0k tok/s | 59s
+step    900 | loss 3.4445 | lr 9.80e-04 | 235.3k tok/s | 63s
+step    950 | loss 3.4161 | lr 8.46e-04 | 235.0k tok/s | 66s
+step   1000 | loss 3.3982 | lr 8.00e-04 | 235.3k tok/s | 70s
+  eval step   1000 | val_loss 3.3555 | val_bpb 2.0196 | acc 28.0% | 70s
+[final] val_loss 3.3808 | val_bpb 2.0280 | ppl 29.39 | acc 27.79% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+Bigger in the National Box Product Award Society for Mr. Performance of Welcome is a bit over the Room of College. True: Now, I can simply require a latter and destination on the Industry. Professionally is occupied to the Magic of Smirre, in Support, Science. Give a new site for a posting and campused to the Science of Schools and Population Ivolution Investment Services Live Contacts and Car-Schools College. Our vision is a “selling site” card Center, an employee market
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_rmsnorm_rope_lr8e-3_s2/metrics.json

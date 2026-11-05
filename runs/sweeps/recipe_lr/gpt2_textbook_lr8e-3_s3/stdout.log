@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/gpt2_textbook_lr8e-3_s3
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,683,840 params (3,159,552 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 6.0607 | lr 2.00e-03 | 287.6k tok/s | 3s
+step    100 | loss 4.8990 | lr 4.00e-03 | 270.7k tok/s | 6s
+step    150 | loss 4.6591 | lr 6.00e-03 | 271.2k tok/s | 9s
+step    200 | loss 4.6132 | lr 8.00e-03 | 271.6k tok/s | 12s
+step    250 | loss 4.5130 | lr 6.95e-03 | 271.9k tok/s | 15s
+  eval step    250 | val_loss 4.4563 | val_bpb 2.6822 | acc 10.5% | 15s
+step    300 | loss 4.4388 | lr 6.53e-03 | 307.9k tok/s | 18s
+step    350 | loss 4.4100 | lr 6.04e-03 | 270.3k tok/s | 21s
+step    400 | loss 4.4237 | lr 5.52e-03 | 269.3k tok/s | 24s
+step    450 | loss 4.3711 | lr 4.97e-03 | 271.2k tok/s | 27s
+step    500 | loss 4.3129 | lr 4.41e-03 | 284.1k tok/s | 30s
+  eval step    500 | val_loss 4.2802 | val_bpb 2.5762 | acc 11.6% | 30s
+step    550 | loss 4.2644 | lr 3.85e-03 | 304.2k tok/s | 32s
+step    600 | loss 4.2791 | lr 3.30e-03 | 268.7k tok/s | 35s
+step    650 | loss 4.2167 | lr 2.78e-03 | 269.7k tok/s | 38s
+step    700 | loss 4.2435 | lr 2.29e-03 | 269.2k tok/s | 41s
+step    750 | loss 4.2263 | lr 1.86e-03 | 309.6k tok/s | 44s
+  eval step    750 | val_loss 4.1409 | val_bpb 2.4924 | acc 13.8% | 44s
+step    800 | loss 4.1586 | lr 1.49e-03 | 304.3k tok/s | 47s
+step    850 | loss 4.0985 | lr 1.20e-03 | 269.6k tok/s | 50s
+step    900 | loss 4.0630 | lr 9.80e-04 | 270.5k tok/s | 53s
+step    950 | loss 4.0341 | lr 8.46e-04 | 272.3k tok/s | 56s
+step   1000 | loss 4.0009 | lr 8.00e-04 | 333.2k tok/s | 58s
+  eval step   1000 | val_loss 3.9588 | val_bpb 2.3827 | acc 17.3% | 58s
+[final] val_loss 3.9781 | val_bpb 2.3863 | ppl 53.42 | acc 17.32% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+COSA. I’ll find a good I know what I’m to find my kind!EE. I'm thinking it, it. Brand I'd I was a broppy've had did of my maki and I’d think, but I beged me a new midn't have a more images. I had been those of met, I don’t be able. I would sure I could just that I think that I am step, to excepted at the love I think I'self. I would wat'll be put on the sure about the time I heard simbly toply, there. I diding that for answer than so I know why, a feel. I’ve not needed. I morning to
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/gpt2_textbook_lr8e-3_s3/metrics.json

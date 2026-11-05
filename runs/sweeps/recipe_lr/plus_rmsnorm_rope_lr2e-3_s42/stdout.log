@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_rmsnorm_rope_lr2e-3_s42
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,410,176 params (3,148,032 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 6.1694 | lr 5.00e-04 | 229.2k tok/s | 4s
+step    100 | loss 5.0193 | lr 1.00e-03 | 263.7k tok/s | 7s
+step    150 | loss 4.6172 | lr 1.50e-03 | 264.8k tok/s | 10s
+step    200 | loss 4.4214 | lr 2.00e-03 | 265.0k tok/s | 13s
+step    250 | loss 4.2239 | lr 1.74e-03 | 649.0k tok/s | 14s
+  eval step    250 | val_loss 4.1143 | val_bpb 2.4763 | acc 16.6% | 14s
+step    300 | loss 4.0457 | lr 1.63e-03 | 264.7k tok/s | 17s
+step    350 | loss 3.9472 | lr 1.51e-03 | 264.0k tok/s | 20s
+step    400 | loss 3.9206 | lr 1.38e-03 | 264.3k tok/s | 23s
+step    450 | loss 3.8329 | lr 1.24e-03 | 289.4k tok/s | 26s
+step    500 | loss 3.7456 | lr 1.10e-03 | 742.5k tok/s | 27s
+  eval step    500 | val_loss 3.7146 | val_bpb 2.2358 | acc 22.5% | 27s
+step    550 | loss 3.6701 | lr 9.62e-04 | 265.3k tok/s | 30s
+step    600 | loss 3.6821 | lr 8.25e-04 | 264.1k tok/s | 34s
+step    650 | loss 3.6144 | lr 6.94e-04 | 264.6k tok/s | 37s
+step    700 | loss 3.6450 | lr 5.73e-04 | 345.1k tok/s | 39s
+step    750 | loss 3.6250 | lr 4.66e-04 | 732.2k tok/s | 40s
+  eval step    750 | val_loss 3.5336 | val_bpb 2.1268 | acc 25.0% | 40s
+step    800 | loss 3.5737 | lr 3.74e-04 | 264.2k tok/s | 43s
+step    850 | loss 3.5133 | lr 2.99e-04 | 264.4k tok/s | 46s
+step    900 | loss 3.4986 | lr 2.45e-04 | 264.1k tok/s | 49s
+step    950 | loss 3.4721 | lr 2.12e-04 | 407.8k tok/s | 51s
+step   1000 | loss 3.4644 | lr 2.00e-04 | 726.3k tok/s | 53s
+  eval step   1000 | val_loss 3.4117 | val_bpb 2.0535 | acc 27.1% | 53s
+[final] val_loss 3.4368 | val_bpb 2.0616 | ppl 31.09 | acc 26.92% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+................. . We slim in your site, I think we got slightly. They tell you apoid. And this love was very different cleaning, it was easy to say, which is a poley. I like this way, I have just like that I am a good ? What do you feel? I am not flew, I fare to get a game face and found. He will not be able to touch your house in the children in the club. I think I need to make a major confused me by certificate, mistake is the most important line but I have sure that I would have a lot of serious. I still doing. I like I th
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_rmsnorm_rope_lr2e-3_s42/metrics.json

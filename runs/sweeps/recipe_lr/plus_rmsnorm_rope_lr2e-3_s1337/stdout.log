@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_rmsnorm_rope_lr2e-3_s1337
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,410,176 params (3,148,032 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 6.1717 | lr 5.00e-04 | 272.1k tok/s | 3s
+step    100 | loss 5.0235 | lr 1.00e-03 | 264.3k tok/s | 6s
+step    150 | loss 4.6111 | lr 1.50e-03 | 263.7k tok/s | 9s
+step    200 | loss 4.4065 | lr 2.00e-03 | 264.8k tok/s | 12s
+step    250 | loss 4.2053 | lr 1.74e-03 | 274.3k tok/s | 15s
+  eval step    250 | val_loss 4.0989 | val_bpb 2.4671 | acc 16.9% | 15s
+step    300 | loss 4.0358 | lr 1.63e-03 | 313.1k tok/s | 18s
+step    350 | loss 3.9392 | lr 1.51e-03 | 266.4k tok/s | 21s
+step    400 | loss 3.9145 | lr 1.38e-03 | 264.2k tok/s | 24s
+step    450 | loss 3.8283 | lr 1.24e-03 | 264.2k tok/s | 27s
+step    500 | loss 3.7402 | lr 1.10e-03 | 279.2k tok/s | 30s
+  eval step    500 | val_loss 3.7149 | val_bpb 2.2360 | acc 22.5% | 30s
+step    550 | loss 3.6647 | lr 9.62e-04 | 313.6k tok/s | 33s
+step    600 | loss 3.6791 | lr 8.25e-04 | 275.7k tok/s | 36s
+step    650 | loss 3.6080 | lr 6.94e-04 | 264.1k tok/s | 39s
+step    700 | loss 3.6424 | lr 5.73e-04 | 264.7k tok/s | 42s
+step    750 | loss 3.6227 | lr 4.66e-04 | 281.6k tok/s | 45s
+  eval step    750 | val_loss 3.5303 | val_bpb 2.1249 | acc 25.1% | 45s
+step    800 | loss 3.5723 | lr 3.74e-04 | 313.6k tok/s | 47s
+step    850 | loss 3.5083 | lr 2.99e-04 | 284.1k tok/s | 50s
+step    900 | loss 3.4958 | lr 2.45e-04 | 263.9k tok/s | 53s
+step    950 | loss 3.4690 | lr 2.12e-04 | 264.6k tok/s | 57s
+step   1000 | loss 3.4574 | lr 2.00e-04 | 283.9k tok/s | 59s
+  eval step   1000 | val_loss 3.4126 | val_bpb 2.0540 | acc 27.1% | 59s
+[final] val_loss 3.4359 | val_bpb 2.0611 | ppl 31.06 | acc 26.94% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+SUY CLS LL: General Brown, To Now, Fairmen, A. Mar, Master, Shead,, Mr. Two, and, C., and Prize. However, Betreler, Gaza., and Festival. When I am did not walk somewhere. Yes, the Middle Center of America, Farmers and Slightness, and Engineering in 7192. Rudging without Swagen told himself: A cross, Northy Multiple Prons. Mountain in Manager Folks, Advisory Adder and Wood Del
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_rmsnorm_rope_lr2e-3_s1337/metrics.json

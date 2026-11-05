@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_rmsnorm_rope_lr4e-3_s3
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,410,176 params (3,148,032 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 5.9218 | lr 1.00e-03 | 217.8k tok/s | 4s
+step    100 | loss 4.7803 | lr 2.00e-03 | 235.6k tok/s | 7s
+step    150 | loss 4.4863 | lr 3.00e-03 | 235.3k tok/s | 11s
+step    200 | loss 4.3431 | lr 4.00e-03 | 264.6k tok/s | 14s
+step    250 | loss 4.1715 | lr 3.48e-03 | 270.8k tok/s | 17s
+  eval step    250 | val_loss 4.0672 | val_bpb 2.4480 | acc 17.3% | 17s
+step    300 | loss 4.0029 | lr 3.26e-03 | 237.6k tok/s | 20s
+step    350 | loss 3.9122 | lr 3.02e-03 | 235.6k tok/s | 24s
+step    400 | loss 3.8995 | lr 2.76e-03 | 235.6k tok/s | 27s
+step    450 | loss 3.8135 | lr 2.49e-03 | 264.7k tok/s | 30s
+step    500 | loss 3.7185 | lr 2.21e-03 | 270.7k tok/s | 33s
+  eval step    500 | val_loss 3.6876 | val_bpb 2.2195 | acc 22.8% | 33s
+step    550 | loss 3.6401 | lr 1.92e-03 | 237.4k tok/s | 37s
+step    600 | loss 3.6505 | lr 1.65e-03 | 235.5k tok/s | 40s
+step    650 | loss 3.5814 | lr 1.39e-03 | 235.4k tok/s | 44s
+step    700 | loss 3.6146 | lr 1.15e-03 | 263.8k tok/s | 47s
+step    750 | loss 3.5938 | lr 9.31e-04 | 271.7k tok/s | 50s
+  eval step    750 | val_loss 3.4920 | val_bpb 2.1018 | acc 25.7% | 50s
+step    800 | loss 3.5349 | lr 7.47e-04 | 237.1k tok/s | 53s
+step    850 | loss 3.4719 | lr 5.99e-04 | 235.2k tok/s | 57s
+step    900 | loss 3.4541 | lr 4.90e-04 | 235.3k tok/s | 60s
+step    950 | loss 3.4235 | lr 4.23e-04 | 263.1k tok/s | 63s
+step   1000 | loss 3.4111 | lr 4.00e-04 | 274.2k tok/s | 66s
+  eval step   1000 | val_loss 3.3639 | val_bpb 2.0247 | acc 27.8% | 66s
+[final] val_loss 3.3905 | val_bpb 2.0339 | ppl 29.68 | acc 27.65% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+Clçé  êöén’s Megal McGod has reported to the Hope of Brahafela Ruten, a Meanis during its ‘rannia’ Bartzah, a Mayor, Ryan felt her snowdahia’s matza. Major, her snowledges, papers, map, and wrong, symphollaiela, in a word, and women. Kulytaha, was a illness of America, and Mannon. In 1901, Marz, has a future sort of 1st,000 million in
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_rmsnorm_rope_lr4e-3_s3/metrics.json

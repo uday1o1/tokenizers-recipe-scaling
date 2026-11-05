@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_wsd_lr4e-3_s1
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,410,176 params (3,148,032 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=wsd
+step     50 | loss 5.9355 | lr 1.00e-03 | 209.3k tok/s | 4s
+step    100 | loss 4.7808 | lr 2.00e-03 | 237.8k tok/s | 7s
+step    150 | loss 4.4772 | lr 3.00e-03 | 273.1k tok/s | 10s
+step    200 | loss 4.3523 | lr 4.00e-03 | 292.2k tok/s | 13s
+step    250 | loss 4.1920 | lr 4.00e-03 | 326.2k tok/s | 16s
+  eval step    250 | val_loss 4.0817 | val_bpb 2.4567 | acc 17.0% | 16s
+step    300 | loss 4.0190 | lr 4.00e-03 | 235.9k tok/s | 19s
+step    350 | loss 3.9420 | lr 4.00e-03 | 238.5k tok/s | 23s
+step    400 | loss 3.9348 | lr 4.00e-03 | 273.2k tok/s | 26s
+step    450 | loss 3.8685 | lr 4.00e-03 | 291.3k tok/s | 28s
+step    500 | loss 3.7830 | lr 4.00e-03 | 326.8k tok/s | 31s
+  eval step    500 | val_loss 3.7443 | val_bpb 2.2537 | acc 21.9% | 31s
+step    550 | loss 3.7072 | lr 4.00e-03 | 235.6k tok/s | 34s
+step    600 | loss 3.7301 | lr 4.00e-03 | 238.7k tok/s | 38s
+step    650 | loss 3.6706 | lr 4.00e-03 | 272.9k tok/s | 41s
+step    700 | loss 3.7196 | lr 4.00e-03 | 290.9k tok/s | 44s
+step    750 | loss 3.7013 | lr 3.35e-03 | 327.1k tok/s | 46s
+  eval step    750 | val_loss 3.6043 | val_bpb 2.1694 | acc 24.1% | 46s
+step    800 | loss 3.5970 | lr 2.68e-03 | 235.8k tok/s | 50s
+step    850 | loss 3.5135 | lr 2.01e-03 | 238.7k tok/s | 53s
+step    900 | loss 3.4512 | lr 1.35e-03 | 272.8k tok/s | 56s
+step    950 | loss 3.3821 | lr 6.80e-04 | 311.1k tok/s | 59s
+step   1000 | loss 3.3263 | lr 1.33e-05 | 403.4k tok/s | 61s
+  eval step   1000 | val_loss 3.2825 | val_bpb 1.9757 | acc 30.0% | 61s
+[final] val_loss 3.3087 | val_bpb 1.9848 | ppl 27.35 | acc 29.74% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+OI LIRLLTEWALLES 500 LOS NEIMETOsing Northern February 2017 OFLLDLUATERITRIFITEDOFOS SOUCTION! 15. OOND MEDEASETIN-PARASDERORENG Q. 00 CANUUSSI: TECS ARD OSAS GLETESLILENATILGOURAY LOTHLINAT ANINASTOSTO ACKIRENEVEONNEN THET TON
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_wsd_lr4e-3_s1/metrics.json

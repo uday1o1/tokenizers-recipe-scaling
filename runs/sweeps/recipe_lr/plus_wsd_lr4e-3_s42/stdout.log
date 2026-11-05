@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_wsd_lr4e-3_s42
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,410,176 params (3,148,032 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=wsd
+step     50 | loss 5.9317 | lr 1.00e-03 | 389.1k tok/s | 2s
+step    100 | loss 4.7927 | lr 2.00e-03 | 287.2k tok/s | 5s
+step    150 | loss 4.4795 | lr 3.00e-03 | 235.2k tok/s | 8s
+step    200 | loss 4.3293 | lr 4.00e-03 | 261.0k tok/s | 12s
+step    250 | loss 4.1693 | lr 4.00e-03 | 273.3k tok/s | 15s
+  eval step    250 | val_loss 4.0727 | val_bpb 2.4513 | acc 17.4% | 15s
+step    300 | loss 4.0122 | lr 4.00e-03 | 401.7k tok/s | 17s
+step    350 | loss 3.9422 | lr 4.00e-03 | 279.0k tok/s | 20s
+step    400 | loss 3.9396 | lr 4.00e-03 | 235.5k tok/s | 23s
+step    450 | loss 3.8666 | lr 4.00e-03 | 261.4k tok/s | 26s
+step    500 | loss 3.7842 | lr 4.00e-03 | 273.5k tok/s | 29s
+  eval step    500 | val_loss 3.7502 | val_bpb 2.2572 | acc 21.8% | 29s
+step    550 | loss 3.7158 | lr 4.00e-03 | 401.8k tok/s | 31s
+step    600 | loss 3.7380 | lr 4.00e-03 | 279.4k tok/s | 34s
+step    650 | loss 3.6823 | lr 4.00e-03 | 235.4k tok/s | 38s
+step    700 | loss 3.7269 | lr 4.00e-03 | 261.4k tok/s | 41s
+step    750 | loss 3.7106 | lr 3.35e-03 | 272.9k tok/s | 44s
+  eval step    750 | val_loss 3.6104 | val_bpb 2.1731 | acc 24.0% | 44s
+step    800 | loss 3.6083 | lr 2.68e-03 | 401.8k tok/s | 46s
+step    850 | loss 3.5363 | lr 2.01e-03 | 279.1k tok/s | 49s
+step    900 | loss 3.4851 | lr 1.35e-03 | 235.3k tok/s | 52s
+step    950 | loss 3.4374 | lr 6.80e-04 | 261.4k tok/s | 55s
+step   1000 | loss 3.3955 | lr 1.33e-05 | 273.2k tok/s | 58s
+  eval step   1000 | val_loss 3.3438 | val_bpb 2.0126 | acc 28.3% | 58s
+[final] val_loss 3.3693 | val_bpb 2.0212 | ppl 29.06 | acc 28.08% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+Tampafazahan. We squak in a site, and we are suggested to the 30-booked size. We are loved to get a big request, such as the room same, which is a poky. Rather, the friend, shall the next ? What do not boost your life? What’s the girl organic five-class, but not try to sure the game. You practice your own wonders on your general version, suspend your body. We would like to take times, but is the most important particular. You will get in the vaccinator and more. We are still a good person and try
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_wsd_lr4e-3_s42/metrics.json

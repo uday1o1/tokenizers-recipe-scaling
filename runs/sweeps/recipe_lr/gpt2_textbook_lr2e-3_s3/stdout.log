@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/gpt2_textbook_lr2e-3_s3
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,683,840 params (3,159,552 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 6.2607 | lr 5.00e-04 | 262.5k tok/s | 3s
+step    100 | loss 5.1698 | lr 1.00e-03 | 296.2k tok/s | 6s
+step    150 | loss 4.7040 | lr 1.50e-03 | 291.1k tok/s | 9s
+step    200 | loss 4.5779 | lr 2.00e-03 | 290.7k tok/s | 12s
+step    250 | loss 4.4823 | lr 1.74e-03 | 290.4k tok/s | 14s
+  eval step    250 | val_loss 4.4235 | val_bpb 2.6624 | acc 10.9% | 14s
+step    300 | loss 4.4144 | lr 1.63e-03 | 338.2k tok/s | 17s
+step    350 | loss 4.3821 | lr 1.51e-03 | 297.9k tok/s | 20s
+step    400 | loss 4.3860 | lr 1.38e-03 | 292.9k tok/s | 22s
+step    450 | loss 4.3436 | lr 1.24e-03 | 288.0k tok/s | 25s
+step    500 | loss 4.2976 | lr 1.10e-03 | 297.1k tok/s | 28s
+  eval step    500 | val_loss 4.2713 | val_bpb 2.5708 | acc 11.9% | 28s
+step    550 | loss 4.2562 | lr 9.62e-04 | 427.9k tok/s | 30s
+step    600 | loss 4.2688 | lr 8.25e-04 | 291.3k tok/s | 33s
+step    650 | loss 4.2088 | lr 6.94e-04 | 296.9k tok/s | 35s
+step    700 | loss 4.2347 | lr 5.73e-04 | 293.1k tok/s | 38s
+step    750 | loss 4.2186 | lr 4.66e-04 | 289.0k tok/s | 41s
+  eval step    750 | val_loss 4.1367 | val_bpb 2.4898 | acc 13.9% | 41s
+step    800 | loss 4.1613 | lr 3.74e-04 | 554.0k tok/s | 43s
+step    850 | loss 4.1115 | lr 2.99e-04 | 289.2k tok/s | 45s
+step    900 | loss 4.0870 | lr 2.45e-04 | 292.0k tok/s | 48s
+step    950 | loss 4.0664 | lr 2.12e-04 | 289.2k tok/s | 51s
+step   1000 | loss 4.0517 | lr 2.00e-04 | 291.0k tok/s | 54s
+  eval step   1000 | val_loss 4.0023 | val_bpb 2.4089 | acc 16.4% | 54s
+[final] val_loss 4.0214 | val_bpb 2.4123 | ppl 55.78 | acc 16.46% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+Old Finderrance, the Satt, is a politued online online and value to please contriving to a feed to be available that the in which a totainable dels, and cult and a missional, butter that the afforth. They material of the catory of all the practices of meter. Paperaturrentiredit to presentricy in all of the casure, topric, and is airrasising in a motental of directorary, in the solicy, and a definistainstructorrem of parkingle of problem that you of the paptition age site side on the receives in edia
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/gpt2_textbook_lr2e-3_s3/metrics.json

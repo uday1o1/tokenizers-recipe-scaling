@@ -1,11 +1,11 @@
 
 metric = val_bpb  (lower is better)
 
-                         n_seeds  val_bpb_mean  val_bpb_std  params_M  train_min
-name                                                                            
-textbook_nope                  5        2.5072       0.0008    3.4217     0.8596
-textbook_rope_steps4000        5        1.8162       0.0088    3.4217     2.9239
-textbook_steps4000             5        1.8413       0.0054    3.6838     3.6729
+                         n_seeds  val_bpb_mean  val_bpb_std  params_M  train_min  delta_vs_textbook_steps4000  paired_p
+name                                                                                                                   
+textbook_rope_steps4000        5        1.8162       0.0088    3.4217     2.9239                      -0.0251    0.0059
+textbook_steps4000             5        1.8413       0.0054    3.6838     3.6729                       0.0000       NaN
+textbook_nope                  5        2.5072       0.0008    3.4217     0.8596                       0.6659    0.0000
 
 seed noise floor: median within-experiment std = 0.0054 bpb (differences below ~2x this are not trustworthy without more seeds)
 

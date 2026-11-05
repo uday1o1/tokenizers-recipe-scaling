@@ -70,7 +70,8 @@ def tokenizers():
     band(ax, F["gpt2_bpe_500steps"]["curve"], PAL[0], "GPT-2, 500 steps", x="steps", scale=1)
     band(ax, F["gpt2_bpe_dropout0.3"]["curve"], PAL[2], "GPT-2, dropout 0.3", x="steps", scale=1)
     band(ax, T["char"]["curve"], PAL[8], "char", x="steps", scale=1, ls="--")
-    ax.set_ylim(2.0, 3.0)
+    ax.set_ylim(2.0, 3.3)
+    ax.set_yticks(np.arange(2.0, 3.01, 0.2))
     ax.set_xlabel("optimizer step")
     ax.set_ylabel("validation bits per byte")
     ax.legend(fontsize=6.3, loc="upper left")
@@ -117,7 +118,8 @@ def recipe():
     c = Q["textbook_nope"]["curve"]
     ax.plot(np.array(c["tokens"]) / 1e6, c["mean"], color=PAL[8], ls=":", marker="x", ms=4,
             label="none, 16.4M")
-    ax.set_ylim(1.75, 3.0)
+    ax.set_ylim(1.75, 3.45)
+    ax.set_yticks(np.arange(1.8, 2.81, 0.2))
     ax.set_xlabel("training tokens (millions)")
     ax.set_ylabel("validation bpb")
     ax.legend(fontsize=6, loc="upper right", title="positions, tokens", title_fontsize=6)

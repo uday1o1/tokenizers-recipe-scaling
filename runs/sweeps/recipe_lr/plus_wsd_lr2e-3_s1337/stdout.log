@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_wsd_lr2e-3_s1337
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,410,176 params (3,148,032 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=wsd
+step     50 | loss 6.1717 | lr 5.00e-04 | 214.8k tok/s | 4s
+step    100 | loss 5.0235 | lr 1.00e-03 | 235.6k tok/s | 7s
+step    150 | loss 4.6112 | lr 1.50e-03 | 235.3k tok/s | 11s
+step    200 | loss 4.4064 | lr 2.00e-03 | 265.3k tok/s | 14s
+step    250 | loss 4.2164 | lr 2.00e-03 | 272.0k tok/s | 17s
+  eval step    250 | val_loss 4.1135 | val_bpb 2.4759 | acc 16.7% | 17s
+step    300 | loss 4.0465 | lr 2.00e-03 | 236.0k tok/s | 20s
+step    350 | loss 3.9585 | lr 2.00e-03 | 235.6k tok/s | 24s
+step    400 | loss 3.9452 | lr 2.00e-03 | 235.5k tok/s | 27s
+step    450 | loss 3.8687 | lr 2.00e-03 | 265.8k tok/s | 30s
+step    500 | loss 3.7870 | lr 2.00e-03 | 272.6k tok/s | 33s
+  eval step    500 | val_loss 3.7570 | val_bpb 2.2613 | acc 21.9% | 33s
+step    550 | loss 3.7160 | lr 2.00e-03 | 235.8k tok/s | 37s
+step    600 | loss 3.7398 | lr 2.00e-03 | 235.5k tok/s | 40s
+step    650 | loss 3.6795 | lr 2.00e-03 | 235.4k tok/s | 44s
+step    700 | loss 3.7281 | lr 2.00e-03 | 265.0k tok/s | 47s
+step    750 | loss 3.7103 | lr 1.67e-03 | 273.5k tok/s | 50s
+  eval step    750 | val_loss 3.6215 | val_bpb 2.1797 | acc 23.8% | 50s
+step    800 | loss 3.6144 | lr 1.34e-03 | 235.6k tok/s | 53s
+step    850 | loss 3.5411 | lr 1.01e-03 | 235.3k tok/s | 57s
+step    900 | loss 3.4970 | lr 6.73e-04 | 235.3k tok/s | 60s
+step    950 | loss 3.4495 | lr 3.40e-04 | 264.1k tok/s | 63s
+step   1000 | loss 3.4194 | lr 6.67e-06 | 277.2k tok/s | 66s
+  eval step   1000 | val_loss 3.3638 | val_bpb 2.0246 | acc 28.0% | 66s
+[final] val_loss 3.3878 | val_bpb 2.0322 | ppl 29.60 | acc 27.79% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+SUST, FLL: Generacy and Traitor Nov 5,0000.m., Master Scheck,, Marketing Master and Steels, Priority. However, Bobots 00 Brue. - His club past 1510 Max Conference. 24, 201, 10 150 / 1000 million: 20000:880%7, 2014317425, 11109 12933; No. 1 Multiple Snow. Multivitamin Scottt, AMMSO AD. 1) - Del
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_wsd_lr2e-3_s1337/metrics.json

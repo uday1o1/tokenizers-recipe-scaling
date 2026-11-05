@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_rmsnorm_rope_lr4e-3_s1
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,410,176 params (3,148,032 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 5.9355 | lr 1.00e-03 | 216.5k tok/s | 4s
+step    100 | loss 4.7809 | lr 2.00e-03 | 236.5k tok/s | 7s
+step    150 | loss 4.4772 | lr 3.00e-03 | 236.5k tok/s | 11s
+step    200 | loss 4.3530 | lr 4.00e-03 | 272.6k tok/s | 14s
+step    250 | loss 4.1759 | lr 3.48e-03 | 264.2k tok/s | 17s
+  eval step    250 | val_loss 4.0638 | val_bpb 2.4460 | acc 17.3% | 17s
+step    300 | loss 3.9995 | lr 3.26e-03 | 237.3k tok/s | 20s
+step    350 | loss 3.9093 | lr 3.02e-03 | 235.7k tok/s | 24s
+step    400 | loss 3.8899 | lr 2.76e-03 | 235.6k tok/s | 27s
+step    450 | loss 3.8105 | lr 2.49e-03 | 271.9k tok/s | 30s
+step    500 | loss 3.7134 | lr 2.21e-03 | 264.4k tok/s | 33s
+  eval step    500 | val_loss 3.6792 | val_bpb 2.2144 | acc 23.0% | 33s
+step    550 | loss 3.6354 | lr 1.92e-03 | 237.1k tok/s | 37s
+step    600 | loss 3.6486 | lr 1.65e-03 | 235.8k tok/s | 40s
+step    650 | loss 3.5752 | lr 1.39e-03 | 236.4k tok/s | 44s
+step    700 | loss 3.6092 | lr 1.15e-03 | 273.2k tok/s | 47s
+step    750 | loss 3.5882 | lr 9.31e-04 | 262.0k tok/s | 50s
+  eval step    750 | val_loss 3.4911 | val_bpb 2.1012 | acc 25.8% | 50s
+step    800 | loss 3.5277 | lr 7.47e-04 | 237.1k tok/s | 53s
+step    850 | loss 3.4613 | lr 5.99e-04 | 235.6k tok/s | 57s
+step    900 | loss 3.4412 | lr 4.90e-04 | 236.5k tok/s | 60s
+step    950 | loss 3.4069 | lr 4.23e-04 | 273.2k tok/s | 63s
+step   1000 | loss 3.3841 | lr 4.00e-04 | 275.0k tok/s | 66s
+  eval step   1000 | val_loss 3.3404 | val_bpb 2.0106 | acc 28.6% | 66s
+[final] val_loss 3.3672 | val_bpb 2.0199 | ppl 29.00 | acc 28.31% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+OIOCELLTEWALRED 500000 NEIMETHow to help you can deliver the data catury for you that transfer yourself from your mail. Before the ethical biology sites with the course of you. Our questions: 2013-00-00700 U.S. A.C. 3. 0.2008 I/16:4550/18886155/25-808,750 B.G. C.A. Looking in an auto-contractive game. Mostly three vs? 199030541 180000,
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_rmsnorm_rope_lr4e-3_s1/metrics.json

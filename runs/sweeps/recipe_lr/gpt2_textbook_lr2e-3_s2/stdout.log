@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/gpt2_textbook_lr2e-3_s2
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,683,840 params (3,159,552 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 6.2588 | lr 5.00e-04 | 258.0k tok/s | 3s
+step    100 | loss 5.1510 | lr 1.00e-03 | 281.2k tok/s | 6s
+step    150 | loss 4.7088 | lr 1.50e-03 | 281.8k tok/s | 9s
+step    200 | loss 4.5865 | lr 2.00e-03 | 283.2k tok/s | 12s
+step    250 | loss 4.4864 | lr 1.74e-03 | 292.0k tok/s | 15s
+  eval step    250 | val_loss 4.4266 | val_bpb 2.6643 | acc 10.8% | 15s
+step    300 | loss 4.4171 | lr 1.63e-03 | 290.7k tok/s | 18s
+step    350 | loss 4.3813 | lr 1.51e-03 | 279.0k tok/s | 20s
+step    400 | loss 4.3903 | lr 1.38e-03 | 282.2k tok/s | 23s
+step    450 | loss 4.3435 | lr 1.24e-03 | 280.7k tok/s | 26s
+step    500 | loss 4.2982 | lr 1.10e-03 | 309.0k tok/s | 29s
+  eval step    500 | val_loss 4.2716 | val_bpb 2.5710 | acc 11.9% | 29s
+step    550 | loss 4.2569 | lr 9.62e-04 | 288.1k tok/s | 32s
+step    600 | loss 4.2737 | lr 8.25e-04 | 280.9k tok/s | 35s
+step    650 | loss 4.2156 | lr 6.94e-04 | 280.1k tok/s | 38s
+step    700 | loss 4.2435 | lr 5.73e-04 | 280.5k tok/s | 41s
+step    750 | loss 4.2285 | lr 4.66e-04 | 327.5k tok/s | 43s
+  eval step    750 | val_loss 4.1484 | val_bpb 2.4969 | acc 13.8% | 43s
+step    800 | loss 4.1738 | lr 3.74e-04 | 291.8k tok/s | 46s
+step    850 | loss 4.1271 | lr 2.99e-04 | 280.8k tok/s | 49s
+step    900 | loss 4.1040 | lr 2.45e-04 | 281.1k tok/s | 52s
+step    950 | loss 4.0842 | lr 2.12e-04 | 280.4k tok/s | 55s
+step   1000 | loss 4.0629 | lr 2.00e-04 | 348.6k tok/s | 57s
+  eval step   1000 | val_loss 4.0208 | val_bpb 2.4201 | acc 16.1% | 57s
+[final] val_loss 4.0398 | val_bpb 2.4233 | ppl 56.81 | acc 16.13% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+cience of Sc. | Amer Aricanica, Societing for Mron-Ashon Kel Eashwood Pican Rury, Collin, Lic Colinia Resa Media, Adeli, in Pracan, Prama Meloes, Sen Humanas Collegeliciiver, Theircribus riptembedia-or of Ka, Hi,, Da and Drami (M (1829: Van, Ni (2197).201848605993-6-2.14, Molio.4, Framy: Ecro.), Sim Center, Kon, and Khan, M
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/gpt2_textbook_lr2e-3_s2/metrics.json

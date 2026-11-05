@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/gpt2_textbook_lr2e-3_s1337
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,683,840 params (3,159,552 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 6.2735 | lr 5.00e-04 | 261.3k tok/s | 3s
+step    100 | loss 5.1619 | lr 1.00e-03 | 283.4k tok/s | 6s
+step    150 | loss 4.7077 | lr 1.50e-03 | 287.1k tok/s | 9s
+step    200 | loss 4.5838 | lr 2.00e-03 | 284.8k tok/s | 12s
+step    250 | loss 4.4845 | lr 1.74e-03 | 292.8k tok/s | 15s
+  eval step    250 | val_loss 4.4216 | val_bpb 2.6613 | acc 10.7% | 15s
+step    300 | loss 4.4142 | lr 1.63e-03 | 305.0k tok/s | 17s
+step    350 | loss 4.3778 | lr 1.51e-03 | 283.7k tok/s | 20s
+step    400 | loss 4.3887 | lr 1.38e-03 | 285.8k tok/s | 23s
+step    450 | loss 4.3413 | lr 1.24e-03 | 286.0k tok/s | 26s
+step    500 | loss 4.2976 | lr 1.10e-03 | 293.4k tok/s | 29s
+  eval step    500 | val_loss 4.2726 | val_bpb 2.5716 | acc 11.8% | 29s
+step    550 | loss 4.2539 | lr 9.62e-04 | 317.3k tok/s | 31s
+step    600 | loss 4.2705 | lr 8.25e-04 | 281.6k tok/s | 34s
+step    650 | loss 4.2100 | lr 6.94e-04 | 282.2k tok/s | 37s
+step    700 | loss 4.2380 | lr 5.73e-04 | 284.4k tok/s | 40s
+step    750 | loss 4.2213 | lr 4.66e-04 | 303.7k tok/s | 43s
+  eval step    750 | val_loss 4.1413 | val_bpb 2.4926 | acc 13.8% | 43s
+step    800 | loss 4.1640 | lr 3.74e-04 | 327.1k tok/s | 45s
+step    850 | loss 4.1154 | lr 2.99e-04 | 281.4k tok/s | 48s
+step    900 | loss 4.0913 | lr 2.45e-04 | 284.8k tok/s | 51s
+step    950 | loss 4.0721 | lr 2.12e-04 | 290.0k tok/s | 54s
+step   1000 | loss 4.0533 | lr 2.00e-04 | 312.3k tok/s | 56s
+  eval step   1000 | val_loss 4.0080 | val_bpb 2.4123 | acc 16.3% | 56s
+[final] val_loss 4.0258 | val_bpb 2.4150 | ppl 56.03 | acc 16.35% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+SUS., Fe, a Genncover, ordate, Drabing, Intervestate, Cons of Hitcy, H, Marketing Masison, C., and Pribedge. Colum, Brarends, In Ga, U., and Folara, Williolarisaz, Lad, Warnety, J.,,, Carie, Acia, Mark, Indian and Color of Pared in an in Gla.A, Orate, Indian Politi, Iman, Nedian, Ka, Eu, Nolicy Me, Colngul Mountry, Man,, M. Distry, J., Can., and, Wad,
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/gpt2_textbook_lr2e-3_s1337/metrics.json

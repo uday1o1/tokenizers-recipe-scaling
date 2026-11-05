@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_wsd_lr2e-3_s3
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,410,176 params (3,148,032 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=wsd
+step     50 | loss 6.1556 | lr 5.00e-04 | 569.8k tok/s | 1s
+step    100 | loss 5.0102 | lr 1.00e-03 | 607.4k tok/s | 3s
+step    150 | loss 4.6161 | lr 1.50e-03 | 465.5k tok/s | 5s
+step    200 | loss 4.4157 | lr 2.00e-03 | 245.2k tok/s | 8s
+step    250 | loss 4.2354 | lr 2.00e-03 | 235.2k tok/s | 11s
+  eval step    250 | val_loss 4.1206 | val_bpb 2.4801 | acc 16.7% | 11s
+step    300 | loss 4.0605 | lr 2.00e-03 | 325.6k tok/s | 14s
+step    350 | loss 3.9684 | lr 2.00e-03 | 442.3k tok/s | 16s
+step    400 | loss 3.9525 | lr 2.00e-03 | 402.4k tok/s | 18s
+step    450 | loss 3.8794 | lr 2.00e-03 | 244.8k tok/s | 21s
+step    500 | loss 3.7952 | lr 2.00e-03 | 235.4k tok/s | 25s
+  eval step    500 | val_loss 3.7615 | val_bpb 2.2640 | acc 21.6% | 25s
+step    550 | loss 3.7251 | lr 2.00e-03 | 325.1k tok/s | 27s
+step    600 | loss 3.7469 | lr 2.00e-03 | 436.3k tok/s | 29s
+step    650 | loss 3.6865 | lr 2.00e-03 | 402.2k tok/s | 31s
+step    700 | loss 3.7316 | lr 2.00e-03 | 246.0k tok/s | 34s
+step    750 | loss 3.7154 | lr 1.67e-03 | 235.3k tok/s | 38s
+  eval step    750 | val_loss 3.6147 | val_bpb 2.1757 | acc 24.0% | 38s
+step    800 | loss 3.6187 | lr 1.34e-03 | 324.5k tok/s | 40s
+step    850 | loss 3.5482 | lr 1.01e-03 | 432.8k tok/s | 42s
+step    900 | loss 3.5014 | lr 6.73e-04 | 402.5k tok/s | 44s
+step    950 | loss 3.4555 | lr 3.40e-04 | 245.9k tok/s | 48s
+step   1000 | loss 3.4196 | lr 6.67e-06 | 235.3k tok/s | 51s
+  eval step   1000 | val_loss 3.3689 | val_bpb 2.0277 | acc 27.8% | 51s
+[final] val_loss 3.3948 | val_bpb 2.0364 | ppl 29.81 | acc 27.58% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+Clumblock My Option: The BCG Allow Camps Service South Typuit Hopeful Bands: 15 RESA: 1550 EDESS CACABA BODINDATHIAREN SUES: EREW #ERISKTEATETTERALLALRATINDOTRENTS ORACEALR DISINERIPEGISE: VES TULER! 4. With ASTERT ANTRESTIMENTINSTH RIMINGEN 150. IN 00
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_wsd_lr2e-3_s3/metrics.json

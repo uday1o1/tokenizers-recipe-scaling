@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_wsd_lr8e-3_s1337
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,410,176 params (3,148,032 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=wsd
+step     50 | loss 5.7403 | lr 2.00e-03 | 213.0k tok/s | 4s
+step    100 | loss 4.6650 | lr 4.00e-03 | 235.2k tok/s | 7s
+step    150 | loss 4.4537 | lr 6.00e-03 | 235.1k tok/s | 11s
+step    200 | loss 4.3904 | lr 8.00e-03 | 235.2k tok/s | 14s
+step    250 | loss 4.2304 | lr 8.00e-03 | 236.4k tok/s | 18s
+  eval step    250 | val_loss 4.1208 | val_bpb 2.4803 | acc 16.8% | 18s
+step    300 | loss 4.0580 | lr 8.00e-03 | 235.5k tok/s | 21s
+step    350 | loss 3.9799 | lr 8.00e-03 | 235.1k tok/s | 25s
+step    400 | loss 3.9766 | lr 8.00e-03 | 235.2k tok/s | 28s
+step    450 | loss 3.8987 | lr 8.00e-03 | 235.0k tok/s | 32s
+step    500 | loss 3.8270 | lr 8.00e-03 | 238.2k tok/s | 35s
+  eval step    500 | val_loss 3.7831 | val_bpb 2.2770 | acc 21.3% | 35s
+step    550 | loss 3.7501 | lr 8.00e-03 | 235.4k tok/s | 39s
+step    600 | loss 3.7716 | lr 8.00e-03 | 235.0k tok/s | 42s
+step    650 | loss 3.7149 | lr 8.00e-03 | 235.2k tok/s | 46s
+step    700 | loss 3.7613 | lr 8.00e-03 | 235.1k tok/s | 49s
+step    750 | loss 3.7408 | lr 6.69e-03 | 238.4k tok/s | 53s
+  eval step    750 | val_loss 3.6451 | val_bpb 2.1939 | acc 23.5% | 53s
+step    800 | loss 3.6418 | lr 5.36e-03 | 235.7k tok/s | 56s
+step    850 | loss 3.5682 | lr 4.03e-03 | 235.0k tok/s | 59s
+step    900 | loss 3.5160 | lr 2.69e-03 | 235.3k tok/s | 63s
+step    950 | loss 3.4651 | lr 1.36e-03 | 235.0k tok/s | 66s
+step   1000 | loss 3.4193 | lr 2.67e-05 | 238.3k tok/s | 70s
+  eval step   1000 | val_loss 3.3694 | val_bpb 2.0280 | acc 27.8% | 70s
+[final] val_loss 3.3957 | val_bpb 2.0370 | ppl 29.84 | acc 27.56% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+Save Created Lover Generaco and Traito Nov 5, 1904 Marson of Hitchestr, 1999, Harris. Craft, Red. Hiller, Choice, Society, Marshi, and Boys. WA. Max, Lado W. 24, John, Architecturia, Marketer’s mountains of the pattern that is correctly a horrible rules. At this point on a telephone 2946, No. J. Meady Know. Manka, 19 m. Dr. 44-15.11) - Del
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_wsd_lr8e-3_s1337/metrics.json

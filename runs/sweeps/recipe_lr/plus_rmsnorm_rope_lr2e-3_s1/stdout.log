@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_rmsnorm_rope_lr2e-3_s1
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,410,176 params (3,148,032 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 6.1660 | lr 5.00e-04 | 493.3k tok/s | 2s
+step    100 | loss 5.0156 | lr 1.00e-03 | 650.0k tok/s | 3s
+step    150 | loss 4.6079 | lr 1.50e-03 | 236.4k tok/s | 6s
+step    200 | loss 4.4104 | lr 2.00e-03 | 236.5k tok/s | 10s
+step    250 | loss 4.2241 | lr 1.74e-03 | 236.5k tok/s | 13s
+  eval step    250 | val_loss 4.1187 | val_bpb 2.4790 | acc 16.3% | 13s
+step    300 | loss 4.0508 | lr 1.63e-03 | 499.4k tok/s | 15s
+step    350 | loss 3.9494 | lr 1.51e-03 | 718.0k tok/s | 16s
+step    400 | loss 3.9254 | lr 1.38e-03 | 235.9k tok/s | 20s
+step    450 | loss 3.8393 | lr 1.24e-03 | 235.8k tok/s | 23s
+step    500 | loss 3.7459 | lr 1.10e-03 | 235.6k tok/s | 27s
+  eval step    500 | val_loss 3.7111 | val_bpb 2.2336 | acc 22.5% | 27s
+step    550 | loss 3.6691 | lr 9.62e-04 | 488.6k tok/s | 28s
+step    600 | loss 3.6811 | lr 8.25e-04 | 764.0k tok/s | 29s
+step    650 | loss 3.6133 | lr 6.94e-04 | 240.2k tok/s | 33s
+step    700 | loss 3.6456 | lr 5.73e-04 | 235.9k tok/s | 36s
+step    750 | loss 3.6267 | lr 4.66e-04 | 235.8k tok/s | 40s
+  eval step    750 | val_loss 3.5295 | val_bpb 2.1243 | acc 25.1% | 40s
+step    800 | loss 3.5730 | lr 3.74e-04 | 452.5k tok/s | 41s
+step    850 | loss 3.5120 | lr 2.99e-04 | 756.9k tok/s | 43s
+step    900 | loss 3.4950 | lr 2.45e-04 | 242.2k tok/s | 46s
+step    950 | loss 3.4683 | lr 2.12e-04 | 235.6k tok/s | 49s
+step   1000 | loss 3.4608 | lr 2.00e-04 | 235.5k tok/s | 53s
+  eval step   1000 | val_loss 3.4108 | val_bpb 2.0529 | acc 27.2% | 53s
+[final] val_loss 3.4378 | val_bpb 2.0622 | ppl 31.12 | acc 26.94% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+HI LC. The BTATA is a 2-you are telling to be makes in the networks. Today you can get it allowed, it is more than throwed if nothing that you can do similar anything. I would try a latter plan! I wanted a lower tool, but you're not fun to look for the top of the wales. But there is one tour, I am explaining the best packing. (So wonderful is not live, I have to give a dot at the signature butter to your following, fighting animals like a corner. We needly for all the possible following in following outside and done down on the l
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_rmsnorm_rope_lr2e-3_s1/metrics.json

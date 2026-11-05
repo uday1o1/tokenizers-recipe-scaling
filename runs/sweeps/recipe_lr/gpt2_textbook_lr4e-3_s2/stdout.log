@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/gpt2_textbook_lr4e-3_s2
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,683,840 params (3,159,552 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 6.0688 | lr 1.00e-03 | 283.2k tok/s | 3s
+step    100 | loss 4.9140 | lr 2.00e-03 | 264.9k tok/s | 6s
+step    150 | loss 4.6295 | lr 3.00e-03 | 263.8k tok/s | 9s
+step    200 | loss 4.5852 | lr 4.00e-03 | 264.8k tok/s | 12s
+step    250 | loss 4.4898 | lr 3.48e-03 | 268.6k tok/s | 15s
+  eval step    250 | val_loss 4.4327 | val_bpb 2.6680 | acc 10.7% | 15s
+step    300 | loss 4.4207 | lr 3.26e-03 | 315.6k tok/s | 18s
+step    350 | loss 4.3942 | lr 3.02e-03 | 268.1k tok/s | 21s
+step    400 | loss 4.4066 | lr 2.76e-03 | 264.1k tok/s | 24s
+step    450 | loss 4.3520 | lr 2.49e-03 | 264.2k tok/s | 27s
+step    500 | loss 4.3032 | lr 2.21e-03 | 273.6k tok/s | 30s
+  eval step    500 | val_loss 4.2738 | val_bpb 2.5724 | acc 11.9% | 30s
+step    550 | loss 4.2533 | lr 1.92e-03 | 316.2k tok/s | 33s
+step    600 | loss 4.2645 | lr 1.65e-03 | 277.5k tok/s | 36s
+step    650 | loss 4.1940 | lr 1.39e-03 | 264.0k tok/s | 39s
+step    700 | loss 4.2156 | lr 1.15e-03 | 264.6k tok/s | 42s
+step    750 | loss 4.1869 | lr 9.31e-04 | 276.3k tok/s | 45s
+  eval step    750 | val_loss 4.0993 | val_bpb 2.4673 | acc 14.8% | 45s
+step    800 | loss 4.1131 | lr 7.47e-04 | 315.7k tok/s | 47s
+step    850 | loss 4.0513 | lr 5.99e-04 | 286.1k tok/s | 50s
+step    900 | loss 4.0174 | lr 4.90e-04 | 264.0k tok/s | 53s
+step    950 | loss 3.9890 | lr 4.23e-04 | 264.4k tok/s | 56s
+step   1000 | loss 3.9580 | lr 4.00e-04 | 278.4k tok/s | 59s
+  eval step   1000 | val_loss 3.9175 | val_bpb 2.3579 | acc 18.1% | 59s
+[final] val_loss 3.9345 | val_bpb 2.3602 | ppl 51.14 | acc 18.14% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+Bigious Sc.S. Way, Vol. At Society in Mr., Furchase, D., L., P., Rurpurity, Dr., C., Dowever, M., Any, Murt, P., Construita, Poes, Media, Please, Prisedicagon, Smircribodies, Me, H., M., Br.,,, D. and Pr., Monday, Southi, Pop, Supt., Ma., Ternelinnowele, Mcle-S., Crtricteduc. Capy: Eproduction, Sim Center, Spr., Cannings
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/gpt2_textbook_lr4e-3_s2/metrics.json

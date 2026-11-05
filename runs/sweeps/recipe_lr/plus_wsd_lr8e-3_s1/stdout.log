@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_wsd_lr8e-3_s1
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,410,176 params (3,148,032 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=wsd
+step     50 | loss 5.7174 | lr 2.00e-03 | 522.2k tok/s | 2s
+step    100 | loss 4.6504 | lr 4.00e-03 | 648.4k tok/s | 3s
+step    150 | loss 4.4503 | lr 6.00e-03 | 473.1k tok/s | 5s
+step    200 | loss 4.3845 | lr 8.00e-03 | 473.3k tok/s | 6s
+step    250 | loss 4.2188 | lr 8.00e-03 | 472.5k tok/s | 8s
+  eval step    250 | val_loss 4.1118 | val_bpb 2.4749 | acc 16.8% | 8s
+step    300 | loss 4.0447 | lr 8.00e-03 | 746.9k tok/s | 9s
+step    350 | loss 3.9673 | lr 8.00e-03 | 473.0k tok/s | 11s
+step    400 | loss 3.9637 | lr 8.00e-03 | 473.0k tok/s | 13s
+step    450 | loss 3.8814 | lr 8.00e-03 | 473.0k tok/s | 14s
+step    500 | loss 3.8039 | lr 8.00e-03 | 473.4k tok/s | 16s
+  eval step    500 | val_loss 3.7702 | val_bpb 2.2693 | acc 21.7% | 16s
+step    550 | loss 3.7360 | lr 8.00e-03 | 574.1k tok/s | 17s
+step    600 | loss 3.7531 | lr 8.00e-03 | 473.2k tok/s | 19s
+step    650 | loss 3.6964 | lr 8.00e-03 | 473.1k tok/s | 21s
+step    700 | loss 3.7418 | lr 8.00e-03 | 473.4k tok/s | 23s
+step    750 | loss 3.7267 | lr 6.69e-03 | 473.4k tok/s | 24s
+  eval step    750 | val_loss 3.6258 | val_bpb 2.1823 | acc 23.8% | 24s
+step    800 | loss 3.6249 | lr 5.36e-03 | 518.7k tok/s | 26s
+step    850 | loss 3.5554 | lr 4.03e-03 | 472.9k tok/s | 28s
+step    900 | loss 3.5028 | lr 2.69e-03 | 472.4k tok/s | 29s
+step    950 | loss 3.4500 | lr 1.36e-03 | 472.6k tok/s | 31s
+step   1000 | loss 3.4095 | lr 2.67e-05 | 473.4k tok/s | 33s
+  eval step   1000 | val_loss 3.3561 | val_bpb 2.0200 | acc 28.0% | 33s
+[final] val_loss 3.3828 | val_bpb 2.0292 | ppl 29.45 | acc 27.76% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+Omma. There is no maximum, there is no changes something an excluding sling methodod of the data cultural research traded by a hostale. Her couple of the bedroom systems with the Lika’s fastening from the 2013-01-00700-2012. The million tabled straight hopes for the human direction of the red is to live in a fundriend, skin signature skin, and representing the standardization. Minnesotto A.K. 1990 is a problem that is done catalog
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_wsd_lr8e-3_s1/metrics.json

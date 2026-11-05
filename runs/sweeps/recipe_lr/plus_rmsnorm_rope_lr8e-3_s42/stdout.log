@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_rmsnorm_rope_lr8e-3_s42
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,410,176 params (3,148,032 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 5.7042 | lr 2.00e-03 | 215.1k tok/s | 4s
+step    100 | loss 4.6536 | lr 4.00e-03 | 235.2k tok/s | 7s
+step    150 | loss 4.4529 | lr 6.00e-03 | 235.1k tok/s | 11s
+step    200 | loss 4.3748 | lr 8.00e-03 | 235.2k tok/s | 14s
+step    250 | loss 4.1943 | lr 6.95e-03 | 235.0k tok/s | 18s
+  eval step    250 | val_loss 4.0764 | val_bpb 2.4535 | acc 17.4% | 18s
+step    300 | loss 4.0082 | lr 6.53e-03 | 236.3k tok/s | 21s
+step    350 | loss 3.9166 | lr 6.04e-03 | 235.1k tok/s | 25s
+step    400 | loss 3.9072 | lr 5.52e-03 | 235.2k tok/s | 28s
+step    450 | loss 3.8134 | lr 4.97e-03 | 235.0k tok/s | 32s
+step    500 | loss 3.7229 | lr 4.41e-03 | 236.6k tok/s | 35s
+  eval step    500 | val_loss 3.6860 | val_bpb 2.2185 | acc 22.9% | 35s
+step    550 | loss 3.6471 | lr 3.85e-03 | 236.3k tok/s | 39s
+step    600 | loss 3.6532 | lr 3.30e-03 | 235.0k tok/s | 42s
+step    650 | loss 3.5839 | lr 2.78e-03 | 235.2k tok/s | 46s
+step    700 | loss 3.6166 | lr 2.29e-03 | 235.1k tok/s | 49s
+step    750 | loss 3.5914 | lr 1.86e-03 | 236.7k tok/s | 53s
+  eval step    750 | val_loss 3.4932 | val_bpb 2.1025 | acc 25.9% | 53s
+step    800 | loss 3.5313 | lr 1.49e-03 | 236.5k tok/s | 56s
+step    850 | loss 3.4678 | lr 1.20e-03 | 235.0k tok/s | 59s
+step    900 | loss 3.4452 | lr 9.80e-04 | 235.3k tok/s | 63s
+step    950 | loss 3.4187 | lr 8.46e-04 | 235.0k tok/s | 66s
+step   1000 | loss 3.4029 | lr 8.00e-04 | 236.6k tok/s | 70s
+  eval step   1000 | val_loss 3.3550 | val_bpb 2.0193 | acc 28.0% | 70s
+[final] val_loss 3.3829 | val_bpb 2.0293 | ppl 29.45 | acc 27.79% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+Thisfaction of the 188 year older Indian and has been suggested to the 30-2009 I have been lost in 2007 for clearly 1002. The same is to the case of the 9098, the season 2014. Its the 8005 later will be easily accessible to the expressive leade money and receive the test to receive a population in the 1966 on 12 years, 1030 to 110 points and 580 times during the evolution of the first gear session was able to create a seven pattern of the current and tag
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_rmsnorm_rope_lr8e-3_s42/metrics.json

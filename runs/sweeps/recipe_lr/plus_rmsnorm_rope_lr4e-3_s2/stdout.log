@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_rmsnorm_rope_lr4e-3_s2
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,410,176 params (3,148,032 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 5.9532 | lr 1.00e-03 | 502.9k tok/s | 2s
+step    100 | loss 4.7972 | lr 2.00e-03 | 503.9k tok/s | 3s
+step    150 | loss 4.4829 | lr 3.00e-03 | 235.4k tok/s | 7s
+step    200 | loss 4.3403 | lr 4.00e-03 | 235.5k tok/s | 10s
+step    250 | loss 4.1658 | lr 3.48e-03 | 235.2k tok/s | 14s
+  eval step    250 | val_loss 4.0642 | val_bpb 2.4462 | acc 17.4% | 14s
+step    300 | loss 3.9988 | lr 3.26e-03 | 660.2k tok/s | 15s
+step    350 | loss 3.9177 | lr 3.02e-03 | 536.1k tok/s | 16s
+step    400 | loss 3.8956 | lr 2.76e-03 | 235.6k tok/s | 20s
+step    450 | loss 3.8129 | lr 2.49e-03 | 235.5k tok/s | 23s
+step    500 | loss 3.7220 | lr 2.21e-03 | 235.6k tok/s | 27s
+  eval step    500 | val_loss 3.6858 | val_bpb 2.2184 | acc 22.9% | 27s
+step    550 | loss 3.6413 | lr 1.92e-03 | 629.6k tok/s | 28s
+step    600 | loss 3.6515 | lr 1.65e-03 | 514.3k tok/s | 30s
+step    650 | loss 3.5824 | lr 1.39e-03 | 235.5k tok/s | 33s
+step    700 | loss 3.6175 | lr 1.15e-03 | 235.4k tok/s | 37s
+step    750 | loss 3.5970 | lr 9.31e-04 | 235.3k tok/s | 40s
+  eval step    750 | val_loss 3.4997 | val_bpb 2.1064 | acc 25.6% | 40s
+step    800 | loss 3.5368 | lr 7.47e-04 | 644.3k tok/s | 42s
+step    850 | loss 3.4727 | lr 5.99e-04 | 506.1k tok/s | 43s
+step    900 | loss 3.4549 | lr 4.90e-04 | 235.2k tok/s | 47s
+step    950 | loss 3.4270 | lr 4.23e-04 | 235.3k tok/s | 50s
+step   1000 | loss 3.4126 | lr 4.00e-04 | 235.4k tok/s | 54s
+  eval step   1000 | val_loss 3.3684 | val_bpb 2.0274 | acc 27.7% | 54s
+[final] val_loss 3.3937 | val_bpb 2.0358 | ppl 29.78 | acc 27.57% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+BEPES. |PS ANTIORIN AND TH MELLIUTERIE IF BREREEISTORCORARRIONTESIOIN ANANTIOTRTEEREN MAONERSATIOL PHIFEURE ONTIIN SENSGERIDEROLSPSBATIRLEONDORECTORTIEOET:OTER. Oppression COREVEOEEE LOOWETIOETHE FOOE: EANERTAM COBS ITENE COUN
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_rmsnorm_rope_lr4e-3_s2/metrics.json

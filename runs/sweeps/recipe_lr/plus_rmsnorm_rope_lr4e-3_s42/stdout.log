@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_rmsnorm_rope_lr4e-3_s42
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,410,176 params (3,148,032 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=cosine
+step     50 | loss 5.9317 | lr 1.00e-03 | 216.0k tok/s | 4s
+step    100 | loss 4.7927 | lr 2.00e-03 | 236.5k tok/s | 7s
+step    150 | loss 4.4792 | lr 3.00e-03 | 236.5k tok/s | 11s
+step    200 | loss 4.3306 | lr 4.00e-03 | 272.6k tok/s | 14s
+step    250 | loss 4.1525 | lr 3.48e-03 | 264.4k tok/s | 17s
+  eval step    250 | val_loss 4.0546 | val_bpb 2.4404 | acc 17.6% | 17s
+step    300 | loss 3.9897 | lr 3.26e-03 | 236.5k tok/s | 20s
+step    350 | loss 3.9069 | lr 3.02e-03 | 235.7k tok/s | 24s
+step    400 | loss 3.8934 | lr 2.76e-03 | 235.6k tok/s | 27s
+step    450 | loss 3.8100 | lr 2.49e-03 | 272.5k tok/s | 30s
+step    500 | loss 3.7210 | lr 2.21e-03 | 265.2k tok/s | 33s
+  eval step    500 | val_loss 3.6839 | val_bpb 2.2173 | acc 22.8% | 33s
+step    550 | loss 3.6410 | lr 1.92e-03 | 236.3k tok/s | 37s
+step    600 | loss 3.6499 | lr 1.65e-03 | 235.8k tok/s | 40s
+step    650 | loss 3.5849 | lr 1.39e-03 | 236.9k tok/s | 44s
+step    700 | loss 3.6143 | lr 1.15e-03 | 273.2k tok/s | 47s
+step    750 | loss 3.5940 | lr 9.31e-04 | 263.0k tok/s | 50s
+  eval step    750 | val_loss 3.4961 | val_bpb 2.1042 | acc 25.8% | 50s
+step    800 | loss 3.5357 | lr 7.47e-04 | 236.3k tok/s | 53s
+step    850 | loss 3.4724 | lr 5.99e-04 | 235.6k tok/s | 57s
+step    900 | loss 3.4548 | lr 4.90e-04 | 237.0k tok/s | 60s
+step    950 | loss 3.4283 | lr 4.23e-04 | 273.2k tok/s | 63s
+step   1000 | loss 3.4143 | lr 4.00e-04 | 276.5k tok/s | 66s
+  eval step   1000 | val_loss 3.3683 | val_bpb 2.0273 | acc 27.8% | 66s
+[final] val_loss 3.3939 | val_bpb 2.0359 | ppl 29.78 | acc 27.61% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+Tampost Comments Accessible. We call it in a time, including the Praying of Private Company Information Tentole. We are a nursue for based climbing strength to continue, to the case of the Society to the LordPage: WordPs are the early Concepts and easy to help our factor of links and motivated. We will not be able to build a population in the country by the climble developments in this practice to work the internet, issue to appear and use mistakes that are excellent for media sessions to vaccinate and services. We are still considerably and that
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_rmsnorm_rope_lr4e-3_s42/metrics.json

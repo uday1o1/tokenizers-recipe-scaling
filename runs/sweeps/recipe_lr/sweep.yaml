@@ -1,0 +1,29 @@
+# The AdamW configurations of recipe.yaml at higher learning rates (2e-3, 4e-3 and 8e-3 on every AdamW
+# parameter group), to check whether the gains credited to the recipe changes survive tuning the
+# AdamW baseline's learning rate. Muon runs keep their settings.
+name: recipe_lr
+base: ../../external/DeepDataMiningLearning/DeepDataMiningLearning/llm/nanolm/configs/laptop/L4q_gpt_fineweb_quick.yaml
+out_dir: runs
+seeds: [1337, 42, 1, 2, 3]
+common:
+  train.max_time_sec: 0
+  model.mlp: gelu
+runs:
+  - name: gpt2_textbook_lr2e-3
+    overrides: {model.norm: layernorm, model.pos: learned, model.bias: true, train.optimizer: adamw, train.lr: 2e-3, train.embed_lr: 0.0, train.schedule: cosine, train.min_lr_frac: 0.1}
+  - name: gpt2_textbook_lr4e-3
+    overrides: {model.norm: layernorm, model.pos: learned, model.bias: true, train.optimizer: adamw, train.lr: 4e-3, train.embed_lr: 0.0, train.schedule: cosine, train.min_lr_frac: 0.1}
+  - name: plus_rmsnorm_rope_lr2e-3
+    overrides: {model.norm: rmsnorm, model.pos: rope, model.bias: false, train.optimizer: adamw, train.lr: 2e-3, train.embed_lr: 0.0, train.schedule: cosine, train.min_lr_frac: 0.1}
+  - name: plus_rmsnorm_rope_lr4e-3
+    overrides: {model.norm: rmsnorm, model.pos: rope, model.bias: false, train.optimizer: adamw, train.lr: 4e-3, train.embed_lr: 0.0, train.schedule: cosine, train.min_lr_frac: 0.1}
+  - name: plus_wsd_lr2e-3
+    overrides: {model.norm: rmsnorm, model.pos: rope, model.bias: false, train.optimizer: adamw, train.lr: 2e-3, train.embed_lr: 0.0, train.schedule: wsd, train.warmdown_frac: 0.3, train.min_lr_frac: 0.0}
+  - name: plus_wsd_lr4e-3
+    overrides: {model.norm: rmsnorm, model.pos: rope, model.bias: false, train.optimizer: adamw, train.lr: 4e-3, train.embed_lr: 0.0, train.schedule: wsd, train.warmdown_frac: 0.3, train.min_lr_frac: 0.0}
+  - name: gpt2_textbook_lr8e-3
+    overrides: {model.norm: layernorm, model.pos: learned, model.bias: true, train.optimizer: adamw, train.lr: 8e-3, train.embed_lr: 0.0, train.schedule: cosine, train.min_lr_frac: 0.1}
+  - name: plus_rmsnorm_rope_lr8e-3
+    overrides: {model.norm: rmsnorm, model.pos: rope, model.bias: false, train.optimizer: adamw, train.lr: 8e-3, train.embed_lr: 0.0, train.schedule: cosine, train.min_lr_frac: 0.1}
+  - name: plus_wsd_lr8e-3
+    overrides: {model.norm: rmsnorm, model.pos: rope, model.bias: false, train.optimizer: adamw, train.lr: 8e-3, train.embed_lr: 0.0, train.schedule: wsd, train.warmdown_frac: 0.3, train.min_lr_frac: 0.0}

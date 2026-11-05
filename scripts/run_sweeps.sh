@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Download FineWeb (sp1024), then train every run (GPU). SLOTS = how many runs share one GPU at a
-# time (default 4; tokenizer_fix, whose runs all use the 50,257-token GPT-2 vocabulary and have the
-# highest peak memory of any sweep, at most 2). Finished runs are skipped and failed runs are retried,
+# time (default 4; at most 2 for tokenizer_fix, all of whose runs use the 50,257-token GPT-2
+# vocabulary and reach the highest peak memory of any run, 4.6 GB). Finished runs are skipped and failed runs are retried,
 # so the script can be re-run to resume; after a killed sweep, add --reclaim to the nanolm.sweep call
 # to clear the run claims it left behind.
 set -euo pipefail
@@ -16,11 +16,14 @@ for t in char byte word:2048 word:8192 sp_train:bpe:512 sp_train:bpe:2048 sp_tra
 done
 SLOTS=${SLOTS:-4}
 gpus() { python -c "print(','.join(['0'] * $1))"; }
-SWEEPS="tokenizers tokenizer_fix recipe positions scaling swiglu"
+SWEEPS="tokenizers tokenizer_fix recipe recipe_lr positions scaling swiglu"
 for s in $SWEEPS; do
   n=$SLOTS; [ "$s" = tokenizer_fix ] && n=$(( SLOTS < 2 ? SLOTS : 2 ))
   python -m nanolm.sweep --sweep configs/sweeps/$s.yaml --gpus "$(gpus $n)"
 done
+# nanolm.analyze per sweep; with a baseline it adds each configuration's paired difference and p
+declare -A BASE=([tokenizers]=char [recipe]=gpt2_textbook [positions]=textbook_steps4000 [swiglu]=gelu)
 for s in $SWEEPS; do
-  python -m nanolm.analyze runs/sweeps/$s --metric val_bpb > runs/sweeps/$s/analyze_stdout.txt
+  python -m nanolm.analyze runs/sweeps/$s --metric val_bpb ${BASE[$s]:+--baseline ${BASE[$s]}} \
+    > runs/sweeps/$s/analyze_stdout.txt
 done

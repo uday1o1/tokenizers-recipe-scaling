@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_wsd_lr2e-3_s42
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,410,176 params (3,148,032 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=wsd
+step     50 | loss 6.1694 | lr 5.00e-04 | 217.4k tok/s | 4s
+step    100 | loss 5.0193 | lr 1.00e-03 | 235.6k tok/s | 7s
+step    150 | loss 4.6173 | lr 1.50e-03 | 235.3k tok/s | 11s
+step    200 | loss 4.4215 | lr 2.00e-03 | 264.5k tok/s | 14s
+step    250 | loss 4.2340 | lr 2.00e-03 | 271.0k tok/s | 17s
+  eval step    250 | val_loss 4.1244 | val_bpb 2.4825 | acc 16.4% | 17s
+step    300 | loss 4.0556 | lr 2.00e-03 | 240.6k tok/s | 20s
+step    350 | loss 3.9626 | lr 2.00e-03 | 235.6k tok/s | 24s
+step    400 | loss 3.9469 | lr 2.00e-03 | 235.6k tok/s | 27s
+step    450 | loss 3.8716 | lr 2.00e-03 | 263.8k tok/s | 30s
+step    500 | loss 3.7872 | lr 2.00e-03 | 270.8k tok/s | 33s
+  eval step    500 | val_loss 3.7557 | val_bpb 2.2605 | acc 21.8% | 33s
+step    550 | loss 3.7171 | lr 2.00e-03 | 241.1k tok/s | 37s
+step    600 | loss 3.7401 | lr 2.00e-03 | 235.5k tok/s | 40s
+step    650 | loss 3.6812 | lr 2.00e-03 | 235.4k tok/s | 44s
+step    700 | loss 3.7259 | lr 2.00e-03 | 262.7k tok/s | 47s
+step    750 | loss 3.7076 | lr 1.67e-03 | 271.8k tok/s | 50s
+  eval step    750 | val_loss 3.6129 | val_bpb 2.1746 | acc 23.9% | 50s
+step    800 | loss 3.6126 | lr 1.34e-03 | 240.7k tok/s | 53s
+step    850 | loss 3.5422 | lr 1.01e-03 | 235.2k tok/s | 57s
+step    900 | loss 3.4974 | lr 6.73e-04 | 235.3k tok/s | 60s
+step    950 | loss 3.4497 | lr 3.40e-04 | 262.0k tok/s | 63s
+step   1000 | loss 3.4126 | lr 6.67e-06 | 273.1k tok/s | 66s
+  eval step   1000 | val_loss 3.3609 | val_bpb 2.0229 | acc 28.0% | 66s
+[final] val_loss 3.3863 | val_bpb 2.0313 | ppl 29.56 | acc 27.76% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+Tampa Committee . We call it in a site form. Praying this problems, this is an email at male, self-terms, and clearly, such as the History of Sphedule’s San Rather, the Lake Authetics. It’s a non-stopling and normal activity, if you may be able to get found of your group’s lives. All it’s been a method of money, and a lot of schools like that. But now, however, it's ever done, or the million members. It was able to create another and paid tripl. She’d
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_wsd_lr2e-3_s42/metrics.json

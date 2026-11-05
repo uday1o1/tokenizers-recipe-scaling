@@ -1,0 +1,34 @@
+[run] /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_wsd_lr4e-3_s2
+[run] device: cuda (precision=bfloat16, compile=yes) | world_size=1
+[data] fineweb10B_sp1024 | tokenizer=sp:data/golf/tokenizers/fineweb_1024_bpe.model vocab=1024 | train 100,000,000 tok | val 62,021,846 tok
+[model] gpt: 3,410,176 params (3,148,032 non-embedding)
+[train] 1000 steps x 16,384 tokens/step (0.16 passes over train) | optimizer=adamw schedule=wsd
+step     50 | loss 5.9531 | lr 1.00e-03 | 209.6k tok/s | 4s
+step    100 | loss 4.7972 | lr 2.00e-03 | 237.8k tok/s | 7s
+step    150 | loss 4.4831 | lr 3.00e-03 | 273.1k tok/s | 10s
+step    200 | loss 4.3406 | lr 4.00e-03 | 292.2k tok/s | 13s
+step    250 | loss 4.1820 | lr 4.00e-03 | 326.2k tok/s | 16s
+  eval step    250 | val_loss 4.0859 | val_bpb 2.4593 | acc 17.1% | 16s
+step    300 | loss 4.0227 | lr 4.00e-03 | 235.6k tok/s | 19s
+step    350 | loss 3.9530 | lr 4.00e-03 | 238.7k tok/s | 23s
+step    400 | loss 3.9400 | lr 4.00e-03 | 273.1k tok/s | 26s
+step    450 | loss 3.8675 | lr 4.00e-03 | 291.4k tok/s | 28s
+step    500 | loss 3.7905 | lr 4.00e-03 | 327.3k tok/s | 31s
+  eval step    500 | val_loss 3.7484 | val_bpb 2.2561 | acc 21.8% | 31s
+step    550 | loss 3.7172 | lr 4.00e-03 | 235.9k tok/s | 34s
+step    600 | loss 3.7380 | lr 4.00e-03 | 238.7k tok/s | 38s
+step    650 | loss 3.6772 | lr 4.00e-03 | 272.9k tok/s | 41s
+step    700 | loss 3.7276 | lr 4.00e-03 | 290.9k tok/s | 44s
+step    750 | loss 3.7092 | lr 3.35e-03 | 327.1k tok/s | 46s
+  eval step    750 | val_loss 3.6123 | val_bpb 2.1742 | acc 23.9% | 46s
+step    800 | loss 3.6086 | lr 2.68e-03 | 235.5k tok/s | 50s
+step    850 | loss 3.5373 | lr 2.01e-03 | 238.9k tok/s | 53s
+step    900 | loss 3.4850 | lr 1.35e-03 | 272.8k tok/s | 56s
+step    950 | loss 3.4343 | lr 6.80e-04 | 311.2k tok/s | 59s
+step   1000 | loss 3.3915 | lr 1.33e-05 | 404.4k tok/s | 61s
+  eval step   1000 | val_loss 3.3432 | val_bpb 2.0122 | acc 28.2% | 61s
+[final] val_loss 3.3688 | val_bpb 2.0208 | ppl 29.04 | acc 28.02% | 2,097,152 tokens, 2.41 bytes/token
+[sample]
+HEPES. |PS ANTIS ARENDERT MELLIUTERIE:/www.//d/com/RCO.gr.f.2-S.1186070000.406-36213-7004/56880 PHD6000008 There is an examplication that generally is that the cost democracy is that our affiliates the number of level, include: - The launch of motorgery the circumstances. - College of Office Followers and Transitions - Update models - Accommodation -
+
+[done] metrics -> /root/tokenizers-recipe-scaling/runs/sweeps/recipe_lr/plus_wsd_lr4e-3_s2/metrics.json
