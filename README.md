@@ -7,7 +7,7 @@ Controlled experiments on small GPT models that separate the effect of an idea f
 3. **Scaling.** Five widths and four depths at three token budgets, plotted against non-embedding parameters and against training FLOPs: does the curve flatten, and is a 2× larger model or 2× more tokens the better use of compute?
 4. **SwiGLU against GELU.** At nanolm's 6 × 384 size, where SwiGLU loses: is it the learning rate or the token budget?
 
-All training uses [nanolm](https://github.com/lkk688/DeepDataMiningLearning/tree/main/DeepDataMiningLearning/llm) at commit `8418fc1`, unmodified. Every experiment is a sweep file in `configs/sweeps/`, and every statistic below is computed from the run records in `runs/` by `analysis/summarize.py` into `results/summary.json` or is a span, ratio or count of its values (the size of the validation split comes from the byte and char runs' `stdout.log`); values attributed to nanolm's tutorial are quoted from it.
+All training uses [nanolm](https://github.com/lkk688/DeepDataMiningLearning/tree/main/DeepDataMiningLearning/llm) at commit `8418fc1`, unmodified. Every experiment is a sweep file in `configs/sweeps/`, and every statistic below is computed from the run records in `runs/` by `analysis/summarize.py` into `results/summary.json` or is a span, difference, ratio or count of its values (the size of the validation split comes from the byte and char runs' `stdout.log`, and the attention term of the compute ratios, 12 L d T FLOPs per token with T = 512, from each run's `config.yaml`); values attributed to nanolm's tutorial are quoted from it.
 
 ## Results
 
@@ -50,7 +50,7 @@ Results are validation bits per byte (bpb; lower is better), as mean ± std over
 ### Scaling (2 seeds)
 
 - **Trend.** Along the width series bpb falls with every width step at every budget, and by these point estimates the gain per doubling of non-embedding parameters N shrinks at every step: from 0.092 to 0.031 bpb at 16.4M tokens and from 0.073 to 0.038 at 65.5M (each width step multiplies N by 1.89 to 2.12). The curve flattens, less so with more tokens.
-- **Shape.** 8 layers × 256 (5.8% more non-embedding parameters than 4 layers × 352) is lower than 4 × 352 by 0.005 to 0.015 bpb across the budgets (the 0.005 not resolved). 2 layers × 256 (5.8% more non-embedding parameters than 4 layers × 176) is 0.020 to 0.069 worse than 4 × 176.
+- **Shape.** 8 layers × 256 (5.8% more non-embedding parameters than 4 layers × 352) is lower than 4 × 352 by 0.005 to 0.015 bpb across the budgets (all 3 resolved). 2 layers × 256 (5.8% more non-embedding parameters than 4 layers × 176) is 0.020 to 0.069 worse than 4 × 176.
 - **2× model or 2× tokens.** At about equal compute (6ND within 6%; with attention counted the twice-the-tokens point has 1.01 to 1.19 times its pair's compute, and in the 4 pairs within 6% it still gains 0.008 to 0.058), a width-series model with twice the tokens beats the next width up in 7 of 8 pairs, by 0.008 to 0.058 bpb. The eighth pair (−0.002) is not resolved; its larger model has the most tokens per non-embedding parameter of all pairs (22). A doubling of tokens gains 0.068 to 0.114 bpb at every width, a doubling of N 0.031 to 0.092. Along the depth series the same holds from 4 to 8 layers, but 2 layers on twice the tokens is not better than 4 layers.
 
 ### SwiGLU against GELU (6 × 384, 49M tokens, 5 seeds)
@@ -86,7 +86,7 @@ python analysis/figures.py     # figures/*.png (no GPU)
 ```
 
 - **Time.** The sum of per-run training times is 13.3 hours. `SLOTS=6 bash scripts/run_sweeps.sh` runs six at a time on one 24 GB GPU (two for `tokenizer_fix`); the per-run times in `metrics.json` include that sharing.
-- **Without a GPU.** `summarize.py` rebuilds `results/summary.json`, from which every statistic above is read or derived, and `figures.py` rebuilds every figure in `figures/`, from the committed `runs/`.
+- **Without a GPU.** `summarize.py` rebuilds `results/summary.json`, from which every statistic above is read or derived (the attention FLOPs with each run's `config.yaml`), and `figures.py` rebuilds every figure in `figures/`, from the committed `runs/`.
 
 ## Limitations
 
