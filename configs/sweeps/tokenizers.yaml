@@ -1,5 +1,5 @@
 # The same 4-layer modern character Transformer on Tiny Shakespeare with eight tokenizers: nanolm's
-# sweeps/laptop_tokenizers.yaml, with 3 seeds and without the laptop wall-clock cap, so every run
+# sweeps/laptop_tokenizers.yaml, with 3 seeds and without L3_tokenizer's 2700 s wall-clock cap, so every run
 # takes its full 2000 steps x 8,192 tokens. Learned vocabularies are trained on the training split.
 name: tokenizers
 base: ../../external/DeepDataMiningLearning/DeepDataMiningLearning/llm/nanolm/configs/laptop/L3_tokenizer.yaml
