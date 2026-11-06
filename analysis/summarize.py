@@ -113,7 +113,8 @@ def recipe():
 
 
 def recipe_lr():
-    """The AdamW configurations at lr 1e-3 (recipe sweep), 2e-3, 4e-3 and 8e-3 (recipe_lr sweep)."""
+    """The three AdamW chain configurations (gpt2_textbook, plus_rmsnorm_rope, plus_wsd) at lr 1e-3 (recipe sweep),
+    2e-3, 4e-3 and 8e-3 (recipe_lr sweep)."""
     out = {}
     for n in ("gpt2_textbook", "plus_rmsnorm_rope", "plus_wsd"):
         runs = {"1e-3": ("recipe", n), "2e-3": ("recipe_lr", f"{n}_lr2e-3"), "4e-3": ("recipe_lr", f"{n}_lr4e-3"),

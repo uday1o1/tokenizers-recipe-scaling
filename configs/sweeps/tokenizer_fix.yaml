@@ -1,6 +1,7 @@
-# Two fixes for the GPT-2 tokenizer (V = 50,257), whose large embedding table overfits the 1 MB
-# corpus: stop training after 500 steps (a full cosine schedule over 500 steps, the step at which
-# nanolm's tutorial reports this tokenizer's best validation bpb), or raise dropout from 0.1 to 0.3.
+# Two fixes for the GPT-2 tokenizer (V = 50,257), whose runs overfit the 1 MB corpus (54 passes over it
+# with a 50,257-row embedding table): stop training after 500 steps (a full cosine schedule over 500
+# steps, the step at which nanolm's tutorial reports this tokenizer's best validation bpb), or raise
+# dropout from 0.1 to 0.3.
 name: tokenizer_fix
 base: ../../external/DeepDataMiningLearning/DeepDataMiningLearning/llm/nanolm/configs/laptop/L3_tokenizer.yaml
 out_dir: runs

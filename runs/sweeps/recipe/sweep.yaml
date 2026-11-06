@@ -3,12 +3,13 @@
 #   gpt2_textbook -> plus_rmsnorm_rope -> plus_wsd (still AdamW) -> plus_muon (WSD).
 # muon_cosine completes a 2x2 of schedule (cosine, WSD) x optimizer (AdamW, Muon) on the
 # RMSNorm/RoPE model, separating the schedule from the optimizer. textbook_rope and
-# textbook_rmsnorm change one of the two architecture knobs at a time (biases kept), splitting
-# the first step. adamw_matched is plus_wsd with the two other settings the Muon runs change (embedding
-# learning rate 3e-3, no weight decay), so plus_muon against it isolates the optimizer on the weight
-# matrices. The MLP is GELU throughout.
-# AdamW runs use nanolm's 03_gpt_fineweb settings (lr 1e-3, cosine to 10%); Muon runs use the
-# L4 settings (Muon lr 0.02 on matrices, Adam lr 3e-3 elsewhere). No wall-clock cap.
+# textbook_rmsnorm change one of the two architecture knobs at a time (biases kept), splitting the
+# first step. adamw_matched is plus_wsd with two more settings the Muon runs change (embedding
+# learning rate 3e-3, no weight decay), so plus_muon against it measures the optimizer on the weight
+# matrices (the norm gains still get lr 1e-3 there, 3e-3 in the Muon runs). The MLP is GELU throughout.
+# AdamW runs use nanolm's 03_gpt_fineweb settings (lr 1e-3, weight decay 0.1, cosine to 10%), except
+# that plus_wsd and adamw_matched use WSD and adamw_matched has the two settings above; Muon runs use
+# its L4 settings (Muon lr 0.02 on matrices, Adam lr 3e-3 elsewhere). No wall-clock cap.
 name: recipe
 base: ../../external/DeepDataMiningLearning/DeepDataMiningLearning/llm/nanolm/configs/laptop/L4q_gpt_fineweb_quick.yaml
 out_dir: runs

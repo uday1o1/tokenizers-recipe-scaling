@@ -1,6 +1,6 @@
-# The AdamW configurations of recipe.yaml at higher learning rates (2e-3, 4e-3 and 8e-3 on every AdamW
-# parameter group), to check whether the gains credited to the recipe changes survive tuning the
-# AdamW baseline's learning rate. Muon runs keep their settings.
+# Three AdamW configurations of recipe.yaml (gpt2_textbook, plus_rmsnorm_rope, plus_wsd) at higher learning
+# rates (2e-3, 4e-3 and 8e-3 on every AdamW parameter group), to check whether the gains credited to the
+# recipe changes survive tuning the AdamW learning rate. plus_muon keeps its recipe.yaml settings.
 name: recipe_lr
 base: ../../external/DeepDataMiningLearning/DeepDataMiningLearning/llm/nanolm/configs/laptop/L4q_gpt_fineweb_quick.yaml
 out_dir: runs
